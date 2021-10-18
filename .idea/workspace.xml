@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b8bfe596-1685-40a2-9d66-cb7c791ff197" name="Default Changelist" comment="" />
+    <list default="true" id="b8bfe596-1685-40a2-9d66-cb7c791ff197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bkfmonit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bkfmonit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +161,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HoboShop" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/CoolAdmin - Edited" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -160,16 +183,30 @@
       <workItem from="1634067119647" duration="583000" />
       <workItem from="1634067740684" duration="22000" />
       <workItem from="1634067788149" duration="198000" />
+      <workItem from="1634200521416" duration="833000" />
+      <workItem from="1634538593978" duration="36000" />
+      <workItem from="1634546729471" duration="14460000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="774" y="294" key="FileChooserDialogImpl" timestamp="1634056327506">
+    <state x="774" y="294" key="FileChooserDialogImpl" timestamp="1634538627558">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="774" y="294" key="FileChooserDialogImpl/68.0.1852.1080@68.0.1852.1080" timestamp="1634056327506" />
+    <state x="774" y="294" key="FileChooserDialogImpl/68.0.1852.1080@68.0.1852.1080" timestamp="1634538627558" />
   </component>
 </project>
