@@ -30,11 +30,11 @@
                     <!--                            </ul>-->
                 </li>
                 <li>
-                    <a href="chart.html">
+                    <a href="#">
                         <i class="fas fa-chart-bar"></i>نمودار ها</a>
                 </li>
                 <li>
-                    <a href="table.html">
+                    <a href="#">
                         <i class="fas fa-table"></i>جدول ها</a>
                 </li>
                 <!--                        <li>-->

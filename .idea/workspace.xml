@@ -20,9 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8bfe596-1685-40a2-9d66-cb7c791ff197" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/bkfmonit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bkfmonit.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/icon/fan-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_08_19_000000_create_failed_jobs_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg-title-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/bg-title-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/Untitled-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-05.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-06.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/avatar-big-01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/logo-blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/logo-mini.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/logo-white.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/icon/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -161,9 +182,15 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/GitHub/CoolAdmin - Edited" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/images/icon" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LaravelProjects\bkfmonit\public\images\icon" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -185,7 +212,8 @@
       <workItem from="1634067788149" duration="198000" />
       <workItem from="1634200521416" duration="833000" />
       <workItem from="1634538593978" duration="36000" />
-      <workItem from="1634546729471" duration="14460000" />
+      <workItem from="1634546729471" duration="15717000" />
+      <workItem from="1634624880492" duration="7990000" />
     </task>
     <servers />
   </component>
@@ -202,11 +230,16 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="774" y="294" key="FileChooserDialogImpl" timestamp="1634538627558">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
     <state x="774" y="294" key="FileChooserDialogImpl/68.0.1852.1080@68.0.1852.1080" timestamp="1634538627558" />
+    <state x="713" y="262" key="SettingsEditor" timestamp="1634624925916">
+      <screen x="68" y="0" width="1852" height="1080" />
+    </state>
+    <state x="713" y="262" key="SettingsEditor/68.0.1852.1080@68.0.1852.1080" timestamp="1634624925916" />
   </component>
 </project>

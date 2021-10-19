@@ -34,11 +34,14 @@
     <!-- Main CSS-->
     <link href="css/theme.css" rel="stylesheet" media="all">
 
-{{--    <!-- SevenSeg  -->--}}
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>--}}
-{{--    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>--}}
-{{--    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>--}}
-{{--    <script src="js/sevenSeg.js"></script>--}}
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+    <script src="js/kuma-gauge.jquery.js"></script>
+    {{--    <!-- SevenSeg  -->--}}
+    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>--}}
+    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>--}}
+    {{--    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>--}}
+    {{--    <script src="js/sevenSeg.js"></script>--}}
 
 
 </head>
@@ -50,9 +53,9 @@
         <div class="header-mobile__bar">
             <div class="container-fluid">
                 <div class="ml-3 header-mobile-inner">
-                    <a href="#" >
+                    <a href="#">
                         <div class=" row  d-flex flex-row align-items-center text-center  justify-content-center ">
-                            <img src="images/icon/bkf3_icon.png" alt="BKFMonit" />
+                            <img src="images/icon/bkf3_icon.png" alt="BKFMonit"/>
                             <h5 class="text-dark ml-2">BKFMonit</h5>
                         </div>
 
@@ -167,8 +170,8 @@
     <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
-    @include('layouts.sidebar')
-    <!-- END MENU SIDEBAR-->
+@include('layouts.sidebar')
+<!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
     <div class="page-container">
@@ -178,7 +181,8 @@
                 <div class="container-fluid">
                     <div class="header-wrap ">
                         <form class="form-header " action="" method="POST">
-                            <input class=" au-input au-input--xl" type="text" name="search" placeholder="Search for datas &amp; reports..." />
+                            <input class=" au-input au-input--xl" type="text" name="search"
+                                   placeholder="Search for datas &amp; reports..."/>
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -194,7 +198,7 @@
                                         </div>
                                         <div class="mess__item">
                                             <div class="image img-cir img-40">
-                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno" />
+                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno"/>
                                             </div>
                                             <div class="content">
                                                 <h6>Michelle Moreno</h6>
@@ -204,7 +208,7 @@
                                         </div>
                                         <div class="mess__item">
                                             <div class="image img-cir img-40">
-                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers" />
+                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers"/>
                                             </div>
                                             <div class="content">
                                                 <h6>Diane Myers</h6>
@@ -226,7 +230,7 @@
                                         </div>
                                         <div class="email__item">
                                             <div class="image img-cir img-40">
-                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey" />
+                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey"/>
                                             </div>
                                             <div class="content">
                                                 <p>Meeting about new dashboard...</p>
@@ -235,7 +239,7 @@
                                         </div>
                                         <div class="email__item">
                                             <div class="image img-cir img-40">
-                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey" />
+                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey"/>
                                             </div>
                                             <div class="content">
                                                 <p>Meeting about new dashboard...</p>
@@ -244,7 +248,7 @@
                                         </div>
                                         <div class="email__item">
                                             <div class="image img-cir img-40">
-                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey" />
+                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey"/>
                                             </div>
                                             <div class="content">
                                                 <p>Meeting about new dashboard...</p>
@@ -299,7 +303,7 @@
                             <div class="account-wrap">
                                 <div class="account-item clearfix js-item-menu">
                                     <div class="image">
-                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        <img src="images/icon/avatar-01.jpg" alt="John Doe"/>
                                     </div>
                                     <div class="content">
                                         <a class="js-acc-btn" href="#">john doe</a>
@@ -308,7 +312,7 @@
                                         <div class="info clearfix">
                                             <div class="image">
                                                 <a href="#">
-                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe"/>
                                                 </a>
                                             </div>
                                             <div class="content">
@@ -347,7 +351,7 @@
         <!-- HEADER DESKTOP-->
 
         <!-- MAIN CONTENT-->
-        <div class="main-content " >
+        <div class="main-content ">
             <div class="section__content section__content--p30 ">
                 <div class="container-fluid">
                     <div class="row" hidden>
@@ -355,145 +359,154 @@
                             <div class="overview-wrap">
                                 <h2 class="title-1">overview</h2>
                                 <button class="au-btn au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-plus"></i>add item</button>
+                                    <i class="zmdi zmdi-plus"></i>add item
+                                </button>
                             </div>
                         </div>
                     </div>
 
                     <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت سنسور ها</p>
 
+                    <div class="au-card text-center  mb-3  ">
 
-                    <div class="au-card text-center  mb-3 ">
 
-                        <div class="row mr-2 ml-2 text-center " style=" display: flex;
+                        <div class="row  text-center flex justify-content-center align-items-center" >
+                            <div class="alert alert-danger m-0" style="width: 500px" role="alert">
+                                مشکلی در دستگاه به وجود آمده است
+                            </div>
+                        </div>
+
+
+
+                        <div class="row mr-2 ml-2 text-center mt-4" style=" display: flex;
     justify-content: center;
     align-items: center;">
 
 
-{{--                            @for ($i = 0; $i < 20; $i++)--}}
-                                <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
-                                    <div class="led-box child ">
-                                        <div class="led-on"></div>
-                                        <p class="text-light">HIGH TEMP</p>
-                                    </div>
+                            {{--                            @for ($i = 0; $i < 20; $i++)--}}
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
+                                <div class="led-box child ">
+                                    <div class="led-on"></div>
+                                    <p class="text-light">HIGH TEMP</p>
                                 </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            </div>
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-off"></div>
                                     <p class="text-light">HIGH HUM</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">DOOR OPEN</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">DRY WICK</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-off"></div>
                                     <p class="text-light">MAIN HEATER</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">SPRAY</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">DAMPER OPENING</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-off"></div>
                                     <p class="text-light">DAMPER OPEN</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-off"></div>
                                     <p class="text-light">LEFT</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">RIGHT</p>
                                 </div>
                             </div>
 
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">LOW TEMP</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">LOW HUM</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">FAN FAILURE</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">PROGRAM ERROR</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">AUXLARY HEATER</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">EGG TURN</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">DAMPER CLOSING</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">DAMPER CLOSED</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">TURNING</p>
                                 </div>
                             </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2" >
+                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
                                 <div class="led-box child ">
                                     <div class="led-on"></div>
                                     <p class="text-light">FAILURE</p>
                                 </div>
                             </div>
 
-{{--                            @endfor--}}
+                            {{--                            @endfor--}}
 
                             {{--                        <div class="col-sm-6 col-lg-3">--}}
                             {{--                            <div class="overview-item overview-item--c2">--}}
@@ -550,14 +563,49 @@
                             {{--                            </div>--}}
                             {{--                        </div>--}}
                         </div>
-                        <div class="alert alert-danger mt-4" role="alert">
-                            مشکلی در دستگاه به وجود آمده است
+
+
+
+                        <div class="row mt-5 flex justify-content-center align-items-center">
+                            <div style="width: 200px ;  display: flex; justify-content: center;align-items: center;" class="text-center">
+                                <div class="col">
+                                    <div class="rotate" style="width: 100px" id="fan">
+                                        <img class="wings" src="images/icon/fan-icon.png" alt="">
+                                    </div>
+                                    <div class="mt-2" style="width: 100px">
+                                        <label class="form-switch ">
+                                            <input type="checkbox" checked id="fan_check">
+                                            <i></i>
+
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="js-gauge demo gauge"></div>
+                            <script>
+                                $('.demo').kumaGauge({
+                                    value: Math.floor((Math.random() * 99) + 1),
+                                });
+                            </script>
+                            <div class="js-gauge demo gauge"></div>
+                            <script>
+                                $('.demo').kumaGauge({
+                                    value: Math.floor((Math.random() * 99) + 1),
+                                });
+                            </script>
+                            <div class="js-gauge demo gauge"></div>
+                            <script>
+                                $('.demo').kumaGauge({
+                                    value: Math.floor((Math.random() * 99) + 1),
+                                });
+                            </script>
+
                         </div>
 
 
-                        <div class="rotate" style="width: 100px">
-                            <img class="wings" src="https://i.ya-webdesign.com/images/fan-blades-png.png" alt="">
-                        </div>
                     </div>
 
 
@@ -627,7 +675,8 @@
                         <div class="col-md-12">
                             <p class="title-2 text-right text-dark mb-4 mt-4" style=" font-size: 20px">جدول اطلاعات</p>
                             <div class="table-responsive table-bordered table--no-card m-b-40">
-                                <table class=" table table-borderless table-striped table-earning" style="direction: rtl">
+                                <table class=" table table-borderless table-striped table-earning"
+                                       style="direction: rtl">
                                     <thead>
                                     <tr>
                                         <th class="text-center " style="width : 12%; padding: 20px;">دستگاه</th>
@@ -645,95 +694,159 @@
                                     </thead>
                                     <tbody>
                                     <tr>
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
                                         <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center"  style="width: 12%">99.82</td>
+                                        <td class="text-center" style="width: 12%">99.82</td>
                                         <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
 
                                     </tr>
                                     <tr>
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
                                         <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center"  style="width: 12%">99.82</td>
+                                        <td class="text-center" style="width: 12%">99.82</td>
                                         <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
 
                                     </tr>
                                     <tr>
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
                                         <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center"  style="width: 12%">99.82</td>
+                                        <td class="text-center" style="width: 12%">99.82</td>
                                         <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
 
                                     </tr>
                                     <tr>
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
-{{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
+                                        {{--                                        <td>1</td>--}}
                                         <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center"  style="width: 12%">99.82</td>
+                                        <td class="text-center" style="width: 12%">99.82</td>
                                         <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-on"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
-                                        <td class="text-center" style="width: 8%"><div class="led-off"></div></td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-on"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
+                                        <td class="text-center" style="width: 8%">
+                                            <div class="led-off"></div>
+                                        </td>
 
                                     </tr>
 
@@ -741,72 +854,72 @@
                             </div>
                         </div>
 
-{{--                        <div class="col-lg-3" hidden>--}}
-{{--                            <h2 class="title-1 m-b-25">Top countries</h2>--}}
-{{--                            <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">--}}
-{{--                                <div class="au-card-inner">--}}
-{{--                                    <div class="table-responsive">--}}
-{{--                                        <table class="table table-top-countries">--}}
-{{--                                            <tbody>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>United States</td>--}}
-{{--                                                <td class="text-right">$119,366.96</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>Australia</td>--}}
-{{--                                                <td class="text-right">$70,261.65</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>United Kingdom</td>--}}
-{{--                                                <td class="text-right">$46,399.22</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>Turkey</td>--}}
-{{--                                                <td class="text-right">$35,364.90</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>Germany</td>--}}
-{{--                                                <td class="text-right">$20,366.96</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>France</td>--}}
-{{--                                                <td class="text-right">$10,366.96</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>Australia</td>--}}
-{{--                                                <td class="text-right">$5,366.96</td>--}}
-{{--                                            </tr>--}}
-{{--                                            <tr>--}}
-{{--                                                <td>Italy</td>--}}
-{{--                                                <td class="text-right">$1639.32</td>--}}
-{{--                                            </tr>--}}
-{{--                                            </tbody>--}}
-{{--                                        </table>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="col-lg-3" hidden>--}}
+                        {{--                            <h2 class="title-1 m-b-25">Top countries</h2>--}}
+                        {{--                            <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">--}}
+                        {{--                                <div class="au-card-inner">--}}
+                        {{--                                    <div class="table-responsive">--}}
+                        {{--                                        <table class="table table-top-countries">--}}
+                        {{--                                            <tbody>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>United States</td>--}}
+                        {{--                                                <td class="text-right">$119,366.96</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>Australia</td>--}}
+                        {{--                                                <td class="text-right">$70,261.65</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>United Kingdom</td>--}}
+                        {{--                                                <td class="text-right">$46,399.22</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>Turkey</td>--}}
+                        {{--                                                <td class="text-right">$35,364.90</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>Germany</td>--}}
+                        {{--                                                <td class="text-right">$20,366.96</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>France</td>--}}
+                        {{--                                                <td class="text-right">$10,366.96</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>Australia</td>--}}
+                        {{--                                                <td class="text-right">$5,366.96</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            <tr>--}}
+                        {{--                                                <td>Italy</td>--}}
+                        {{--                                                <td class="text-right">$1639.32</td>--}}
+                        {{--                                            </tr>--}}
+                        {{--                                            </tbody>--}}
+                        {{--                                        </table>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                     </div>
 
                     <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">تغییرات دما</p>
 
-                    <div class="row"     >
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="au-card m-b-30">
                                 <div class="au-card-inner">
-{{--                                    <h3 class="title-2 m-b-40 text-right">تغییرات دما</h3>--}}
+                                    {{--                                    <h3 class="title-2 m-b-40 text-right">تغییرات دما</h3>--}}
                                     <canvas id="team-chart"></canvas>
                                 </div>
                             </div>
                         </div>
                     </div>
-{{--                    <div class="row">--}}
-{{--                        <div class="col-md-12">--}}
-{{--                            <div class="copyright">--}}
-{{--                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="row">--}}
+                    {{--                        <div class="col-md-12">--}}
+                    {{--                            <div class="copyright">--}}
+                    {{--                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>--}}
+                    {{--                            </div>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -837,9 +950,101 @@
 <script src="vendor/select2/select2.min.js">
 </script>
 
+<script>
+    try {
+
+        //Team chart
+        var ctx = document.getElementById("team-chart");
+        if (ctx) {
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    type: 'line',
+                    defaultFontFamily: 'Poppins',
+                    datasets: [{
+                        data: [88, 90, 91, 90, 95, 99, 90, 88, 90, 91, 90, 95, 99, 90],
+                        label: "دما",
+                        backgroundColor: 'rgba(0,103,255,.15)',
+                        borderColor: 'rgba(0,103,255,0.5)',
+                        borderWidth: 3.5,
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'rgba(0,103,255,0.5)',
+                    },]
+                },
+                options: {
+                    responsive: true,
+                    tooltips: {
+                        mode: 'index',
+                        titleFontSize: 12,
+                        titleFontColor: '#000',
+                        bodyFontColor: '#000',
+                        backgroundColor: '#fff',
+                        titleFontFamily: 'Poppins',
+                        bodyFontFamily: 'Poppins',
+                        cornerRadius: 3,
+                        intersect: false,
+                    },
+                    legend: {
+                        display: false,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            fontFamily: 'Poppins',
+                        },
+
+
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Month'
+                            },
+                            ticks: {
+                                fontFamily: "Poppins"
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value',
+                                fontFamily: "Poppins"
+                            },
+                            ticks: {
+                                min: 50,
+                                max: 100,
+                                fontFamily: "Poppins"
+                            }
+                        }]
+                    },
+                    title: {
+                        display: false,
+                    }
+                }
+            });
+        }
+
+
+    } catch (error) {
+        console.log(error);
+    }
+</script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
-
 
 
 </body>
