@@ -567,7 +567,8 @@
 
 
                         <div class="row mt-5 flex justify-content-center align-items-center">
-                            <div style="width: 200px ;  display: flex; justify-content: center;align-items: center;" class="text-center">
+                            <div style=" width: 200px;  display: flex; justify-content: center;align-items: center;" class="text-center ml-3">
+
                                 <div class="col">
                                     <div class="rotate" style="width: 100px" id="fan">
                                         <img class="wings" src="images/icon/fan-icon.png" alt="">
@@ -584,24 +585,43 @@
                             </div>
 
 
-                            <div class="js-gauge demo gauge"></div>
-                            <script>
-                                $('.demo').kumaGauge({
-                                    value: Math.floor((Math.random() * 99) + 1),
-                                });
-                            </script>
-                            <div class="js-gauge demo gauge"></div>
-                            <script>
-                                $('.demo').kumaGauge({
-                                    value: Math.floor((Math.random() * 99) + 1),
-                                });
-                            </script>
-                            <div class="js-gauge demo gauge"></div>
-                            <script>
-                                $('.demo').kumaGauge({
-                                    value: Math.floor((Math.random() * 99) + 1),
-                                });
-                            </script>
+                            <div class="col">
+                                <div class="js-gauge demo gauge"></div>
+                                    <p> Tempreture 1</p>
+                                    <script>
+                                        $('.demo').kumaGauge({
+                                            value: Math.floor((Math.random() * 99) + 1),
+                                        });
+                                    </script>
+                            </div>
+                            <div class="col">
+                                <div class="js-gauge demo gauge"></div>
+                                <p> Tempreture 2</p>
+                                <script>
+                                    $('.demo').kumaGauge({
+                                        value: Math.floor((Math.random() * 99) + 1),
+                                    });
+                                </script>
+                            </div>
+                            <div class="col">
+                                <div class="js-gauge demo gauge"></div>
+                                <p> Humidity 1</p>
+                                <script>
+                                    $('.demo').kumaGauge({
+                                        value: Math.floor((Math.random() * 99) + 1),
+                                    });
+                                </script>
+                            </div>
+
+                            <div class="col">
+                                <div class="js-gauge demo gauge"></div>
+                                <p> Co 2</p>
+                                <script>
+                                    $('.demo').kumaGauge({
+                                        value: Math.floor((Math.random() * 99) + 1),
+                                    });
+                                </script>
+                            </div>
 
                         </div>
 
