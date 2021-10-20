@@ -49,8 +49,9 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     font-family: vazir_n;
 
 }
+
 @font-face {
-    font-family:vazir_n;
+    font-family: vazir_n;
     src: url('../fonts/vazir/vazir.eot');
     src: url('../fonts/vazir/vazir.eot?#iefix') format('embedded-opentype');
     src: url('../fonts/vazir/vazir.ttf') format('truetype');
@@ -63,19 +64,20 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     margin-bottom: 10px;
     float: left;
 }
+
 .led-box p {
     font-size: 12px;
     text-align: center;
     margin: 1em;
 }
+
 .grid-container-panel {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 40px;
     grid-gap: 24px;
     background-color: black;
-    padding: 12px 57px;
-;
+    padding: 12px 57px;;
     border: 2px solid white;
     border-radius: 10px;
     display: block;
@@ -83,7 +85,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     margin-right: auto;
 }
 
-.grid-container-panel>div {
+.grid-container-panel > div {
     text-align: center;
     font-size: 30px;
 }
@@ -98,7 +100,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     border-radius: 10px;
 }
 
-.grid-container-panel>div {
+.grid-container-panel > div {
     text-align: center;
     display: block;
     margin-left: auto;
@@ -111,9 +113,11 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     width: 80px;
     padding: -7px 60px;
 }
+
 .rotate {
     animation: rotation 1s infinite linear;
 }
+
 @keyframes rotation {
     from {
         transform: rotate(0deg);
@@ -122,6 +126,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
         transform: rotate(359deg);
     }
 }
+
 .parent {
     width: 150px;
     min-width: 100px;
@@ -130,6 +135,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     justify-content: center;
     align-items: center;
 }
+
 .form-switch {
     display: inline-block;
     cursor: pointer;
@@ -154,7 +160,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     left: 0;
     width: 42px;
     height: 22px;
-    background-color: #fff;
+    background-color: black;
     border-radius: 11px;
     transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
     transition: all 0.25s linear;
@@ -178,18 +184,29 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     transform: translate3d(2px, 2px, 0);
 }
 
-.form-switch:active input:checked + i::after { transform: translate3d(16px, 2px, 0); }
+.form-switch:active input:checked + i::after {
+    transform: translate3d(16px, 2px, 0);
+}
 
-.form-switch input { display: none; }
+.form-switch input {
+    display: none;
+}
 
-.form-switch input:checked + i { background-color: #4BD763; }
+.form-switch input:checked + i {
+    background-color: red;
+}
 
-.form-switch input:checked + i::before { transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0); }
+.form-switch input:checked + i::before {
+    transform: translate3d(18px, 2px, 0) scale3d(0, 0, 0);
+}
 
-.form-switch input:checked + i::after { transform: translate3d(22px, 2px, 0); }
+.form-switch input:checked + i::after {
+    transform: translate3d(22px, 2px, 0);
+}
+
 .child {
     width: 100px;
-    height:50px;
+    height: 50px;
 }
 
 .led-on {
@@ -209,6 +226,7 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px 1px, inset #ffffff 0 1px 5px, #ffffff 0 2px 8px;
 }
+
 ul {
     margin: 0;
 }
@@ -333,6 +351,7 @@ strong {
     font-size: 24px;
     line-height: 1;
 }
+
 .title-pe {
     font-family: "B Yekan";
 }
@@ -445,11 +464,12 @@ section {
 
 @media (max-width: 991px) {
     .page-wrapper {
-    overflow: auto;
-    background: #e5e5e5;
-    padding-bottom: 12vh;
+        overflow: auto;
+        background: #e5e5e5;
+        padding-bottom: 12vh;
+    }
 }
-}
+
 .page-container {
     background: #e5e5e5;
     padding-right: 300px;
@@ -487,7 +507,7 @@ section {
 @media (max-width: 991px) {
     .main-content {
         padding-top: 50px;
-	padding-bottom: 100px;
+        padding-bottom: 100px;
     }
 }
 
@@ -1123,7 +1143,7 @@ section {
 .rs-select2--light .select2-container--open .select2-dropdown,
 .rs-select2--trans .select2-container--open .select2-dropdown {
     font-size: 14px;
-    box-shadow: 0px 2px 15px 3px rgba(0,0,0,0.1);
+    box-shadow: 0px 2px 15px 3px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
@@ -1132,7 +1152,7 @@ section {
     overflow: hidden;
 }
 
-.rs-select2--dark .select2-container--open .select2-dropdown .select2-results__option ,
+.rs-select2--dark .select2-container--open .select2-dropdown .select2-results__option,
 .rs-select2--trans .select2-container--open .select2-dropdown .select2-results__option,
 .rs-select2--light .select2-container--open .select2-dropdown .select2-results__option {
     padding: 8px 16px;
@@ -1146,10 +1166,9 @@ section {
 .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
- }
+}
 
 .rs-select2--border .select2-container--default .select2-selection--single,
-
 .rs-select2--dark2 .select2-container--default .select2-selection--single {
     background: #555;
 }
@@ -1662,9 +1681,9 @@ section {
 }
 
 .account-dropdown .info .content .name {
-    line-height: -webkit-calc(20/16);
-    line-height: -moz-calc(20/16);
-    line-height: calc(20/16);
+    line-height: -webkit-calc(20 / 16);
+    line-height: -moz-calc(20 / 16);
+    line-height: calc(20 / 16);
 }
 
 .account-dropdown .info .content .name a {
@@ -1680,9 +1699,9 @@ section {
 .account-dropdown .info .content .email {
     font-size: 13px;
     color: #999;
-    line-height: -webkit-calc(20/13);
-    line-height: -moz-calc(20/13);
-    line-height: calc(20/13);
+    line-height: -webkit-calc(20 / 13);
+    line-height: -moz-calc(20 / 13);
+    line-height: calc(20 / 13);
 }
 
 .account-dropdown:after {
@@ -1744,14 +1763,17 @@ section {
     font-size: 18px;
     vertical-align: middle;
 }
-.rtl-side-bar{
+
+.rtl-side-bar {
     float: right;
     direction: rtl;
     text-align: right;
 }
-.rtl-side-bar  * i{
+
+.rtl-side-bar * i {
     margin-left: 10px;
 }
+
 .menu-sidebar {
     width: 300px;
     position: fixed;
@@ -2085,9 +2107,9 @@ section {
 }
 
 .mess__title p, .email__title p, .notifi__title p {
-    line-height: -webkit-calc(29/14);
-    line-height: -moz-calc(29/14);
-    line-height: calc(29/14);
+    line-height: -webkit-calc(29 / 14);
+    line-height: -moz-calc(29 / 14);
+    line-height: calc(29 / 14);
     font-size: 14px;
     color: #808080;
 }
@@ -2149,9 +2171,9 @@ section {
 .mess__item .content p {
     font-size: 14px;
     color: #555;
-    line-height: -webkit-calc(24/14);
-    line-height: -moz-calc(24/14);
-    line-height: calc(24/14);
+    line-height: -webkit-calc(24 / 14);
+    line-height: -moz-calc(24 / 14);
+    line-height: calc(24 / 14);
     margin-bottom: 4px;
 }
 
@@ -2360,7 +2382,7 @@ section {
     -moz-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    border-bottom: 1px  solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
 }
 
 .account2 .name {
@@ -3444,6 +3466,28 @@ section {
     overflow: hidden;
 }
 
+.center-items {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.alert-error-1 {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: #000;
+    border-color: red;
+}
+.au-card-seven-seg {
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background: #000;
+    overflow: hidden;
+}
+
 .au-card--border {
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
@@ -4037,7 +4081,7 @@ section {
 }
 
 .task-progress {
-    border: 1px solid  #e5e5e5;
+    border: 1px solid #e5e5e5;
     background: #fff;
     padding: 40px;
     padding-top: 42px;
@@ -4924,9 +4968,9 @@ section {
 .copyright p {
     font-size: 14px;
     color: #666;
-    line-height: -webkit-calc(24/14);
-    line-height: -moz-calc(24/14);
-    line-height: calc(24/14);
+    line-height: -webkit-calc(24 / 14);
+    line-height: -moz-calc(24 / 14);
+    line-height: calc(24 / 14);
 }
 
 /* ----- Breadcrumb ----- */
@@ -5489,7 +5533,7 @@ section {
 }
 
 .switch.switch-text .switch-label::before,
-  .switch.switch-text .switch-label::after {
+.switch.switch-text .switch-label::after {
     position: absolute;
     top: 50%;
     width: 50%;
@@ -5635,7 +5679,7 @@ section {
 }
 
 .switch.switch-icon .switch-label::before,
-  .switch.switch-icon .switch-label::after {
+.switch.switch-icon .switch-label::after {
     position: absolute;
     top: 50%;
     width: 50%;

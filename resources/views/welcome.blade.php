@@ -37,11 +37,12 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
     <script src="js/kuma-gauge.jquery.js"></script>
-    {{--    <!-- SevenSeg  -->--}}
-    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>--}}
-    {{--    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>--}}
-    {{--    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>--}}
-    {{--    <script src="js/sevenSeg.js"></script>--}}
+
+    <!-- SevenSeg  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="js/sevenSeg.js"></script>
 
 
 </head>
@@ -187,163 +188,163 @@
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
-{{--                        <div class="header-button" hidden>--}}
-{{--                            <div class="noti-wrap">--}}
-{{--                                <div class="noti__item js-item-menu">--}}
-{{--                                    <i class="zmdi zmdi-comment-more"></i>--}}
-{{--                                    <span class="quantity">1</span>--}}
-{{--                                    <div class="mess-dropdown js-dropdown">--}}
-{{--                                        <div class="mess__title">--}}
-{{--                                            <p>You have 2 news message</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="mess__item">--}}
-{{--                                            <div class="image img-cir img-40">--}}
-{{--                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno"/>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h6>Michelle Moreno</h6>--}}
-{{--                                                <p>Have sent a photo</p>--}}
-{{--                                                <span class="time">3 min ago</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="mess__item">--}}
-{{--                                            <div class="image img-cir img-40">--}}
-{{--                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers"/>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h6>Diane Myers</h6>--}}
-{{--                                                <p>You are now connected on message</p>--}}
-{{--                                                <span class="time">Yesterday</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="mess__footer">--}}
-{{--                                            <a href="#">View all messages</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="noti__item js-item-menu">--}}
-{{--                                    <i class="zmdi zmdi-email"></i>--}}
-{{--                                    <span class="quantity">1</span>--}}
-{{--                                    <div class="email-dropdown js-dropdown">--}}
-{{--                                        <div class="email__title">--}}
-{{--                                            <p>You have 3 New Emails</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="email__item">--}}
-{{--                                            <div class="image img-cir img-40">--}}
-{{--                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey"/>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>Meeting about new dashboard...</p>--}}
-{{--                                                <span>Cynthia Harvey, 3 min ago</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="email__item">--}}
-{{--                                            <div class="image img-cir img-40">--}}
-{{--                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey"/>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>Meeting about new dashboard...</p>--}}
-{{--                                                <span>Cynthia Harvey, Yesterday</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="email__item">--}}
-{{--                                            <div class="image img-cir img-40">--}}
-{{--                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey"/>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>Meeting about new dashboard...</p>--}}
-{{--                                                <span>Cynthia Harvey, April 12,,2018</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="email__footer">--}}
-{{--                                            <a href="#">See all emails</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="noti__item js-item-menu">--}}
-{{--                                    <i class="zmdi zmdi-notifications"></i>--}}
-{{--                                    <span class="quantity">3</span>--}}
-{{--                                    <div class="notifi-dropdown js-dropdown">--}}
-{{--                                        <div class="notifi__title">--}}
-{{--                                            <p>You have 3 Notifications</p>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="notifi__item">--}}
-{{--                                            <div class="bg-c1 img-cir img-40">--}}
-{{--                                                <i class="zmdi zmdi-email-open"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>You got a email notification</p>--}}
-{{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="notifi__item">--}}
-{{--                                            <div class="bg-c2 img-cir img-40">--}}
-{{--                                                <i class="zmdi zmdi-account-box"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>Your account has been blocked</p>--}}
-{{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="notifi__item">--}}
-{{--                                            <div class="bg-c3 img-cir img-40">--}}
-{{--                                                <i class="zmdi zmdi-file-text"></i>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <p>You got a new file</p>--}}
-{{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="notifi__footer">--}}
-{{--                                            <a href="#">All notifications</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <div class="account-wrap">--}}
-{{--                                <div class="account-item clearfix js-item-menu">--}}
-{{--                                    <div class="image">--}}
-{{--                                        <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="content">--}}
-{{--                                        <a class="js-acc-btn" href="#">john doe</a>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="account-dropdown js-dropdown">--}}
-{{--                                        <div class="info clearfix">--}}
-{{--                                            <div class="image">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
-{{--                                                </a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h5 class="name">--}}
-{{--                                                    <a href="#">john doe</a>--}}
-{{--                                                </h5>--}}
-{{--                                                <span class="email">johndoe@example.com</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="account-dropdown__body">--}}
-{{--                                            <div class="account-dropdown__item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <i class="zmdi zmdi-account"></i>Account</a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="account-dropdown__item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <i class="zmdi zmdi-settings"></i>Setting</a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="account-dropdown__item">--}}
-{{--                                                <a href="#">--}}
-{{--                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="account-dropdown__footer">--}}
-{{--                                            <a href="#">--}}
-{{--                                                <i class="zmdi zmdi-power"></i>Logout</a>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="header-button" hidden>--}}
+                        {{--                            <div class="noti-wrap">--}}
+                        {{--                                <div class="noti__item js-item-menu">--}}
+                        {{--                                    <i class="zmdi zmdi-comment-more"></i>--}}
+                        {{--                                    <span class="quantity">1</span>--}}
+                        {{--                                    <div class="mess-dropdown js-dropdown">--}}
+                        {{--                                        <div class="mess__title">--}}
+                        {{--                                            <p>You have 2 news message</p>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="mess__item">--}}
+                        {{--                                            <div class="image img-cir img-40">--}}
+                        {{--                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno"/>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <h6>Michelle Moreno</h6>--}}
+                        {{--                                                <p>Have sent a photo</p>--}}
+                        {{--                                                <span class="time">3 min ago</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="mess__item">--}}
+                        {{--                                            <div class="image img-cir img-40">--}}
+                        {{--                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers"/>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <h6>Diane Myers</h6>--}}
+                        {{--                                                <p>You are now connected on message</p>--}}
+                        {{--                                                <span class="time">Yesterday</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="mess__footer">--}}
+                        {{--                                            <a href="#">View all messages</a>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="noti__item js-item-menu">--}}
+                        {{--                                    <i class="zmdi zmdi-email"></i>--}}
+                        {{--                                    <span class="quantity">1</span>--}}
+                        {{--                                    <div class="email-dropdown js-dropdown">--}}
+                        {{--                                        <div class="email__title">--}}
+                        {{--                                            <p>You have 3 New Emails</p>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="email__item">--}}
+                        {{--                                            <div class="image img-cir img-40">--}}
+                        {{--                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey"/>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>Meeting about new dashboard...</p>--}}
+                        {{--                                                <span>Cynthia Harvey, 3 min ago</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="email__item">--}}
+                        {{--                                            <div class="image img-cir img-40">--}}
+                        {{--                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey"/>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>Meeting about new dashboard...</p>--}}
+                        {{--                                                <span>Cynthia Harvey, Yesterday</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="email__item">--}}
+                        {{--                                            <div class="image img-cir img-40">--}}
+                        {{--                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey"/>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>Meeting about new dashboard...</p>--}}
+                        {{--                                                <span>Cynthia Harvey, April 12,,2018</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="email__footer">--}}
+                        {{--                                            <a href="#">See all emails</a>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                                <div class="noti__item js-item-menu">--}}
+                        {{--                                    <i class="zmdi zmdi-notifications"></i>--}}
+                        {{--                                    <span class="quantity">3</span>--}}
+                        {{--                                    <div class="notifi-dropdown js-dropdown">--}}
+                        {{--                                        <div class="notifi__title">--}}
+                        {{--                                            <p>You have 3 Notifications</p>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="notifi__item">--}}
+                        {{--                                            <div class="bg-c1 img-cir img-40">--}}
+                        {{--                                                <i class="zmdi zmdi-email-open"></i>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>You got a email notification</p>--}}
+                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="notifi__item">--}}
+                        {{--                                            <div class="bg-c2 img-cir img-40">--}}
+                        {{--                                                <i class="zmdi zmdi-account-box"></i>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>Your account has been blocked</p>--}}
+                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="notifi__item">--}}
+                        {{--                                            <div class="bg-c3 img-cir img-40">--}}
+                        {{--                                                <i class="zmdi zmdi-file-text"></i>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <p>You got a new file</p>--}}
+                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="notifi__footer">--}}
+                        {{--                                            <a href="#">All notifications</a>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                            <div class="account-wrap">--}}
+                        {{--                                <div class="account-item clearfix js-item-menu">--}}
+                        {{--                                    <div class="image">--}}
+                        {{--                                        <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="content">--}}
+                        {{--                                        <a class="js-acc-btn" href="#">john doe</a>--}}
+                        {{--                                    </div>--}}
+                        {{--                                    <div class="account-dropdown js-dropdown">--}}
+                        {{--                                        <div class="info clearfix">--}}
+                        {{--                                            <div class="image">--}}
+                        {{--                                                <a href="#">--}}
+                        {{--                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
+                        {{--                                                </a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="content">--}}
+                        {{--                                                <h5 class="name">--}}
+                        {{--                                                    <a href="#">john doe</a>--}}
+                        {{--                                                </h5>--}}
+                        {{--                                                <span class="email">johndoe@example.com</span>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="account-dropdown__body">--}}
+                        {{--                                            <div class="account-dropdown__item">--}}
+                        {{--                                                <a href="#">--}}
+                        {{--                                                    <i class="zmdi zmdi-account"></i>Account</a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="account-dropdown__item">--}}
+                        {{--                                                <a href="#">--}}
+                        {{--                                                    <i class="zmdi zmdi-settings"></i>Setting</a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                            <div class="account-dropdown__item">--}}
+                        {{--                                                <a href="#">--}}
+                        {{--                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>--}}
+                        {{--                                            </div>--}}
+                        {{--                                        </div>--}}
+                        {{--                                        <div class="account-dropdown__footer">--}}
+                        {{--                                            <a href="#">--}}
+                        {{--                                                <i class="zmdi zmdi-power"></i>Logout</a>--}}
+                        {{--                                        </div>--}}
+                        {{--                                    </div>--}}
+                        {{--                                </div>--}}
+                        {{--                            </div>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -365,17 +366,16 @@
                         </div>
                     </div>
 
-                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت سنسور ها</p>
+                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت فعلی دستگاه</p>
 
-                    <div class="au-card text-center  mb-3  ">
+                    <div class="au-card text-center  mb-3  " style="background-color: #000">
 
 
-                        <div class="row  text-center flex justify-content-center align-items-center" >
-                            <div class="alert alert-danger m-0" style="width: 500px" role="alert">
+                        <div class="row  text-center flex justify-content-center align-items-center">
+                            <div class="alert alert-error-1 m-0" style="width: 500px;color: red " role="alert">
                                 مشکلی در دستگاه به وجود آمده است
                             </div>
                         </div>
-
 
 
                         <div class="row mr-2 ml-2 text-center mt-4" style=" display: flex;
@@ -506,74 +506,18 @@
                                 </div>
                             </div>
 
-                            {{--                            @endfor--}}
-
-                            {{--                        <div class="col-sm-6 col-lg-3">--}}
-                            {{--                            <div class="overview-item overview-item--c2">--}}
-                            {{--                                <div class="overview__inner">--}}
-                            {{--                                    <div class="overview-box clearfix">--}}
-                            {{--                                        <div class="icon">--}}
-                            {{--                                            <i class="zmdi zmdi-shopping-cart"></i>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="text">--}}
-                            {{--                                            <h2>388,688</h2>--}}
-                            {{--                                            <span>items solid</span>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="overview-chart">--}}
-                            {{--                                        <canvas id="widgetChart2"></canvas>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
-                            {{--                        <div class="col-sm-6 col-lg-3">--}}
-                            {{--                            <div class="overview-item overview-item--c3">--}}
-                            {{--                                <div class="overview__inner">--}}
-                            {{--                                    <div class="overview-box clearfix">--}}
-                            {{--                                        <div class="icon">--}}
-                            {{--                                            <i class="zmdi zmdi-calendar-note"></i>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="text">--}}
-                            {{--                                            <h2>1,086</h2>--}}
-                            {{--                                            <span>this week</span>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="overview-chart">--}}
-                            {{--                                        <canvas id="widgetChart3"></canvas>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
-                            {{--                        <div class="col-sm-6 col-lg-3">--}}
-                            {{--                            <div class="overview-item overview-item--c4">--}}
-                            {{--                                <div class="overview__inner">--}}
-                            {{--                                    <div class="overview-box clearfix">--}}
-                            {{--                                        <div class="icon">--}}
-                            {{--                                            <i class="zmdi zmdi-money"></i>--}}
-                            {{--                                        </div>--}}
-                            {{--                                        <div class="text">--}}
-                            {{--                                            <h2>$1,060,386</h2>--}}
-                            {{--                                            <span>total earnings</span>--}}
-                            {{--                                        </div>--}}
-                            {{--                                    </div>--}}
-                            {{--                                    <div class="overview-chart">--}}
-                            {{--                                        <canvas id="widgetChart4"></canvas>--}}
-                            {{--                                    </div>--}}
-                            {{--                                </div>--}}
-                            {{--                            </div>--}}
-                            {{--                        </div>--}}
                         </div>
 
 
-
                         <div class="row mt-5 flex justify-content-center align-items-center">
-                            <div style=" width: 200px;  display: flex; justify-content: center;align-items: center;" class="text-center ml-3">
+                            <div style=" width: 200px;  display: flex; justify-content: center;align-items: center;"
+                                 class="text-center ml-3">
 
                                 <div class="col">
                                     <div class="rotate" style="width: 100px" id="fan">
                                         <img class="wings" src="images/icon/fan-icon.png" alt="">
                                     </div>
-                                    <div class="mt-2" style="width: 100px">
+                                    <div class="mt-3" style="width: 100px">
                                         <label class="form-switch ">
                                             <input type="checkbox" checked id="fan_check">
                                             <i></i>
@@ -585,42 +529,49 @@
                             </div>
 
 
-                            <div class="col">
-                                <div class="js-gauge demo gauge"></div>
-                                    <p> Tempreture 1</p>
-                                    <script>
-                                        $('.demo').kumaGauge({
-                                            value: Math.floor((Math.random() * 99) + 1),
-                                        });
-                                    </script>
-                            </div>
-                            <div class="col">
-                                <div class="js-gauge demo gauge"></div>
-                                <p> Tempreture 2</p>
-                                <script>
-                                    $('.demo').kumaGauge({
-                                        value: Math.floor((Math.random() * 99) + 1),
-                                    });
-                                </script>
-                            </div>
-                            <div class="col">
-                                <div class="js-gauge demo gauge"></div>
-                                <p> Humidity 1</p>
-                                <script>
-                                    $('.demo').kumaGauge({
-                                        value: Math.floor((Math.random() * 99) + 1),
-                                    });
-                                </script>
-                            </div>
+                            <div class="">
+                                <div class="col">
 
-                            <div class="col">
-                                <div class="js-gauge demo gauge"></div>
-                                <p> Co 2</p>
-                                <script>
-                                    $('.demo').kumaGauge({
-                                        value: Math.floor((Math.random() * 99) + 1),
-                                    });
-                                </script>
+                                    <div id="exampleArray" class="au-card-seven-seg" style="width: 200px;"></div>
+
+                                    <p class="text-light"> Tempreture 1</p>
+                                    <script>
+                                        $("#exampleArray").sevenSeg({digits: 5, value: 98.05});
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="col">
+
+                                    <div id="exampleArray2" class="au-card-seven-seg" style="width: 200px;"></div>
+
+                                    <p class="text-light"> Tempreture 2</p>
+                                    <script>
+                                        $("#exampleArray2").sevenSeg({digits: 5, value: 99.05});
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="col">
+
+                                    <div id="exampleArray3" class="au-card-seven-seg" style="width: 200px;"></div>
+
+                                    <p class="text-light"> Humidity</p>
+                                    <script>
+                                        $("#exampleArray3").sevenSeg({digits: 5, value: 95.83});
+                                    </script>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="col">
+
+                                    <div id="exampleArray4" class="au-card-seven-seg" style="width: 200px;"></div>
+
+                                    <p class="text-light"> CO2 </p>
+                                    <script>
+                                        $("#exampleArray4").sevenSeg({digits: 5, value: 20.02});
+                                    </script>
+                                </div>
                             </div>
 
                         </div>
@@ -921,14 +872,39 @@
                         {{--                        </div>--}}
                     </div>
 
-                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">تغییرات دما</p>
+                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">نمودار ها</p>
 
                     <div class="row">
-                        <div class="col-lg-12">
+                        <div class="col-lg-6">
                             <div class="au-card m-b-30">
                                 <div class="au-card-inner">
                                     {{--                                    <h3 class="title-2 m-b-40 text-right">تغییرات دما</h3>--}}
-                                    <canvas id="team-chart"></canvas>
+                                    <canvas id="temperature-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    {{--                                    <h3 class="title-2 m-b-40 text-right">تغییرات دما</h3>--}}
+                                    <canvas id="humidity-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    {{--                                    <h3 class="title-2 m-b-40 text-right">تغییرات دما</h3>--}}
+                                    <canvas id="co2-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="au-card m-b-30">
+                                <div class="au-card-inner">
+                                    <canvas id="error-chart"></canvas>
                                 </div>
                             </div>
                         </div>
@@ -974,7 +950,7 @@
     try {
 
         //Team chart
-        var ctx = document.getElementById("team-chart");
+        var ctx = document.getElementById("temperature-chart");
         if (ctx) {
             ctx.height = 150;
             var myChart = new Chart(ctx, {
@@ -985,15 +961,27 @@
                     defaultFontFamily: 'Poppins',
                     datasets: [{
                         data: [88, 90, 91, 90, 95, 99, 90, 88, 90, 91, 90, 95, 99, 90],
-                        label: "دما",
-                        backgroundColor: 'rgba(0,103,255,.15)',
+                        label: "Temperature 1",
+                        backgroundColor: 'transparent',
                         borderColor: 'rgba(0,103,255,0.5)',
                         borderWidth: 3.5,
                         pointStyle: 'circle',
                         pointRadius: 5,
                         pointBorderColor: 'transparent',
                         pointBackgroundColor: 'rgba(0,103,255,0.5)',
-                    },]
+                    },
+                        {
+                            data: [90, 92, 90, 88, 95, 99, 90, 88, 90, 95, 99, 90, 88, 90],
+                            label: "Temperature 2",
+                            backgroundColor: 'transparent',
+                            borderColor: 'rgb(255,0,111)',
+                            borderWidth: 3.5,
+                            pointStyle: 'circle',
+                            pointRadius: 5,
+                            pointBorderColor: 'transparent',
+                            pointBackgroundColor: 'rgb(255,0,81)',
+                        }
+                    ]
                 },
                 options: {
                     responsive: true,
@@ -1009,7 +997,7 @@
                         intersect: false,
                     },
                     legend: {
-                        display: false,
+                        display: true,
                         position: 'top',
                         labels: {
                             usePointStyle: true,
@@ -1041,11 +1029,103 @@
                             },
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Value',
+                                labelString: 'Temperature',
                                 fontFamily: "Poppins"
                             },
                             ticks: {
                                 min: 50,
+                                max: 120,
+                                fontFamily: "Poppins"
+                            }
+                        }]
+                    },
+                    title: {
+                        display: false,
+                    }
+                }
+            });
+        }
+
+
+    } catch (error) {
+        console.log(error);
+    }
+    try {
+
+        //Team chart
+        var ctx = document.getElementById("humidity-chart");
+        if (ctx) {
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    type: 'line',
+                    defaultFontFamily: 'Poppins',
+                    datasets: [{
+                        data: [60, 65, 62, 68, 70, 78, 75, 80, 75, 70, 60, 62, 68, 70],
+                        label: "Humidity",
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgb(200,0,255)',
+                        borderWidth: 3.5,
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'rgb(191,0,246)',
+                    },
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    tooltips: {
+                        mode: 'index',
+                        titleFontSize: 12,
+                        titleFontColor: '#000',
+                        bodyFontColor: '#000',
+                        backgroundColor: '#fff',
+                        titleFontFamily: 'Poppins',
+                        bodyFontFamily: 'Poppins',
+                        cornerRadius: 3,
+                        intersect: false,
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            fontFamily: 'Poppins',
+                        },
+
+
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Month'
+                            },
+                            ticks: {
+                                fontFamily: "Poppins"
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Humidity',
+                                fontFamily: "Poppins"
+                            },
+                            ticks: {
+                                min: 20,
                                 max: 100,
                                 fontFamily: "Poppins"
                             }
@@ -1062,6 +1142,143 @@
     } catch (error) {
         console.log(error);
     }
+    try {
+
+        //Team chart
+        var ctx = document.getElementById("co2-chart");
+        if (ctx) {
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    type: 'line',
+                    defaultFontFamily: 'Poppins',
+                    datasets: [{
+                        data: [60, 65, 62, 68, 70, 78, 75, 80, 75, 70, 60, 62, 68, 70],
+                        label: "CO2",
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgb(1,10,59)',
+                        borderWidth: 3.5,
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'rgb(1,10,59)',
+                    },
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    tooltips: {
+                        mode: 'index',
+                        titleFontSize: 12,
+                        titleFontColor: '#000',
+                        bodyFontColor: '#000',
+                        backgroundColor: '#fff',
+                        titleFontFamily: 'Poppins',
+                        bodyFontFamily: 'Poppins',
+                        cornerRadius: 3,
+                        intersect: false,
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            fontFamily: 'Poppins',
+                        },
+
+
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Month'
+                            },
+                            ticks: {
+                                fontFamily: "Poppins"
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'CO2',
+                                fontFamily: "Poppins"
+                            },
+                            ticks: {
+                                min: 20,
+                                max: 100,
+                                fontFamily: "Poppins"
+                            }
+                        }]
+                    },
+                    title: {
+                        display: false,
+                    }
+                }
+            });
+        }
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
+    try {
+
+        //pie chart
+        var ctx = document.getElementById("error-chart");
+        if (ctx) {
+            ctx.height = 150;
+            var myChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    datasets: [{
+                        data: [80, 20],
+                        backgroundColor: [
+                            "rgb(60,176,65)",
+                            "rgb(255, 82, 82)",
+                        ],
+                        hoverBackgroundColor: [
+                            "rgb(60,176,65)",
+                            "rgb(255, 82, 82)",
+                        ]
+
+                    }],
+                    labels: [
+                        "OK",
+                        "ERROR",
+                    ]
+                },
+                options: {
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            fontFamily: 'Poppins'
+                        }
+
+                    },
+                    responsive: true
+                }
+            });
+        }
+
+
+    } catch (error) {
+        console.log(error);
+    }
+
 </script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
