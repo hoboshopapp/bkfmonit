@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/{lan?}', function ($lan = 'fa') {
+    return view('welcome' ,[
+        'lan' => $lan
+        ]);
 });

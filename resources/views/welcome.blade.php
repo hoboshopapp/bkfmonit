@@ -365,215 +365,279 @@
                             </div>
                         </div>
                     </div>
-
-                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت فعلی دستگاه</p>
+                    @if ($lan == 'fa')
+                        <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت فعلی دستگاه</p>
+                    @else
+                        <p class="title-2 text-left text-dark mb-4 " style=" font-size: 20px">system status</p>
+                    @endif
 
                     <div class="au-card text-center  mb-3  " style="background-color: #000">
 
 
-                        <div class="row  text-center flex justify-content-center align-items-center">
-                            <div class="alert alert-error-1 m-0" style="width: 500px;color: red " role="alert">
-                                مشکلی در دستگاه به وجود آمده است
-                            </div>
-                        </div>
 
 
-                        <div class="row mr-2 ml-2 text-center mt-4" style=" display: flex;
-    justify-content: center;
-    align-items: center;">
+                        <div class="container">
+                            <div class="row p-2 new-parent-center">
 
 
-                            {{--                            @for ($i = 0; $i < 20; $i++)--}}
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">HIGH TEMP</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-off"></div>
-                                    <p class="text-light">HIGH HUM</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">DOOR OPEN</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">DRY WICK</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-off"></div>
-                                    <p class="text-light">MAIN HEATER</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">SPRAY</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">DAMPER OPENING</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-off"></div>
-                                    <p class="text-light">DAMPER OPEN</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-off"></div>
-                                    <p class="text-light">LEFT</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">RIGHT</p>
-                                </div>
-                            </div>
+                                <div class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3  col-lg-4 new-parent-center mr-lg-4  ">
+                                    <p class="text-light row">
+                                        SYSTEM ALARMS
+                                    </p>
 
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">LOW TEMP</p>
+                                    <div class="row new-au-card pb-3 ">
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">LOW HUM</p>
+                                <div class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-4 new-parent-center  mr-lg-4 ">
+                                    <p class="text-light row">
+                                        SYSTEM STATUS
+                                    </p>
+                                    <div class="row new-au-card pb-3">
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">FAN FAILURE</p>
+                                <div class=" d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-2  new-parent-center ">
+                                    <p class="text-truncate text-light row">
+                                        EGG STATUS
+                                    </p>
+                                    <div class="row new-au-card pb-3">
+                                        <div class="col-6  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-on"></div>
+                                                    <p class="text-light">HIGH TEMP</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">PROGRAM ERROR</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">AUXLARY HEATER</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">EGG TURN</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">DAMPER CLOSING</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">DAMPER CLOSED</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">TURNING</p>
-                                </div>
-                            </div>
-                            <div class="bg-dark col-md-1 col-sm-1 col-lg-1 parent au-card m-2">
-                                <div class="led-box child ">
-                                    <div class="led-on"></div>
-                                    <p class="text-light">FAILURE</p>
-                                </div>
+
                             </div>
 
                         </div>
 
 
                         <div class="row mt-5 flex justify-content-center align-items-center">
-                            <div style=" width: 200px;  display: flex; justify-content: center;align-items: center;"
-                                 class="text-center ml-3">
-
-                                <div class="col">
-                                    <div class="rotate" style="width: 100px" id="fan">
-                                        <img class="wings" src="images/icon/fan-icon.png" alt="">
-                                    </div>
-                                    <div class="mt-3" style="width: 100px">
-                                        <label class="form-switch ">
-                                            <input type="checkbox" checked id="fan_check">
-                                            <i></i>
-
-                                        </label>
-                                    </div>
-                                </div>
-
-                            </div>
 
 
-                            <div class="">
-                                <div class="col">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column" >
+                                    <p class="text-truncate text-light"> TEMPRETURE 1</p>
+                                    <div id="exampleArray" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
 
-                                    <div id="exampleArray" class="au-card-seven-seg" style="width: 200px;"></div>
 
-                                    <p class="text-light"> Tempreture 1</p>
                                     <script>
                                         $("#exampleArray").sevenSeg({digits: 5, value: 98.05});
                                     </script>
-                                </div>
                             </div>
-                            <div class="">
-                                <div class="col">
 
-                                    <div id="exampleArray2" class="au-card-seven-seg" style="width: 200px;"></div>
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                                    <p class="text-truncate text-light"> TEMPRETURE 2</p>
+                                    <div id="exampleArray2" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
 
-                                    <p class="text-light"> Tempreture 2</p>
+
                                     <script>
                                         $("#exampleArray2").sevenSeg({digits: 5, value: 99.05});
                                     </script>
-                                </div>
                             </div>
-                            <div class="">
-                                <div class="col">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                                    <p class="text-light"> HUMIDITY</p>
+                                    <div id="exampleArray3" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
 
-                                    <div id="exampleArray3" class="au-card-seven-seg" style="width: 200px;"></div>
 
-                                    <p class="text-light"> Humidity</p>
                                     <script>
                                         $("#exampleArray3").sevenSeg({digits: 5, value: 95.83});
                                     </script>
-                                </div>
                             </div>
-                            <div class="">
-                                <div class="col">
-
-                                    <div id="exampleArray4" class="au-card-seven-seg" style="width: 200px;"></div>
-
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
                                     <p class="text-light"> CO2 </p>
+
+                                    <div id="exampleArray4" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
+
                                     <script>
                                         $("#exampleArray4").sevenSeg({digits: 5, value: 20.02});
                                     </script>
+                            </div>
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                                <div style="display: flex; justify-content: center;align-items: center;"
+                                     class="text-center ml-3">
+
+                                    <div class="col">
+                                        <div class="rotate" style="width: 100px; height: 100px;" id="fan">
+                                            <img class="wings" src="images/icon/fan-icon.png" alt="">
+                                        </div>
+                                        <div class="mt-3" style="width: 100px" hidden>
+                                            <label class="form-switch ">
+                                                <input type="checkbox" checked id="fan_check">
+                                                <i></i>
+
+                                            </label>
+                                        </div>
+                                    </div>
+
                                 </div>
+
                             </div>
 
+
+                        </div>
+                        <div class="row  text-center flex justify-content-center align-items-center mt-5" >
+                            <div class="alert new-au-card m-0 set_alarm_anim" style="width: 500px;color: white " role="alert">
+                                مشکلی در دستگاه به وجود آمده است
+                            </div>
                         </div>
 
 

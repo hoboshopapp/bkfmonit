@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends  Model
+class UserType extends Model
 {
 //    use HasApiTokens, HasFactory, Notifiable;
 
@@ -19,10 +20,6 @@ class User extends  Model
      */
     protected $fillable = [
         'name',
-        'username',
-        'password',
-        'user_type',
-        'api_key',
     ];
 
     /**
@@ -30,9 +27,9 @@ class User extends  Model
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-    ];
+//    protected $hidden = [
+//        'password',
+//    ];
 
     /**
      * The attributes that should be cast.
@@ -41,7 +38,6 @@ class User extends  Model
      */
 
     public function type(){
-        return $this->belongsTo(UserType::class , 'user_type' , 'id');
 //        return $this->ha
     }
 }

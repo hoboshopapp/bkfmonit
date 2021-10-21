@@ -59,18 +59,42 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     src: url('../fonts/vazir/vazir.woff2') format('woff2');
 }
 
-.led-box {
-    width: 100%;
-    margin-bottom: 10px;
-    float: left;
+
+.new-au-card {
+    border-radius: 10px;
+    border: solid 1px #ffffff;
 }
 
-.led-box p {
-    font-size: 12px;
+.new-led-on {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0015;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px 1px, inset #ffffff 0 1px 5px, #ffffff 0 2px 8px;
+}
+
+.new-parent {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-parent-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin: 1em;
 }
 
+.new-child {
+    text-align: center;
+    width: 40px;
+    height: 50px;
+    font-size: 11px;
+}
 .grid-container-panel {
     display: grid;
     grid-template-columns: auto;
@@ -3480,12 +3504,27 @@ section {
     border-color: red;
 }
 .au-card-seven-seg {
-    padding: 10px;
+    padding: 15px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
     background: #000;
     overflow: hidden;
+}
+
+@keyframes alarm-anim {
+    0%{
+        background-color: black;
+    }
+   50%{
+        background-color: #c31313;
+    }
+    100%{
+        background-color: black;
+    }
+}
+.set_alarm_anim{
+    animation: alarm-anim infinite 2s ease-in-out;
 }
 
 .au-card--border {
