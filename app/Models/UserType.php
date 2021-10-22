@@ -12,13 +12,15 @@ use Laravel\Sanctum\HasApiTokens;
 class UserType extends Model
 {
 //    use HasApiTokens, HasFactory, Notifiable;
-
+    protected $table = 'user_type';
+    protected $primaryKey = 'id';
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
+        'id',
         'name',
     ];
 
@@ -37,7 +39,7 @@ class UserType extends Model
      * @var array
      */
 
-    public function type(){
-//        return $this->ha
+    public function users(){
+       return $this->hasMany(User::class , 'user_type' );
     }
 }

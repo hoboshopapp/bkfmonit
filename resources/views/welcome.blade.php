@@ -389,7 +389,7 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
-                                                    <div class="new-led-on"></div>
+                                                    <div class="new-led-off"></div>
                                                     <p class="text-light">HIGH TEMP</p>
                                                 </div>
                                             </div>
@@ -397,56 +397,56 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">HIGH HUM</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">MAIN</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">DRY WICK</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">LOW TEMP</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">LOW HUM</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">FAN FAILURE</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">PROGRAM ERROR</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -462,7 +462,31 @@
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
                                                     <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <p class="text-light">MAIN HEATER</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">SPRAY</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">DAMPER OPENING</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">DAMPER OPENED</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -470,7 +494,15 @@
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
                                                     <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <p class="text-light">AUX  HEATER</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-3  p-2">
+                                            <div class="new-parent">
+                                                <div class="led-box new-child ">
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">EGG TURN</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -478,7 +510,7 @@
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
                                                     <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <p class="text-light">DAMPER CLOSING</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -486,39 +518,7 @@
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
                                                     <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3  p-2">
-                                            <div class="new-parent">
-                                                <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3  p-2">
-                                            <div class="new-parent">
-                                                <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3  p-2">
-                                            <div class="new-parent">
-                                                <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-3  p-2">
-                                            <div class="new-parent">
-                                                <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <p class="text-light">DAMPER CLOSED</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -534,31 +534,31 @@
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
                                                     <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <p class="text-light">LEFT</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">RIGHT</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">TURNING</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">HIGH TEMP</p>
+                                                    <div class="new-led-off"></div>
+                                                    <p class="text-light">FAILURE</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -574,46 +574,50 @@
                         <div class="row mt-5 flex justify-content-center align-items-center">
 
 
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column" >
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 " >
                                     <p class="text-truncate text-light"> TEMPRETURE 1</p>
-                                    <div id="exampleArray" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
+                                    <div id="exampleArray" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
 
+                                <p class="text-light mt-2  small">98.02 </p>
 
                                     <script>
                                         $("#exampleArray").sevenSeg({digits: 5, value: 98.05});
                                     </script>
                             </div>
 
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
                                     <p class="text-truncate text-light"> TEMPRETURE 2</p>
-                                    <div id="exampleArray2" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
+                                    <div id="exampleArray2" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
 
+                                <p class="text-light mt-2  small">98.02 </p>
 
                                     <script>
                                         $("#exampleArray2").sevenSeg({digits: 5, value: 99.05});
                                     </script>
                             </div>
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
                                     <p class="text-light"> HUMIDITY</p>
-                                    <div id="exampleArray3" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
+                                    <div id="exampleArray3" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
 
+                                <p class="text-light mt-2  small">98.02 </p>
 
                                     <script>
                                         $("#exampleArray3").sevenSeg({digits: 5, value: 95.83});
                                     </script>
                             </div>
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
                                     <p class="text-light"> CO2 </p>
 
-                                    <div id="exampleArray4" class="new-au-card au-card-seven-seg" style="width: 200px;"></div>
+                                    <div id="exampleArray4" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
+                                <p class="text-light mt-2  small">__ </p>
 
                                     <script>
                                         $("#exampleArray4").sevenSeg({digits: 5, value: 20.02});
                                     </script>
                             </div>
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column">
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
                                 <div style="display: flex; justify-content: center;align-items: center;"
-                                     class="text-center ml-3">
+                                     class="text-center mt-3">
 
                                     <div class="col">
                                         <div class="rotate" style="width: 100px; height: 100px;" id="fan">
@@ -645,7 +649,7 @@
 
 
                     <div class="row" hidden>
-                        <div class="col-lg-6">
+                        <div class="col-lg- mr-lg-2 6">
                             <div class="au-card recent-report">
                                 <div class="au-card-inner">
                                     <h3 class="title-2">recent reports</h3>

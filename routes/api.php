@@ -21,3 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/post_data' , function (Request $request){
     return $request->input('data');
 });
+
+Route::get('/test' , function (Request $request){
+    $type =\App\Models\User::all()->find(2)->type ;
+    return "$type";
+});

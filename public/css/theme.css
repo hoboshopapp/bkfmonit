@@ -74,6 +74,15 @@ Notes:	decreasing heading by 0.4em with every subsequent heading level
     border-radius: 50%;
     box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px 1px, inset #ffffff 0 1px 5px, #ffffff 0 2px 8px;
 }
+.new-led-off {
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 20px;
+    height: 20px;
+    background-color: #000000;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 3px 1px, inset #ffffff 0 1px 5px, #ffffff 0 2px 8px;
+}
 
 .new-parent {
     height: 80px;
