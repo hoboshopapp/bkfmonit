@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PanelController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/{lan?}', function ($lan = 'fa') {
-    return view('welcome' ,[
-        'lan' => $lan
-        ]);
+
+Route::middleware(['api_auth'])->group(function () {
+    Route::get('/',  [PanelController::class, 'dashboard']);
+    Route::get('/dashboard',  [PanelController::class, 'dashboard_dara']);
+
 });
+//Route::get('/login',function (){return "Hello login";} )->name('login');
+Route::get('/login',[PanelController::class, 'login'] )->name('login');
+Route::post('/check_login', [PanelController::class, 'check_login'])->name('check_login');

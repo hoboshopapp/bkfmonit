@@ -41,7 +41,7 @@
     <!-- SevenSeg  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="js/sevenSeg.js"></script>
 
 
@@ -188,163 +188,6 @@
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
-                        {{--                        <div class="header-button" hidden>--}}
-                        {{--                            <div class="noti-wrap">--}}
-                        {{--                                <div class="noti__item js-item-menu">--}}
-                        {{--                                    <i class="zmdi zmdi-comment-more"></i>--}}
-                        {{--                                    <span class="quantity">1</span>--}}
-                        {{--                                    <div class="mess-dropdown js-dropdown">--}}
-                        {{--                                        <div class="mess__title">--}}
-                        {{--                                            <p>You have 2 news message</p>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="mess__item">--}}
-                        {{--                                            <div class="image img-cir img-40">--}}
-                        {{--                                                <img src="images/icon/avatar-06.jpg" alt="Michelle Moreno"/>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <h6>Michelle Moreno</h6>--}}
-                        {{--                                                <p>Have sent a photo</p>--}}
-                        {{--                                                <span class="time">3 min ago</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="mess__item">--}}
-                        {{--                                            <div class="image img-cir img-40">--}}
-                        {{--                                                <img src="images/icon/avatar-04.jpg" alt="Diane Myers"/>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <h6>Diane Myers</h6>--}}
-                        {{--                                                <p>You are now connected on message</p>--}}
-                        {{--                                                <span class="time">Yesterday</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="mess__footer">--}}
-                        {{--                                            <a href="#">View all messages</a>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="noti__item js-item-menu">--}}
-                        {{--                                    <i class="zmdi zmdi-email"></i>--}}
-                        {{--                                    <span class="quantity">1</span>--}}
-                        {{--                                    <div class="email-dropdown js-dropdown">--}}
-                        {{--                                        <div class="email__title">--}}
-                        {{--                                            <p>You have 3 New Emails</p>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="email__item">--}}
-                        {{--                                            <div class="image img-cir img-40">--}}
-                        {{--                                                <img src="images/icon/avatar-06.jpg" alt="Cynthia Harvey"/>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>Meeting about new dashboard...</p>--}}
-                        {{--                                                <span>Cynthia Harvey, 3 min ago</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="email__item">--}}
-                        {{--                                            <div class="image img-cir img-40">--}}
-                        {{--                                                <img src="images/icon/avatar-05.jpg" alt="Cynthia Harvey"/>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>Meeting about new dashboard...</p>--}}
-                        {{--                                                <span>Cynthia Harvey, Yesterday</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="email__item">--}}
-                        {{--                                            <div class="image img-cir img-40">--}}
-                        {{--                                                <img src="images/icon/avatar-04.jpg" alt="Cynthia Harvey"/>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>Meeting about new dashboard...</p>--}}
-                        {{--                                                <span>Cynthia Harvey, April 12,,2018</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="email__footer">--}}
-                        {{--                                            <a href="#">See all emails</a>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                                <div class="noti__item js-item-menu">--}}
-                        {{--                                    <i class="zmdi zmdi-notifications"></i>--}}
-                        {{--                                    <span class="quantity">3</span>--}}
-                        {{--                                    <div class="notifi-dropdown js-dropdown">--}}
-                        {{--                                        <div class="notifi__title">--}}
-                        {{--                                            <p>You have 3 Notifications</p>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="notifi__item">--}}
-                        {{--                                            <div class="bg-c1 img-cir img-40">--}}
-                        {{--                                                <i class="zmdi zmdi-email-open"></i>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>You got a email notification</p>--}}
-                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="notifi__item">--}}
-                        {{--                                            <div class="bg-c2 img-cir img-40">--}}
-                        {{--                                                <i class="zmdi zmdi-account-box"></i>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>Your account has been blocked</p>--}}
-                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="notifi__item">--}}
-                        {{--                                            <div class="bg-c3 img-cir img-40">--}}
-                        {{--                                                <i class="zmdi zmdi-file-text"></i>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <p>You got a new file</p>--}}
-                        {{--                                                <span class="date">April 12, 2018 06:50</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="notifi__footer">--}}
-                        {{--                                            <a href="#">All notifications</a>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
-                        {{--                            <div class="account-wrap">--}}
-                        {{--                                <div class="account-item clearfix js-item-menu">--}}
-                        {{--                                    <div class="image">--}}
-                        {{--                                        <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="content">--}}
-                        {{--                                        <a class="js-acc-btn" href="#">john doe</a>--}}
-                        {{--                                    </div>--}}
-                        {{--                                    <div class="account-dropdown js-dropdown">--}}
-                        {{--                                        <div class="info clearfix">--}}
-                        {{--                                            <div class="image">--}}
-                        {{--                                                <a href="#">--}}
-                        {{--                                                    <img src="images/icon/avatar-01.jpg" alt="John Doe"/>--}}
-                        {{--                                                </a>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="content">--}}
-                        {{--                                                <h5 class="name">--}}
-                        {{--                                                    <a href="#">john doe</a>--}}
-                        {{--                                                </h5>--}}
-                        {{--                                                <span class="email">johndoe@example.com</span>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="account-dropdown__body">--}}
-                        {{--                                            <div class="account-dropdown__item">--}}
-                        {{--                                                <a href="#">--}}
-                        {{--                                                    <i class="zmdi zmdi-account"></i>Account</a>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="account-dropdown__item">--}}
-                        {{--                                                <a href="#">--}}
-                        {{--                                                    <i class="zmdi zmdi-settings"></i>Setting</a>--}}
-                        {{--                                            </div>--}}
-                        {{--                                            <div class="account-dropdown__item">--}}
-                        {{--                                                <a href="#">--}}
-                        {{--                                                    <i class="zmdi zmdi-money-box"></i>Billing</a>--}}
-                        {{--                                            </div>--}}
-                        {{--                                        </div>--}}
-                        {{--                                        <div class="account-dropdown__footer">--}}
-                        {{--                                            <a href="#">--}}
-                        {{--                                                <i class="zmdi zmdi-power"></i>Logout</a>--}}
-                        {{--                                        </div>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -365,22 +208,36 @@
                             </div>
                         </div>
                     </div>
-                    @if ($lan == 'fa')
-                        <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">وضعیت فعلی دستگاه</p>
-                    @else
-                        <p class="title-2 text-left text-dark mb-4 " style=" font-size: 20px">system status</p>
-                    @endif
+                    {{--                    @if ($lan == 'fa')--}}
+                    <p class="title-2 text-right text-dark mb-4 " id="selected_system_name"
+                       style=" font-size: 20px">{{ $user->selected_system->name }} وضعیت فعلی دستگاه</p>
+                    {{--                    @else--}}
+                    {{--                        <p class="title-2 text-left text-dark mb-4 " style=" font-size: 20px">system status</p>--}}
+                    {{--                    @endif--}}
 
                     <div class="au-card text-center  mb-3  " style="background-color: #000">
 
 
-
-
                         <div class="container">
+                            <div class="row flex justify-content-center align-items-center" hidden>
+                                <div
+                                    class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-4 new-parent-center  mr-lg-4 ">
+                                    <p class="text-light row">
+                                        CLOCK
+                                    </p>
+                                    <div class="row new-au-card pb-3 ">
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
                             <div class="row p-2 new-parent-center">
 
 
-                                <div class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3  col-lg-4 new-parent-center mr-lg-4  ">
+                                <div
+                                    class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3  col-lg-4 new-parent-center mr-lg-4  ">
                                     <p class="text-light row">
                                         SYSTEM ALARMS
                                     </p>
@@ -389,7 +246,7 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_high_temp"></div>
                                                     <p class="text-light">HIGH TEMP</p>
                                                 </div>
                                             </div>
@@ -397,7 +254,7 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_high_hum"></div>
                                                     <p class="text-light">HIGH HUM</p>
                                                 </div>
                                             </div>
@@ -405,15 +262,16 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
-                                                    <p class="text-light">MAIN</p>
+                                                    <div class="" id="led_main_or_door_open"></div>
+                                                    <p class="text-light" id="text_main_or_door_open"></p>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_dry_wick"></div>
                                                     <p class="text-light">DRY WICK</p>
                                                 </div>
                                             </div>
@@ -421,7 +279,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_low_temp"></div>
+
                                                     <p class="text-light">LOW TEMP</p>
                                                 </div>
                                             </div>
@@ -429,7 +288,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_low_hum"></div>
+
                                                     <p class="text-light">LOW HUM</p>
                                                 </div>
                                             </div>
@@ -437,7 +297,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_fan_failure"></div>
+
                                                     <p class="text-light">FAN FAILURE</p>
                                                 </div>
                                             </div>
@@ -445,7 +306,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_program_error"></div>
+
                                                     <p class="text-light">PROGRAM ERROR</p>
                                                 </div>
                                             </div>
@@ -453,7 +315,8 @@
 
                                     </div>
                                 </div>
-                                <div class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-4 new-parent-center  mr-lg-4 ">
+                                <div
+                                    class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-4 new-parent-center  mr-lg-4 ">
                                     <p class="text-light row">
                                         SYSTEM STATUS
                                     </p>
@@ -461,7 +324,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
-                                                    <div class="new-led-on"></div>
+                                                    <div class="" id="led_main_heater"></div>
+
                                                     <p class="text-light">MAIN HEATER</p>
                                                 </div>
                                             </div>
@@ -469,7 +333,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_spray"></div>
+
                                                     <p class="text-light">SPRAY</p>
                                                 </div>
                                             </div>
@@ -477,7 +342,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_damper_opening"></div>
+
                                                     <p class="text-light">DAMPER OPENING</p>
                                                 </div>
                                             </div>
@@ -485,7 +351,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_damper_opened"></div>
+
                                                     <p class="text-light">DAMPER OPENED</p>
                                                 </div>
                                             </div>
@@ -493,23 +360,26 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
-                                                    <p class="text-light">AUX  HEATER</p>
+                                                    <div class="" id="led_aux_heater_or_blower"></div>
+                                                    <p class="text-light" id="text_aux_heater_or_blower"></p>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
-                                                    <p class="text-light">EGG TURN</p>
+                                                    <div class="" id="led_egg_turn_or_aux_heater"></div>
+                                                    <p class="text-light" id="text_egg_turn_or_aux_heater"></p>
+
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
+                                                    <div class="" id="led_damper_closing"></div>
+
                                                     <p class="text-light">DAMPER CLOSING</p>
                                                 </div>
                                             </div>
@@ -517,7 +387,8 @@
                                         <div class="col-3  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-on"></div>
+                                                    <div class="" id="led_damper_closed"></div>
+
                                                     <p class="text-light">DAMPER CLOSED</p>
                                                 </div>
                                             </div>
@@ -525,7 +396,9 @@
 
                                     </div>
                                 </div>
-                                <div class=" d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-2  new-parent-center ">
+                                <div
+                                    class="flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-2  new-parent-center"
+                                    id="egg_turn_box">
                                     <p class="text-truncate text-light row">
                                         EGG STATUS
                                     </p>
@@ -533,7 +406,8 @@
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child">
-                                                    <div class="new-led-on"></div>
+                                                    <div class="" id="led_egg_left"></div>
+
                                                     <p class="text-light">LEFT</p>
                                                 </div>
                                             </div>
@@ -541,7 +415,8 @@
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_egg_right"></div>
+
                                                     <p class="text-light">RIGHT</p>
                                                 </div>
                                             </div>
@@ -549,7 +424,8 @@
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_egg_turning"></div>
+
                                                     <p class="text-light">TURNING</p>
                                                 </div>
                                             </div>
@@ -557,7 +433,8 @@
                                         <div class="col-6  p-2">
                                             <div class="new-parent">
                                                 <div class="led-box new-child ">
-                                                    <div class="new-led-off"></div>
+                                                    <div class="" id="led_egg_failure"></div>
+
                                                     <p class="text-light">FAILURE</p>
                                                 </div>
                                             </div>
@@ -565,6 +442,7 @@
 
                                     </div>
                                 </div>
+
 
                             </div>
 
@@ -574,55 +452,51 @@
                         <div class="row mt-5 flex justify-content-center align-items-center">
 
 
-                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 " >
-                                    <p class="text-truncate text-light"> TEMPRETURE 1</p>
-                                    <div id="exampleArray" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
+                            <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
+                                <p class="text-truncate text-light"> TEMPRETURE 1</p>
+                                <div id="exampleArray" class="new-au-card au-card-seven-seg"
+                                     style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small">98.02 </p>
+                                <p class="text-light mt-2  small"
+                                   id="set_temp_1">{{ $user->selected_system->last_record->set_temp1 }} </p>
 
-                                    <script>
-                                        $("#exampleArray").sevenSeg({digits: 5, value: 98.05});
-                                    </script>
                             </div>
 
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
-                                    <p class="text-truncate text-light"> TEMPRETURE 2</p>
-                                    <div id="exampleArray2" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
+                                <p class="text-truncate text-light"> TEMPRETURE 2</p>
+                                <div id="exampleArray2" class="new-au-card au-card-seven-seg"
+                                     style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small">98.02 </p>
+                                <p class="text-light mt-2  small"
+                                   id="set_temp_2">{{ $user->selected_system->last_record->set_temp2 }} </p>
 
-                                    <script>
-                                        $("#exampleArray2").sevenSeg({digits: 5, value: 99.05});
-                                    </script>
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
-                                    <p class="text-light"> HUMIDITY</p>
-                                    <div id="exampleArray3" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
+                                <p class="text-light"> HUMIDITY</p>
+                                <div id="exampleArray3" class="new-au-card au-card-seven-seg"
+                                     style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small">98.02 </p>
+                                <p class="text-light mt-2  small"
+                                   id="set_hum">{{ $user->selected_system->last_record->set_hum }} </p>
 
-                                    <script>
-                                        $("#exampleArray3").sevenSeg({digits: 5, value: 95.83});
-                                    </script>
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
-                                    <p class="text-light"> CO2 </p>
+                                <p class="text-light"> CO2 </p>
 
-                                    <div id="exampleArray4" class="new-au-card au-card-seven-seg" style="width: 180px;"></div>
-                                <p class="text-light mt-2  small">__ </p>
+                                <div id="exampleArray4" class="new-au-card au-card-seven-seg"
+                                     style="width: 180px;"></div>
+                                <p class="text-light mt-2  small">_</p>
 
-                                    <script>
-                                        $("#exampleArray4").sevenSeg({digits: 5, value: 20.02});
-                                    </script>
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
                                 <div style="display: flex; justify-content: center;align-items: center;"
                                      class="text-center mt-3">
 
                                     <div class="col">
-                                        <div class="rotate" style="width: 100px; height: 100px;" id="fan">
-                                            <img class="wings" src="images/icon/fan-icon.png" alt="">
-                                        </div>
+                                            <div style="width: 100px; height: 100px;" id="fan_control">
+                                                <img class="wings" src="images/icon/fan-icon.png" alt="">
+                                            </div>
+
                                         <div class="mt-3" style="width: 100px" hidden>
                                             <label class="form-switch ">
                                                 <input type="checkbox" checked id="fan_check">
@@ -638,84 +512,24 @@
 
 
                         </div>
-                        <div class="row  text-center flex justify-content-center align-items-center mt-5" >
-                            <div class="alert new-au-card m-0 set_alarm_anim" style="width: 500px;color: white " role="alert">
-                                مشکلی در دستگاه به وجود آمده است
+
+                            <div class="row  text-center flex justify-content-center align-items-center mt-5 " id="error_message">
+                                <div class="alert new-au-card m-0 set_alarm_anim" style="width: 500px;color: white "
+                                     role="alert">
+                                    مشکلی در دستگاه به وجود آمده است
+                                </div>
                             </div>
-                        </div>
 
 
                     </div>
 
 
-                    <div class="row" hidden>
-                        <div class="col-lg- mr-lg-2 6">
-                            <div class="au-card recent-report">
-                                <div class="au-card-inner">
-                                    <h3 class="title-2">recent reports</h3>
-                                    <div class="chart-info">
-                                        <div class="chart-info__left">
-                                            <div class="chart-note">
-                                                <span class="dot dot--blue"></span>
-                                                <span>products</span>
-                                            </div>
-                                            <div class="chart-note mr-0">
-                                                <span class="dot dot--green"></span>
-                                                <span>services</span>
-                                            </div>
-                                        </div>
-                                        <div class="chart-info__right">
-                                            <div class="chart-statis">
-                                                    <span class="index incre">
-                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                                <span class="label">products</span>
-                                            </div>
-                                            <div class="chart-statis mr-0">
-                                                    <span class="index decre">
-                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                                <span class="label">services</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="recent-report__chart">
-                                        <canvas id="recent-rep-chart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="au-card chart-percent-card">
-                                <div class="au-card-inner">
-                                    <h3 class="title-2 tm-b-5">char by %</h3>
-                                    <div class="row no-gutters">
-                                        <div class="col-xl-6">
-                                            <div class="chart-note-wrap">
-                                                <div class="chart-note mr-0 d-block">
-                                                    <span class="dot dot--blue"></span>
-                                                    <span>products</span>
-                                                </div>
-                                                <div class="chart-note mr-0 d-block">
-                                                    <span class="dot dot--red"></span>
-                                                    <span>services</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-6">
-                                            <div class="percent-chart">
-                                                <canvas id="percent-chart"></canvas>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-md-12">
                             <p class="title-2 text-right text-dark mb-4 mt-4" style=" font-size: 20px">جدول اطلاعات</p>
                             <div class="table-responsive table-bordered table--no-card m-b-40">
                                 <table class=" table table-borderless table-striped table-earning"
-                                       style="direction: rtl">
+                                       style="direction: ltr">
                                     <thead>
                                     <tr>
                                         <th class="text-center " style="width : 12%; padding: 20px;">دستگاه</th>
@@ -732,212 +546,87 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center" style="width: 12%">99.82</td>
-                                        <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
+                                    @foreach($user->systems as $system)
 
-                                    </tr>
-                                    <tr>
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center" style="width: 12%">99.82</td>
-                                        <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
+                                        <tr>
 
-                                    </tr>
-                                    <tr>
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center" style="width: 12%">99.82</td>
-                                        <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
+                                            @if($system->system_type == 1)
+                                                <td class="text-center" style="width : 12%;">
+                                                    Setter {{ $system->id }}</td>
+                                            @else
+                                                <td class="text-center" style="width : 12%;">
+                                                    Hatcher {{ $system->id }}</td>
+                                            @endif
+                                            <td class="text-center"
+                                                style="width: 12%">{{ $system->last_record->temp1 }}</td>
+                                            <td class="text-center"
+                                                style="width: 12%">{{ $system->last_record->temp2 }}</td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->high_temp==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->low_temp==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->high_hum==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->low_hum==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->door_open==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->fan_failure==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
 
-                                    </tr>
-                                    <tr>
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        {{--                                        <td>1</td>--}}
-                                        <td class="text-center" style="width : 12%;">ستتر 1</td>
-                                        <td class="text-center" style="width: 12%">99.82</td>
-                                        <td class="text-center" style="width: 12%">98.90</td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-on"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
-                                        <td class="text-center" style="width: 8%">
-                                            <div class="led-off"></div>
-                                        </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->dry_wick==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                            <td class="text-center" style="width: 8%">
+                                                @if( $system->last_record->error_program==1)
+                                                    <div class="led-on"></div>
+                                                @else
+                                                    <div class="led-off"></div>
+                                                @endif
+                                            </td>
+                                        </tr>
 
-                                    </tr>
+                                    @endforeach
+
 
                                 </table>
                             </div>
                         </div>
 
-                        {{--                        <div class="col-lg-3" hidden>--}}
-                        {{--                            <h2 class="title-1 m-b-25">Top countries</h2>--}}
-                        {{--                            <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">--}}
-                        {{--                                <div class="au-card-inner">--}}
-                        {{--                                    <div class="table-responsive">--}}
-                        {{--                                        <table class="table table-top-countries">--}}
-                        {{--                                            <tbody>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>United States</td>--}}
-                        {{--                                                <td class="text-right">$119,366.96</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>Australia</td>--}}
-                        {{--                                                <td class="text-right">$70,261.65</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>United Kingdom</td>--}}
-                        {{--                                                <td class="text-right">$46,399.22</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>Turkey</td>--}}
-                        {{--                                                <td class="text-right">$35,364.90</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>Germany</td>--}}
-                        {{--                                                <td class="text-right">$20,366.96</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>France</td>--}}
-                        {{--                                                <td class="text-right">$10,366.96</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>Australia</td>--}}
-                        {{--                                                <td class="text-right">$5,366.96</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            <tr>--}}
-                        {{--                                                <td>Italy</td>--}}
-                        {{--                                                <td class="text-right">$1639.32</td>--}}
-                        {{--                                            </tr>--}}
-                        {{--                                            </tbody>--}}
-                        {{--                                        </table>--}}
-                        {{--                                    </div>--}}
-                        {{--                                </div>--}}
-                        {{--                            </div>--}}
-                        {{--                        </div>--}}
                     </div>
 
                     <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">نمودار ها</p>
@@ -995,6 +684,7 @@
 
 <!-- Jquery JS-->
 <script src="vendor/jquery-3.2.1.min.js"></script>
+
 <!-- Bootstrap JS-->
 <script src="vendor/bootstrap-4.1/popper.min.js"></script>
 <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
@@ -1350,7 +1040,132 @@
 </script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+<script src="js/sevenSeg.js"></script>
+<script>
+    var seven_seg1 = document.getElementById("exampleArray");
+    var seven_seg2 = document.getElementById("exampleArray2");
+    var seven_seg3 = document.getElementById("exampleArray3");
+    var seven_seg4 = document.getElementById("exampleArray4");
+    var set_temp1 = document.getElementById("set_temp_1");
+    var set_temp2 = document.getElementById("set_temp_2");
+    var set_hum = document.getElementById("set_hum");
 
+
+    var selected_system = {!! $user->selected_system !!};
+
+    set_data_selected_system(selected_system)
+
+
+    function set_led(led, value) {
+        if (value == 1) {
+            if (led.classList.contains('new-led-off')) {
+                led.classList.remove('new-led-off');
+            }
+            if (!led.classList.contains('new-led-on')) {
+                led.classList.add('new-led-on');
+            }
+        } else {
+            if (led.classList.contains('new-led-on')) {
+                led.classList.remove('new-led-on');
+            }
+            if (!led.classList.contains('new-led-off')) {
+                led.classList.add('new-led-off');
+            }
+        }
+        console.log(value)
+
+    }
+
+    function set_data_selected_system(selected_system) {
+        var system_type = selected_system.last_record.system_type;
+
+        set_temp1.innerHTML = selected_system.last_record.set_temp1;
+        set_temp2.innerHTML = selected_system.last_record.set_temp2;
+        set_hum.innerHTML = selected_system.last_record.set_hum;
+        selected_system_name.innerHTML = selected_system.name + "وضعیت فعلی دستگاه "
+        // $(function() {
+        set_led(led_high_temp, selected_system.last_record.high_temp)
+        set_led(led_high_hum, selected_system.last_record.high_hum)
+        set_led(led_dry_wick, selected_system.last_record.dry_wick)
+        set_led(led_low_temp, selected_system.last_record.low_temp)
+        set_led(led_low_hum, selected_system.last_record.low_hum)
+        set_led(led_fan_failure, selected_system.last_record.fan_failure)
+        set_led(led_program_error, selected_system.last_record.error_program)
+
+        set_led(led_main_heater, selected_system.last_record.heater)
+        set_led(led_spray, selected_system.last_record.spray)
+        set_led(led_damper_opening, selected_system.last_record.damper_opening)
+        set_led(led_damper_opened, selected_system.last_record.damper_open)
+        set_led(led_damper_closing, selected_system.last_record.damper_closing)
+        set_led(led_damper_closed, selected_system.last_record.damper_closed)
+        // egg_turn_box.classList.add('invisible')
+        // document.getElementById("egg_turn_box").classList.add("invisible")
+
+        if (selected_system.last_record.fan_control == 1){
+            fan_control.classList.add('rotate')
+        }else {
+            fan_control.classList.remove('rotate')
+        }
+
+        if (selected_system.last_record.error == 1){
+            error_message.classList.remove('d-none')
+        }else {
+            error_message.classList.add('d-none')
+        }
+
+        if (system_type == 1) {
+            set_led(led_main_or_door_open, selected_system.last_record.high_temp)
+            set_led(led_aux_heater_or_blower, selected_system.last_record.auxlary_heater)
+            set_led(led_egg_turn_or_aux_heater, selected_system.last_record.egg_turn)
+            text_main_or_door_open.innerHTML = "MAIN"
+            text_aux_heater_or_blower.innerHTML = "AUX HEATER"
+            text_egg_turn_or_aux_heater.innerHTML = "EGG TURN"
+
+            set_led(led_egg_left, selected_system.last_record.egg_left)
+            set_led(led_egg_right, selected_system.last_record.egg_right)
+            set_led(led_egg_turning, selected_system.last_record.turning)
+            set_led(led_egg_failure, selected_system.last_record.egg_failure)
+
+            egg_turn_box.classList.remove('d-none')
+        } else {
+            set_led(led_main_or_door_open, selected_system.last_record.door_open)
+            set_led(led_aux_heater_or_blower, selected_system.last_record.blower)
+            set_led(led_egg_turn_or_aux_heater, selected_system.last_record.auxlary_heater)
+            text_main_or_door_open.innerHTML = "DOOR OPEN"
+            text_aux_heater_or_blower.innerHTML = "BLOWER"
+            text_egg_turn_or_aux_heater.innerHTML = "AUX HEATER"
+
+            egg_turn_box.classList.add('d-none')
+
+        }
+        //     console.log()
+        //
+        // });
+
+        $(seven_seg1).sevenSeg({digits: 5, value: selected_system.last_record.temp1});
+        $(seven_seg2).sevenSeg({digits: 5, value: selected_system.last_record.temp2});
+        $(seven_seg3).sevenSeg({digits: 5, value: selected_system.last_record.hum});
+        $(seven_seg4).sevenSeg({digits: 5, value: selected_system.last_record.co2});
+
+
+    }
+
+    setInterval(function () {
+        $.get("/dashboard", function (data, status) {
+
+            set_data_selected_system(data.user.selected_system)
+            // console.log(status ,data);
+
+        });
+
+
+    }, 3000)
+
+
+</script>
 
 </body>
 </html>

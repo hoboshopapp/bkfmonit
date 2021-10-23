@@ -5,28 +5,23 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends  Model
+class System extends Model
 {
-    use HasFactory;
 //    use HasApiTokens, HasFactory, Notifiable;
-    protected $table = 'users';
+    protected $table = 'systems';
     protected $primaryKey = 'id';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
-     *
      */
     protected $fillable = [
+        'id',
         'name',
-        'username',
-        'password',
-        'user_type',
-        'api_key',
     ];
 
     /**
@@ -34,13 +29,9 @@ class User extends  Model
      *
      * @var array
      */
-    protected $hidden = [
-        'password',
-        'api_key',
-        'created_at',
-        'updated_at'
-
-    ];
+//    protected $hidden = [
+//        'password',
+//    ];
 
     /**
      * The attributes that should be cast.
@@ -48,12 +39,10 @@ class User extends  Model
      * @var array
      */
 
-    public function type(){
-        return $this->belongsTo(UserType::class , 'user_type');
-//        return $this->ha
+    public function records(){
+       return $this->hasMany(SystemRecord::class  , 'system_id')->limit(10);
     }
-    public function systems(){
-        return $this->hasMany(System::class , 'user_id');
-//        return $this->ha
+        public function temp_records(){
+        return $this->hasMany(SystemTempRecord::class  , 'system_id')->limit(10)->orderBy('id' , 'desc');
     }
 }
