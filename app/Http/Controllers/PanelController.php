@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\System;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -10,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Symfony\Component\HttpFoundation\Cookie;
 
 class PanelController extends Controller
 {
@@ -18,44 +20,44 @@ class PanelController extends Controller
         return "Welcome To BKFMonit API";
     }
 
-    public function dashboard(Request $request )
+    public function dashboard(Request $request)
     {
         $user = $this->getUser($request);
-        $user['selected_system'] = $user->systems->get(rand(1,9));
+        $system_id =0;
+        if ($request->has('system_id')){
+            $system_id = \request()->input('system_id');
+        }
+        if ($system_id == 0) {
+            $user['selected_system'] = $user->systems->first();
+        } else {
+            $user['selected_system'] = $user->systems->find($system_id);
+        }
 
         $data['user'] = $user;
 
-        foreach ($user->systems as $system){
-            $system['last_record'] = $system->temp_records->first();
+        foreach ($user->systems as $system) {
+            $system['last_record'] = $system->temp_records->get(rand(1, 9));
         }
-
-
-
-
 
 
 //        return $this->jsonResponse($data , 200);
-        return view("welcome" , [
+        return view("welcome", [
             'user' => $user
         ]);
     }
-    public function dashboard_dara(Request $request )
+
+    public function dashboard_data(Request $request, $system_id = 0)
     {
         $user = $this->getUser($request);
-        $user['selected_system'] = $user->systems->get(rand(1,9));
-
+        $user['selected_system'] = $user->systems->find($system_id);
         $data['user'] = $user;
 
-        foreach ($user->systems as $system){
-            $system['last_record'] = $system->temp_records->first();
+        foreach ($user->systems as $system) {
+            $system['last_record'] = $system->temp_records->get(rand(1, 9));
         }
 
 
-
-
-
-
-        return $this->jsonResponse($data , 200);
+        return $this->jsonResponse($data, 200);
 //        return view("welcome" , [
 //            'user' => $user
 //        ]);
@@ -63,8 +65,16 @@ class PanelController extends Controller
 
     public function login(Request $request)
     {
-        return view('login');
-
+        if ($request->hasCookie('token')) {
+            $token = $request->cookie('token');
+            if (DB::table('users')->where('api_key', $token)) {
+                return \redirect()->route('dashboard');
+            } else {
+                return view('login');
+            }
+        } else {
+            return view('login');
+        }
     }
 
 
@@ -76,7 +86,7 @@ class PanelController extends Controller
 
         if (DB::table('users')->where('username', $username)->where('password', $password)->exists()) {
             $token = DB::table('users')->where('username', $username)->where('password', $password)->first()->api_key;
-            return redirect('/')->withCookie(\Symfony\Component\HttpFoundation\Cookie::create('token', $token));
+            return redirect('/')->withCookie(Cookie::create('token', $token));
         } else {
 //            return view('login' , [
 //                'status' => 'نام کاربری یا رمز عبور وارد شده صحیح نمی باشد !'
@@ -93,9 +103,10 @@ class PanelController extends Controller
     }
 
 
-     function getUser(Request  $request){
+    function getUser(Request $request)
+    {
         $token = $request->cookie('token');
-        $user =User::all()->where('api_key',$token)->first();
+        $user = User::all()->where('api_key', $token)->first();
         return $user;
     }
 

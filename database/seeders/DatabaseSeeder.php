@@ -23,20 +23,19 @@ class DatabaseSeeder extends Seeder
         foreach (range(1, 2) as $type_num) {
             DB::table('user_type')->insert([
                 'id' => $type_num,
-                'name' => "type $type_num"
+                'name' => $type_num == 1 ? 'admin' : 'user'
             ]);
         }
-        foreach (range(1, 2) as $type_num) {
+        foreach (range(1, 2) as $system_type) {
             DB::table('system_type')->insert([
-                'id' => $type_num,
-                'name' => "type $type_num"
+                'id' => $system_type,
+                'name' =>  $system_type == 1 ? 'setter' : 'hatcher'
             ]);
         }
 
         foreach (range(1, 5) as $num) {
-            DB::table('users')->insert(
+            $user_id=DB::table('users')->insertGetId(
                 [
-                    'id' => $num,
                     'user_type' => rand(1, 2),
                     'username' => $faker->userName(),
                     'name' => $faker->name(),
@@ -47,18 +46,19 @@ class DatabaseSeeder extends Seeder
                 ]
             );
             foreach (range(1, 10) as $sys_num) {
+                $system_type = rand(1,2);
                 $sys_id = DB::table('systems')->insertGetId([
-                    'system_type' => rand(1, 2),
+                    'system_type' => $system_type,
                     'serial' => $faker->macAddress(),
-                    'name' => "sys $sys_num",
-                    'user_id' => $num,
+                    'name' => "system $sys_num",
+                    'user_id' => $user_id,
                     'created_at' => now(),
                     'updated_at' => now()
                 ]);
 
                 foreach (range(1, 20) as $rec_num) {
                     DB::table('systems_records')->insert([
-                        'system_type' => rand(1, 2),
+                        'system_type' => $system_type,
                         'system_id' =>$sys_id,
                         'system_read' => rand(0, 1),
                         'temp1' => rand(70.00, 99.99),
@@ -105,7 +105,7 @@ class DatabaseSeeder extends Seeder
                 }
                 foreach (range(1, 20) as $rec_num) {
                     DB::table('systems_temp_records')->insert([
-                        'system_type' => rand(1, 2),
+                        'system_type' => $system_type,
                         'system_id' => $sys_id,
                         'system_read' => rand(0, 1),
                         'temp1' => rand(70.00, 99.99),

@@ -552,10 +552,10 @@
 
                                             @if($system->system_type == 1)
                                                 <td class="text-center" style="width : 12%;">
-                                                    Setter {{ $system->id }}</td>
+                                                    (Setter) {{ $system->id }}</td>
                                             @else
                                                 <td class="text-center" style="width : 12%;">
-                                                    Hatcher {{ $system->id }}</td>
+                                                    (Hatcher) {{ $system->id }}</td>
                                             @endif
                                             <td class="text-center"
                                                 style="width: 12%">{{ $system->last_record->temp1 }}</td>
@@ -1085,7 +1085,7 @@
         set_temp1.innerHTML = selected_system.last_record.set_temp1;
         set_temp2.innerHTML = selected_system.last_record.set_temp2;
         set_hum.innerHTML = selected_system.last_record.set_hum;
-        selected_system_name.innerHTML = selected_system.name + "وضعیت فعلی دستگاه "
+        selected_system_name.innerHTML = selected_system.id + "  وضعیت فعلی دستگاه   "
         // $(function() {
         set_led(led_high_temp, selected_system.last_record.high_temp)
         set_led(led_high_hum, selected_system.last_record.high_hum)
@@ -1154,7 +1154,7 @@
     }
 
     setInterval(function () {
-        $.get("/dashboard", function (data, status) {
+        $.get("/dashboard/{{ $user->selected_system->id }}", function (data, status) {
 
             set_data_selected_system(data.user.selected_system)
             // console.log(status ,data);
