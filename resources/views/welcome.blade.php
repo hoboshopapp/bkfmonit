@@ -493,9 +493,9 @@
                                      class="text-center mt-3">
 
                                     <div class="col">
-                                            <div style="width: 100px; height: 100px;" id="fan_control">
-                                                <img class="wings" src="images/icon/fan-icon.png" alt="">
-                                            </div>
+                                        <div style="width: 100px; height: 100px;" id="fan_control">
+                                            <img class="wings" src="images/icon/fan-icon.png" alt="">
+                                        </div>
 
                                         <div class="mt-3" style="width: 100px" hidden>
                                             <label class="form-switch ">
@@ -513,123 +513,17 @@
 
                         </div>
 
-                            <div class="row  text-center flex justify-content-center align-items-center mt-5 " id="error_message">
-                                <div class="alert new-au-card m-0 set_alarm_anim" style="width: 500px;color: white "
-                                     role="alert">
-                                    مشکلی در دستگاه به وجود آمده است
-                                </div>
-                            </div>
-
-
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p class="title-2 text-right text-dark mb-4 mt-4" style=" font-size: 20px">جدول اطلاعات</p>
-                            <div class="table-responsive table-bordered table--no-card m-b-40">
-                                <table class=" table table-borderless table-striped table-earning"
-                                       style="direction: ltr">
-                                    <thead>
-                                    <tr>
-                                        <th class="text-center " style="width : 12%; padding: 20px;">دستگاه</th>
-                                        <th class="text-center" style="width : 12%;padding: 20px;">دما جلو</th>
-                                        <th class="text-center" style="width : 12%;padding: 20px;">دما پشت</th>
-                                        <th class="text-center" style="width :8%;padding: 20px;">حرارت بالا</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">حرارت پایین</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">رطوبت بالا</th>
-                                        <th class="text-center " style="width : 8%;padding: 20px;">رطوبت پایین</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">در باز</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">مشکل در فن</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">فیتیله خشک</th>
-                                        <th class="text-center" style="width : 8%;padding: 20px;">اخطار برنامه</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($user->systems as $system)
-
-                                        <tr>
-
-                                            @if($system->system_type == 1)
-                                                <td class="text-center" style="width : 12%;">
-                                                    (Setter) {{ $system->id }}</td>
-                                            @else
-                                                <td class="text-center" style="width : 12%;">
-                                                    (Hatcher) {{ $system->id }}</td>
-                                            @endif
-                                            <td class="text-center"
-                                                style="width: 12%">{{ $system->last_record->temp1 }}</td>
-                                            <td class="text-center"
-                                                style="width: 12%">{{ $system->last_record->temp2 }}</td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->high_temp==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->low_temp==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->high_hum==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->low_hum==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->door_open==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->fan_failure==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->dry_wick==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                            <td class="text-center" style="width: 8%">
-                                                @if( $system->last_record->error_program==1)
-                                                    <div class="led-on"></div>
-                                                @else
-                                                    <div class="led-off"></div>
-                                                @endif
-                                            </td>
-                                        </tr>
-
-                                    @endforeach
-
-
-                                </table>
+                        <div class="row  text-center flex justify-content-center align-items-center mt-5 "
+                             id="error_message">
+                            <div class="alert new-au-card m-0 set_alarm_anim" style="width: 500px;color: white "
+                                 role="alert">
+                                مشکلی در دستگاه به وجود آمده است
                             </div>
                         </div>
 
-                    </div>
 
-                    <p class="title-2 text-right text-dark mb-4 " style=" font-size: 20px">نمودار ها</p>
+                    </div>
+                    <p class="title-2 text-right text-dark mb-4 mt-5 " style=" font-size: 20px">نمودار ها</p>
 
                     <div class="row">
                         <div class="col-lg-6">
@@ -666,6 +560,114 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="title-2 text-right text-dark mb-4 mt-4" style=" font-size: 20px">لیست دستگاه ها</p>
+                            <div class="table-responsive table-bordered table--no-card m-b-40">
+                                <table class=" table table-borderless table-striped table-earning" id="systems_table"
+                                       style="direction: ltr">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center " style="width : 12%; padding: 20px;">دستگاه</th>
+                                        <th class="text-center" style="width : 12%;padding: 20px;">دما جلو</th>
+                                        <th class="text-center" style="width : 12%;padding: 20px;">دما پشت</th>
+                                        <th class="text-center" style="width :8%;padding: 20px;">حرارت بالا</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">حرارت پایین</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">رطوبت بالا</th>
+                                        <th class="text-center " style="width : 8%;padding: 20px;">رطوبت پایین</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">در باز</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">مشکل در فن</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">فیتیله خشک</th>
+                                        <th class="text-center" style="width : 8%;padding: 20px;">اخطار برنامه</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {{--                                    @foreach($user->systems as $system)--}}
+
+                                    {{--                                        <tr>--}}
+
+                                    {{--                                            @if($system->system_type == 1)--}}
+                                    {{--                                                <td class="text-center" style="width : 12%;">--}}
+                                    {{--                                                    (Setter) {{ $system->id }}</td>--}}
+                                    {{--                                            @else--}}
+                                    {{--                                                <td class="text-center" style="width : 12%;">--}}
+                                    {{--                                                    (Hatcher) {{ $system->id }}</td>--}}
+                                    {{--                                            @endif--}}
+                                    {{--                                            <td class="text-center"--}}
+                                    {{--                                                style="width: 12%">{{ $system->last_record->temp1 }}</td>--}}
+                                    {{--                                            <td class="text-center"--}}
+                                    {{--                                                style="width: 12%">{{ $system->last_record->temp2 }}</td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->high_temp==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->low_temp==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->high_hum==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->low_hum==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->door_open==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->fan_failure==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->dry_wick==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                            <td class="text-center" style="width: 8%">--}}
+                                    {{--                                                @if( $system->last_record->error_program==1)--}}
+                                    {{--                                                    <div class="led-on"></div>--}}
+                                    {{--                                                @else--}}
+                                    {{--                                                    <div class="led-off"></div>--}}
+                                    {{--                                                @endif--}}
+                                    {{--                                            </td>--}}
+                                    {{--                                        </tr>--}}
+
+                                    {{--                                    @endforeach--}}
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+
                     {{--                    <div class="row">--}}
                     {{--                        <div class="col-md-12">--}}
                     {{--                            <div class="copyright">--}}
@@ -705,7 +707,17 @@
 </script>
 
 <script>
+    {{--var chart_temp1_array={!! $user->selected_system->today_charts !!}--}}
+    var app = @json($user->selected_system->today_charts);
+    var temp1_values = app.temp1_chart;
+    var temp2_values = app.temp2_chart;
+    var clock_values = app.clock_chart;
+    var hum_values = app.hum_chart;
+    var co2_values = app.co2_chart;
+    var error_values = app.error_chart;
+    console.log(hum_values);
     try {
+
 
         //Team chart
         var ctx = document.getElementById("temperature-chart");
@@ -714,11 +726,11 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    labels: clock_values,
                     type: 'line',
                     defaultFontFamily: 'Poppins',
                     datasets: [{
-                        data: [88, 90, 91, 90, 95, 99, 90, 88, 90, 91, 90, 95, 99, 90],
+                        data: temp1_values,
                         label: "Temperature 1",
                         backgroundColor: 'transparent',
                         borderColor: 'rgba(0,103,255,0.5)',
@@ -729,7 +741,7 @@
                         pointBackgroundColor: 'rgba(0,103,255,0.5)',
                     },
                         {
-                            data: [90, 92, 90, 88, 95, 99, 90, 88, 90, 95, 99, 90, 88, 90],
+                            data: temp2_values,
                             label: "Temperature 2",
                             backgroundColor: 'transparent',
                             borderColor: 'rgb(255,0,111)',
@@ -817,11 +829,11 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    labels: clock_values,
                     type: 'line',
                     defaultFontFamily: 'Poppins',
                     datasets: [{
-                        data: [60, 65, 62, 68, 70, 78, 75, 80, 75, 70, 60, 62, 68, 70],
+                        data: hum_values,
                         label: "Humidity",
                         backgroundColor: 'transparent',
                         borderColor: 'rgb(200,0,255)',
@@ -909,11 +921,11 @@
             var myChart = new Chart(ctx, {
                 type: 'line',
                 data: {
-                    labels: ["10:30", "11:30", "12:30", "13:30", "14:30", "15:30", "16:30", "17:30", "18:30", "19:30", "20:30", "21:30", "22:30", "22:30"],
+                    labels: clock_values,
                     type: 'line',
                     defaultFontFamily: 'Poppins',
                     datasets: [{
-                        data: [60, 65, 62, 68, 70, 78, 75, 80, 75, 70, 60, 62, 68, 70],
+                        data: co2_values,
                         label: "CO2",
                         backgroundColor: 'transparent',
                         borderColor: 'rgb(1,10,59)',
@@ -1003,7 +1015,7 @@
                 type: 'pie',
                 data: {
                     datasets: [{
-                        data: [80, 20],
+                        data: error_values,
                         backgroundColor: [
                             "rgb(60,176,65)",
                             "rgb(255, 82, 82)",
@@ -1055,8 +1067,10 @@
 
 
     var selected_system = {!! $user->selected_system !!};
+    var user_systems = {!! $user->systems !!};
 
     set_data_selected_system(selected_system)
+    set_data_systems(user_systems)
 
 
     function set_led(led, value) {
@@ -1075,7 +1089,7 @@
                 led.classList.add('new-led-off');
             }
         }
-        console.log(value)
+        // console.log(value)
 
     }
 
@@ -1085,7 +1099,7 @@
         set_temp1.innerHTML = selected_system.last_record.set_temp1;
         set_temp2.innerHTML = selected_system.last_record.set_temp2;
         set_hum.innerHTML = selected_system.last_record.set_hum;
-        selected_system_name.innerHTML = selected_system.id + "  وضعیت فعلی دستگاه   "
+        selected_system_name.innerHTML = selected_system.name +' '+ (selected_system.type ==1? '(Setter)':'(Hatcher)' )+ "  وضعیت فعلی دستگاه   "
         // $(function() {
         set_led(led_high_temp, selected_system.last_record.high_temp)
         set_led(led_high_hum, selected_system.last_record.high_hum)
@@ -1104,15 +1118,15 @@
         // egg_turn_box.classList.add('invisible')
         // document.getElementById("egg_turn_box").classList.add("invisible")
 
-        if (selected_system.last_record.fan_control == 1){
+        if (selected_system.last_record.fan_control == 1) {
             fan_control.classList.add('rotate')
-        }else {
+        } else {
             fan_control.classList.remove('rotate')
         }
 
-        if (selected_system.last_record.error == 1){
+        if (selected_system.last_record.error == 1) {
             error_message.classList.remove('d-none')
-        }else {
+        } else {
             error_message.classList.add('d-none')
         }
 
@@ -1153,10 +1167,67 @@
 
     }
 
+    function set_data_systems(systems)
+    {
+        table_tbody = document.getElementById('systems_table').getElementsByTagName('tbody')[0];
+        $("#systems_table tbody tr").remove()
+        // systems.foreach(addrow())
+        // function addrow(){
+        // if (table_tbody.rows.length > 0) {
+
+                // console.log(table_tbody.rows)
+
+        // }
+        // if (table_tbody.rows.length >0){
+        //     table_tbody.children().remove()
+        // }
+
+        // for (const row of table_tbody.rows){
+        //     table_tbody.delete
+        // }
+
+        // table_tbody.deleteRow(0)
+        for (const system of systems) {
+            // console.log(a)
+            var new_row = table_tbody.insertRow();
+            new_row.addEventListener("click", function () {
+                window.location.href = "/?system_id="  + system.id
+            })
+            var cell0 = new_row.insertCell()
+            var cell1 = new_row.insertCell()
+            var cell2 = new_row.insertCell()
+            var cell3 = new_row.insertCell()
+            var cell4 = new_row.insertCell()
+            var cell5 = new_row.insertCell()
+            var cell6 = new_row.insertCell()
+            var cell7 = new_row.insertCell()
+            var cell8 = new_row.insertCell()
+            var cell9 = new_row.insertCell()
+            var cell10 = new_row.insertCell()
+
+            cell0.innerText = +system.system_type === +1 ? 'setter ' + system.id : 'hatcher ' + system.id;
+            cell1.innerText = system.last_record.temp1
+            cell2.innerText = system.last_record.temp2
+            cell3.innerHTML = system.last_record.high_temp == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell4.innerHTML = system.last_record.low_temp == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell5.innerHTML = system.last_record.high_hum == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell6.innerHTML = system.last_record.low_hum == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell7.innerHTML = system.last_record.door_open == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell8.innerHTML = system.last_record.fan_failure == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell9.innerHTML = system.last_record.dry_wick == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            cell10.innerHTML = system.last_record.error_program == 1 ? "<div class=\"led-on\"></div>" : "<div class=\"led-off\"></div>"
+            // cell2.innerHTML = "New HI"
+        }
+        // }
+
+
+    }
+
     setInterval(function () {
         $.get("/dashboard/{{ $user->selected_system->id }}", function (data, status) {
 
             set_data_selected_system(data.user.selected_system)
+            set_data_systems(data.user.systems)
             // console.log(status ,data);
 
         });

@@ -25,6 +25,7 @@ class ApiAuthenticate
                 return $next($request);
             }else{
                 return redirect()->route('login');
+
             }
         }else{
             return redirect()->route('login');

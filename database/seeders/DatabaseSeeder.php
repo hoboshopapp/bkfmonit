@@ -56,7 +56,9 @@ class DatabaseSeeder extends Seeder
                     'updated_at' => now()
                 ]);
 
-                foreach (range(1, 20) as $rec_num) {
+                foreach (range(1, 200) as $rec_num) {
+                    $rand_date = today()->toDateString() . ' '.rand(00 , 23).':'.rand(00,59).':'.rand(00,59);
+
                     DB::table('systems_records')->insert([
                         'system_type' => $system_type,
                         'system_id' =>$sys_id,
@@ -98,12 +100,14 @@ class DatabaseSeeder extends Seeder
                         'auxlary_damper' => rand(0, 1),
                         'error' => rand(0, 1),
 
-                        'date' => now(),
+                        'date' => $rand_date,
                         'created_at' => now(),
                         'updated_at' => now(),
                     ]);
                 }
-                foreach (range(1, 20) as $rec_num) {
+                foreach (range(1, 200) as $rec_num) {
+                    $rand_date = today()->toDateString() . ' '.rand(00 , 23).':'.rand(00,59).':'.rand(00,59);
+
                     DB::table('systems_temp_records')->insert([
                         'system_type' => $system_type,
                         'system_id' => $sys_id,
@@ -145,7 +149,7 @@ class DatabaseSeeder extends Seeder
                         'auxlary_damper' => rand(0, 1),
                         'error' => rand(0, 1),
 
-                        'date' => now(),
+                        'date' => $rand_date,
                         'created_at' => now(),
                         'updated_at' => now(),
                     ]);
