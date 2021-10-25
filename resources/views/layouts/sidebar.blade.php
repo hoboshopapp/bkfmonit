@@ -1,8 +1,8 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo text-center d-flex flex-row align-items-center justify-content-center">
-        <a href="#" >
+        <a href="#">
             <div class="row  d-flex flex-row align-items-center text-center  justify-content-center ">
-                <img src="images/icon/bkf3_icon.png" alt="BKFMonit" />
+                <img src="images/icon/bkf3_icon.png" alt="BKFMonit"/>
                 <h5 class="text-dark ml-2">BKFMonit</h5>
             </div>
 
@@ -11,28 +11,36 @@
     <div class="menu-sidebar__content js-scrollbar1">
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list rtl-side-bar">
-                <li class="active has-sub">
-                    <a class="js-arrow" href="#">
-                        <i class="fas fa-tachometer-alt"></i>داشبورد</a>
-                    <!--                            <ul class="list-unstyled navbar__sub-list js-sub-list">-->
-                    <!--                                <li>-->
-                    <!--                                    <a href="index.html">Dashboard 1</a>-->
-                    <!--                                </li>-->
-                    <!--                                <li>-->
-                    <!--                                    <a href="index2.html">Dashboard 2</a>-->
-                    <!--                                </li>-->
-                    <!--                                <li>-->
-                    <!--                                    <a href="index3.html">Dashboard 3</a>-->
-                    <!--                                </li>-->
-                    <!--                                <li>-->
-                    <!--                                    <a href="index4.html">Dashboard 4</a>-->
-                    <!--                                </li>-->
-                    <!--                            </ul>-->
-                </li>
+{{--                <div>{{$page}}</div>--}}
                 <li>
                     <a href="#">
-                        <i class="fas fa-chart-bar"></i>نمودار ها</a>
+                        <i class="fas fa-user"></i>حساب کاربری</a>
                 </li>
+
+                @if($page =='dashboard')
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-tachometer-alt"></i>داشبورد</a>
+                    </li>
+                @else
+                    <li class="has-sub">
+                        <a class="js-arrow" href="/">
+                            <i class="fas fa-tachometer-alt"></i>داشبورد</a>
+                    </li>
+                @endif
+
+                @if($page == 'charts')
+                        <li class="active">
+                            <a href="#">
+                                <i class="fas fa-chart-bar"></i>نمودار ها</a>
+                        </li>
+                @else
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>نمودار ها</a>
+                        </li>
+                @endif
+
                 <li>
                     <a href="#">
                         <i class="fas fa-table"></i>جدول ها</a>
@@ -107,3 +115,6 @@
         </nav>
     </div>
 </aside>
+
+<script>
+</script>

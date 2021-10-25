@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>Charts</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -171,7 +171,7 @@
     <!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
-@include('layouts.sidebar')
+@include('layouts.sidebar' , ['page'=>'dashboard'])
 <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
@@ -198,39 +198,13 @@
         <div class="main-content ">
             <div class="section__content section__content--p30 ">
                 <div class="container-fluid">
-                    <div class="row" hidden>
-                        <div class="col-md-12">
-                            <div class="overview-wrap">
-                                <h2 class="title-1">overview</h2>
-                                <button class="au-btn au-btn-icon au-btn--blue">
-                                    <i class="zmdi zmdi-plus"></i>add item
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    {{--                    @if ($lan == 'fa')--}}
                     <p class="title-2 text-right text-dark mb-4 " id="selected_system_name"
                        style=" font-size: 20px">{{ $user->selected_system->name }} وضعیت فعلی دستگاه</p>
-                    {{--                    @else--}}
-                    {{--                        <p class="title-2 text-left text-dark mb-4 " style=" font-size: 20px">system status</p>--}}
-                    {{--                    @endif--}}
 
                     <div class="au-card text-center  mb-3  " style="background-color: #000">
 
 
                         <div class="container">
-                            <div class="row flex justify-content-center align-items-center" hidden>
-                                <div
-                                    class="d-flex flex-column col-12 col-sm-12 col-md-12 mt-3 col-lg-4 new-parent-center  mr-lg-4 ">
-                                    <p class="text-light row">
-                                        CLOCK
-                                    </p>
-                                    <div class="row new-au-card pb-3 ">
-
-                                    </div>
-
-                                </div>
-                            </div>
 
 
                             <div class="row p-2 new-parent-center">
@@ -523,6 +497,7 @@
 
 
                     </div>
+
                     <p class="title-2 text-right text-dark mb-4 mt-5 " style=" font-size: 20px">نمودار ها</p>
 
                     <div class="row">
@@ -583,81 +558,6 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {{--                                    @foreach($user->systems as $system)--}}
-
-                                    {{--                                        <tr>--}}
-
-                                    {{--                                            @if($system->system_type == 1)--}}
-                                    {{--                                                <td class="text-center" style="width : 12%;">--}}
-                                    {{--                                                    (Setter) {{ $system->id }}</td>--}}
-                                    {{--                                            @else--}}
-                                    {{--                                                <td class="text-center" style="width : 12%;">--}}
-                                    {{--                                                    (Hatcher) {{ $system->id }}</td>--}}
-                                    {{--                                            @endif--}}
-                                    {{--                                            <td class="text-center"--}}
-                                    {{--                                                style="width: 12%">{{ $system->last_record->temp1 }}</td>--}}
-                                    {{--                                            <td class="text-center"--}}
-                                    {{--                                                style="width: 12%">{{ $system->last_record->temp2 }}</td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->high_temp==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->low_temp==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->high_hum==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->low_hum==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->door_open==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->fan_failure==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->dry_wick==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                            <td class="text-center" style="width: 8%">--}}
-                                    {{--                                                @if( $system->last_record->error_program==1)--}}
-                                    {{--                                                    <div class="led-on"></div>--}}
-                                    {{--                                                @else--}}
-                                    {{--                                                    <div class="led-off"></div>--}}
-                                    {{--                                                @endif--}}
-                                    {{--                                            </td>--}}
-                                    {{--                                        </tr>--}}
-
-                                    {{--                                    @endforeach--}}
 
                                     </tbody>
 
@@ -668,13 +568,6 @@
                     </div>
 
 
-                    {{--                    <div class="row">--}}
-                    {{--                        <div class="col-md-12">--}}
-                    {{--                            <div class="copyright">--}}
-                    {{--                                <p>Copyright © 2018 Colorlib. All rights reserved. Template by <a href="https://colorlib.com">Colorlib</a>.</p>--}}
-                    {{--                            </div>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
                 </div>
             </div>
         </div>

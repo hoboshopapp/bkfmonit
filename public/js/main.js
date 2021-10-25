@@ -389,19 +389,6 @@
         console.log(error);
     }
 
-    try {
-        var fan = document.getElementById('fan')
-        var fan_check = document.getElementById('fan_check')
-        fan_check.addEventListener("change", function ({target: {checked}}) {
-            if (checked) {
-           fan.classList.add('rotate');
-            } else {
-                fan.classList.remove('rotate')
-            }
-        })
-    } catch (error) {
-        console.log(error);
-    }
 
 
     try {
