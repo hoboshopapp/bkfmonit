@@ -40,11 +40,19 @@
                                 <i class="fas fa-chart-bar"></i>نمودار ها</a>
                         </li>
                 @endif
+                @if($page == 'tables')
+                    <li class="active">
+                        <a href="#">
+                            <i class="fas fa-table"></i>جدول ها</a>
+                    </li>
+                @else
+                    <li>
+                        <a href="/tables">
+                            <i class="fas fa-table"></i>جدول ها</a>
+                    </li>
+                @endif
 
-                <li>
-                    <a href="#">
-                        <i class="fas fa-table"></i>جدول ها</a>
-                </li>
+
                 <!--                        <li>-->
                 <!--                            <a href="form.html">-->
                 <!--                                <i class="far fa-check-square"></i>Forms</a>-->
