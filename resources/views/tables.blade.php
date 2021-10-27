@@ -407,10 +407,10 @@
 
 
             cell0.innerText = table_value.time
-            cell1.innerText = table_value.temp1
-            cell2.innerText =table_value.temp2
-            cell3.innerHTML =table_value.hum
-            cell4.innerHTML =table_value.co2
+            cell1.innerText = table_value.temp1?table_value.temp1.toFixed(2):null
+            cell2.innerText =table_value.temp2?table_value.temp2.toFixed(2):null
+            cell3.innerHTML =table_value.hum?table_value.hum.toFixed(2):null
+            cell4.innerHTML =table_value.co2?table_value.co2.toFixed(2):null
             cell5.innerHTML = table_value.error
 
         }

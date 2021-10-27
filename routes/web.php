@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PanelController::class, 'dashboard'])->middleware(['api_auth'])->name('dashboard');
 Route::get('/charts', [PanelController::class, 'charts'])->middleware(['api_auth']);
 Route::get('/tables', [PanelController::class, 'tables'])->middleware(['api_auth']);
+    Route::get('/user_account', [PanelController::class, 'user_account'])->middleware(['api_auth']);
 Route::get('/charts_data', [PanelController::class, 'charts_data'])->middleware(['api_auth']);
 
 //Route::get('/{system_id?}', [PanelController::class, 'dashboard'])->middleware(['api_auth']);

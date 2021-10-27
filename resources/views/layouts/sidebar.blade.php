@@ -12,10 +12,17 @@
         <nav class="navbar-sidebar">
             <ul class="list-unstyled navbar__list rtl-side-bar">
 {{--                <div>{{$page}}</div>--}}
-                <li>
-                    <a href="#">
-                        <i class="fas fa-user"></i>حساب کاربری</a>
-                </li>
+                @if($page =='account')
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-tachometer-alt"></i>حساب کاربری</a>
+                    </li>
+                @else
+                    <li class="has-sub">
+                        <a class="js-arrow" href="/user_account">
+                            <i class="fas fa-tachometer-alt"></i>حساب کاربری</a>
+                    </li>
+                @endif
 
                 @if($page =='dashboard')
                     <li class="active has-sub">

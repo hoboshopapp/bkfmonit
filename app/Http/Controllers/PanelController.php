@@ -56,7 +56,6 @@ class PanelController extends Controller
         ]);
     }
 
-
     public function getChartRecords($selected_system)
     {
         $charts = [];
@@ -344,22 +343,22 @@ class PanelController extends Controller
             $temp = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp1');
 
-            $temp1_chart[$i] = $temp;
+            $temp1_chart[$i] = round($temp,2);
 
             $temp2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp2');
 
-            $temp2_chart[$i] = $temp2;
+            $temp2_chart[$i] = round($temp2 , 2);
 
             $hum = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('hum');
 
-            $hum_chart[$i] = $hum;
+            $hum_chart[$i] = round($hum , 2);
 
             $co2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('co2');
 
-            $co2_chart[$i] = $co2;
+            $co2_chart[$i] = round($co2,2);
 
 
 //            $hum = SystemRecord::all()->where('system_id', '=', $selected_system->id)
@@ -407,7 +406,7 @@ class PanelController extends Controller
         $from_day = 'from_day';
         $to_day = 'from day +7';
         //else
-        $from_day = today()->addDays(-26);
+        $from_day = $day->addDays(-26);
         $to_day = today()->toDateString();
 //        return $from_day . ' ' . $to_day;
 
@@ -493,7 +492,7 @@ class PanelController extends Controller
         $from_day = 'from_day';
         $to_day = 'from day +7';
         //else
-        $from_day = today()->addDays(-7);
+        $from_day =$day->addDays(-7);
         $to_day = today()->toDateString();
 //        return $from_day . ' ' . $to_day;
 
@@ -817,6 +816,15 @@ class PanelController extends Controller
     }
 
 
+    public function user_account(Request  $request){
+        $user = $this->getUser($request);
+
+
+        return view("account", [
+            'user' => $user
+        ]);
+
+    }
 
     public function dashboard_data(Request $request, $system_id = 0)
     {
@@ -930,39 +938,6 @@ class PanelController extends Controller
         ]);
     }
 
-    public function charts_data(Request $request)
-    {
-        $user = $this->getUser($request);
-
-        $system_id = 0;
-
-        if ($request->has('system_id')) {
-            $system_id = \request()->input('system_id');
-        }
-
-        if ($system_id == 0) {
-            $user['selected_system'] = $user->systems->first();
-        } else {
-            $user['selected_system'] = $user->systems->find($system_id);
-        }
-
-
-        $charts = $this->getTodayChartRecords($user['selected_system'], today());
-        $last_charts = $this->getLastChartRecords($user['selected_system']);
-        $user->selected_system['today_charts'] = $charts;
-        $user->selected_system['last_charts'] = $last_charts;
-
-//        $system_id = $request->input('system_id');
-//        $charts_type = $request->input('charts_type');
-//        $start_date  =$request->input('start_date');
-//        $end_date  =$request->input('end_date');
-
-
-        return $this->jsonResponse($user, 200);
-//        return view("charts", [
-//            'user' => $user
-//        ]);
-    }
 
     public function check_login(Request $request)
     {
