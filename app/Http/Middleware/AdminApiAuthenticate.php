@@ -9,7 +9,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ApiAuthenticate
+class AdminApiAuthenticate
 {
     /**
      * Handle an incoming request.
@@ -21,7 +21,7 @@ class ApiAuthenticate
     {
         if ($request->hasCookie('token')) {
             $token = $request->cookie('token');
-            if (DB::table('users')->where('api_key' , $token)->exists()){
+            if (DB::table('users')->where('api_key' , $token)->where('user_type' , 1)->exists()){
                 return $next($request);
             }else{
                 return redirect()->route('login');

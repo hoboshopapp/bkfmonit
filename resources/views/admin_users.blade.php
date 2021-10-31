@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Account</title>
+    <title>Users</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -50,11 +50,13 @@
 <body class="animsition">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
-@include('layouts.msidebar' , ['page'=>'account'])
-    <!-- END HEADER MOBILE-->
+{{--    @include('layouts.msidebar' , ['page'=>'dashboard'])--}}
+
+
+<!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
-@include('layouts.sidebar' , ['page'=>'account'])
+@include('layouts.admin_sidebar' , ['page'=>'admin_users'])
 <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
@@ -64,9 +66,9 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">
-                        <form class="form-header d-none" action="" method="POST">
-                            <input class=" au-input au-input--xl" type="text" name="search"
-                                   placeholder="Search ..."/>
+                        <form class="form-header">
+                            <input class=" au-input au-input--xl" type="text" name="search" id="search_text"
+                                   placeholder="Search User ..."/>
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -78,25 +80,39 @@
         <!-- HEADER DESKTOP-->
 
         <!-- MAIN CONTENT-->
-        <div class="main-content ">
-            <div class="container">
-                <!--  SELECTOR DIV -->
-                <div class="au-card text-center " style="direction: rtl">
+        <div class="col main-content  ">
+            <div class="row mr-5 ml-5 pull-right text-right">
+                <button type="button" class="btn btn-outline-primary" id="add_user_button" >
+                    <i class="fa fa-plus-circle"></i> اضافه کردن کاربر
+                </button>
+            </div>
 
-                    <div class="d-flex flex-column align-items-center justify-content-center">
 
-                        <img src="images/avatar.png" style="width: 150px; border-radius: 50%" class="m-5"
-                             alt="BKFMonit"/>
+            <div class="row mr-5 ml-5">
+                <div class="table-responsive table-bordered table--no-card ">
+                    <table class=" table table-borderless table-striped table-earning" id="systems_table"
+                           style="direction: rtl">
+                        <thead>
+                        <tr>
+                            <th class="text-center" style="padding: 20px;">نام کاربر</th>
+                            <th class="text-center" style="padding: 20px;">نام کاربری</th>
+                            <th class="text-center" style="padding: 20px;">تاریخ ثبت</th>
+                            <th class="text-center" style="padding: 20px;">تاریخ انقضای اعتبار</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
-                        <p id="user_name"></p>
-                        <p id="user_expire" class="mt-2"></p>
-                    </div>
+                        </tbody>
 
+                    </table>
                 </div>
 
-
             </div>
+
+
         </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
     </div>
 
 </div>
@@ -120,17 +136,55 @@
 <script src="vendor/circle-progress/circle-progress.min.js"></script>
 <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-<script src="vendor/select2/select2.min.js"></script>
-
+<script src="vendor/select2/select2.min.js">
+</script>
 
 <script>
+    var admin ={!! $user !!};
+    var users = admin.users;
+    var table_tbody = document.getElementById('systems_table').getElementsByTagName('tbody')[0];
+    var search_text = document.getElementById('search_text')
+    search_text.value = admin.search
 
-    var user ={!! $user !!};
-    var user_name = document.getElementById('user_name');
-    var user_expire = document.getElementById('user_expire');
+    var add_user_button = document.getElementById('add_user_button')
+    add_user_button.addEventListener("click", function () {
+        window.location.href = "/admin_add_user"
+    })
+    console.log(users)
+    update_table(users)
+    {{--    var users ={!! $user->users !!};--}}
+    function update_table(users) {
+        $("#systems_table tbody tr").remove()
 
-    user_name.innerText  = 'نام کاربر : ' + user.name
-    user_expire.innerText  = 'تاریخ انقضا اکانت : ' + user.account_expire_time
+        for (const user of users) {
+
+
+            var new_row = table_tbody.insertRow();
+
+            new_row.addEventListener("click", function () {
+                window.location.href = "/admin_user?user_id="  + user.id
+            })
+
+            var cell0 = new_row.insertCell()
+            cell0.classList.add('text-center')
+            var cell1 = new_row.insertCell()
+            cell1.classList.add('text-center')
+            var cell2 = new_row.insertCell()
+            cell2.classList.add('text-center')
+            var cell3 = new_row.insertCell()
+            cell3.classList.add('text-center')
+
+
+            cell0.innerText = user.name
+            cell1.innerText = user.username
+            cell2.innerText = user.created_at
+            cell3.innerHTML = user.account_expire_time
+
+
+        }
+    }
+
+
 </script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
@@ -138,7 +192,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 <script src="js/sevenSeg.js"></script>
+<script>
 
+</script>
 
 </body>
 </html>

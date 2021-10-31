@@ -11,6 +11,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -343,22 +344,22 @@ class PanelController extends Controller
             $temp = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp1');
 
-            $temp1_chart[$i] = round($temp,2);
+            $temp1_chart[$i] = round($temp, 2);
 
             $temp2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp2');
 
-            $temp2_chart[$i] = round($temp2 , 2);
+            $temp2_chart[$i] = round($temp2, 2);
 
             $hum = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('hum');
 
-            $hum_chart[$i] = round($hum , 2);
+            $hum_chart[$i] = round($hum, 2);
 
             $co2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
                 ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('co2');
 
-            $co2_chart[$i] = round($co2,2);
+            $co2_chart[$i] = round($co2, 2);
 
 
 //            $hum = SystemRecord::all()->where('system_id', '=', $selected_system->id)
@@ -402,15 +403,12 @@ class PanelController extends Controller
 //        $today = $day->toDateString();
 
 
-        // if from day is set
-        $from_day = 'from_day';
-        $to_day = 'from day +7';
-        //else
-        $from_day = $day->addDays(-26);
-        $to_day = today()->toDateString();
-//        return $from_day . ' ' . $to_day;
+        if ($day == today()) {
+            $from_day = $day->addDays(-28);
+        } else {
+            $from_day = $day->addDays(-7);
 
-        $today = today()->toDateString();
+        }
 
 
         $result = [];
@@ -423,7 +421,7 @@ class PanelController extends Controller
 
         foreach ($chart_clocks as $chart_clock) {
             $from_d = $chart_clock;
-            $to_d = date('Y-m-d H:i:s', strtotime($chart_clock . " + 24 hours + 59 minutes"));
+            $to_d = date('Y-m-d H:i:s', strtotime($chart_clock . " + 23 hours + 59 minutes"));
 
 
             array_push($temp1_chart, DB::table('systems_records')->where('system_id', '=', $system_id)
@@ -488,15 +486,12 @@ class PanelController extends Controller
 //        $today = $day->toDateString();
 
 
-        // if from day is set
-        $from_day = 'from_day';
-        $to_day = 'from day +7';
-        //else
-        $from_day =$day->addDays(-7);
-        $to_day = today()->toDateString();
-//        return $from_day . ' ' . $to_day;
+        if ($day == today()) {
+            $from_day = $day->addDays(-7);
+        } else {
+            $from_day = $day->addDays(-1);
 
-        $today = today()->toDateString();
+        }
 
 
         $result = [];
@@ -575,7 +570,6 @@ class PanelController extends Controller
 
 
     /////////////////////////////////////
-
 
 
     public function getTodayTableRecords($selected_system, $day)
@@ -674,8 +668,12 @@ class PanelController extends Controller
         $system_id = $selected_system->id;
 
         $tables = [];
-        $from_day = $day->addDays(-7);
+        if ($day == today()) {
+            $from_day = $day->addDays(-7);
+        } else {
+            $from_day = $day->addDays(-1);
 
+        }
         $result = [];
         for ($i = 0; $i < 7; $i++) {
             $now_day = $from_day->addDays(1)->toDateString();
@@ -738,7 +736,7 @@ class PanelController extends Controller
         }
 
 
-        return $tables      ;
+        return $tables;
     }
 
     public function getMonthTableRecords($selected_system, $day)
@@ -750,12 +748,13 @@ class PanelController extends Controller
 //        $today = $day->toDateString();
 
 
-        // if from day is set
-        $from_day = 'from_day';
-        $to_day = 'from day +7';
-        //else
-        $from_day = $day->addDays(-26);
-        $to_day = today()->toDateString();
+        if ($day == today()) {
+            $from_day = $day->addDays(-28);
+        } else {
+            $from_day = $day->addDays(-7);
+
+        }
+
 //        return $from_day . ' ' . $to_day;
 
         $today = today()->toDateString();
@@ -770,12 +769,9 @@ class PanelController extends Controller
         $chart_clocks = $result;
 
 
-
-
-
         for ($x = 0; $x < 28; $x++) {
             $from_d = $chart_clocks[$x];
-            $to_d = date('Y-m-d H:i:s', strtotime($from_d . " + 24 hours + 59 minutes"));
+            $to_d = date('Y-m-d H:i:s', strtotime($from_d . " + 23 hours + 59 minutes"));
 
             $temp1 = DB::table('systems_records')->where('system_id', '=', $system_id)
                 ->whereBetween('date', [$from_d, $to_d])->avg('temp1');
@@ -816,7 +812,8 @@ class PanelController extends Controller
     }
 
 
-    public function user_account(Request  $request){
+    public function user_account(Request $request)
+    {
         $user = $this->getUser($request);
 
 
@@ -848,8 +845,15 @@ class PanelController extends Controller
     {
         if ($request->hasCookie('token')) {
             $token = $request->cookie('token');
-            if (DB::table('users')->where('api_key', $token)) {
-                return \redirect()->route('dashboard');
+            if (DB::table('users')->where('api_key', $token)->exists()) {
+                $user = DB::table('users')->where('api_key', $token)->first();
+                if ($user->user_type == 1) {
+                    return \redirect()->route('admin_users');
+                } elseif ($user->user_type == 2) {
+                    return \redirect()->route('dashboard');
+                } else {
+                    return \redirect()->route('dashboard');
+                }
             } else {
                 return view('login');
             }
@@ -863,21 +867,31 @@ class PanelController extends Controller
         $user = $this->getUser($request);
 
         $system_id = 0;
+        $day = today();
 
         if ($request->has('system_id')) {
             $system_id = \request()->input('system_id');
         }
+        if ($request->has('day')) {
+            try {
+                $day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('day'))));
+            } catch (\Exception $e) {
+            }
+        }
 
+//        return dd($day);
         if ($system_id == 0) {
             $user['selected_system'] = $user->systems->first();
         } else {
             $user['selected_system'] = $user->systems->find($system_id);
         }
+        $user->selected_system['from_date'] = $day->toDateString();
 
-        $charts = $this->getTodayChartRecords($user['selected_system'], today());
+
+        $charts = $this->getTodayChartRecords($user['selected_system'], $day);
         $last_charts = $this->getLastChartRecords($user['selected_system']);
-        $week_charts = $this->getWeekChartRecords($user['selected_system'], today());
-        $month_charts = $this->getMonthChartRecords($user['selected_system'], today());
+        $week_charts = $this->getWeekChartRecords($user['selected_system'], $day);
+        $month_charts = $this->getMonthChartRecords($user['selected_system'], $day);
 //        $month_charts = $this->getLastChartRecords($user['selected_system']);
         $user->selected_system['today_charts'] = $charts;
         $user->selected_system['last_charts'] = $last_charts;
@@ -891,7 +905,6 @@ class PanelController extends Controller
 //        $end_date  =$request->input('end_date');
 
 
-//        return $this->jsonResponse($user, 200);
         return view("charts", [
             'user' => $user
         ]);
@@ -912,8 +925,16 @@ class PanelController extends Controller
         } else {
             $user['selected_system'] = $user->systems->find($system_id);
         }
+        $day = today();
 
 //        $today_tables =
+        if ($request->has('day')) {
+            try {
+                $day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('day'))));
+            } catch (\Exception $e) {
+            }
+        }
+        $user->selected_system['from_date'] = $day->toDateString();
 
 
 //        return $this->jsonResponse($today_tables ,200 );
@@ -923,10 +944,10 @@ class PanelController extends Controller
 //        $month_charts = $this->getMonthChartRecords($user['selected_system'], today());
 
 
-        $user->selected_system['today_table'] = $this->getTodayTableRecords($user['selected_system'], today());
+        $user->selected_system['today_table'] = $this->getTodayTableRecords($user['selected_system'], $day);
         $user->selected_system['last_table'] = $this->getLastTableRecords($user['selected_system']);
-        $user->selected_system['week_table'] = $this->getWeekTableRecords($user['selected_system'], today());
-        $user->selected_system['month_table'] = $this->getMonthTableRecords($user['selected_system'], today());
+        $user->selected_system['week_table'] = $this->getWeekTableRecords($user['selected_system'], $day);
+        $user->selected_system['month_table'] = $this->getMonthTableRecords($user['selected_system'], $day);
 //        $user->selected_system['week_charts'] = $week_charts;
 //        $user->selected_system['month_charts'] = $month_charts;
 
@@ -946,8 +967,25 @@ class PanelController extends Controller
         $password = $request->get('password');
 
         if (DB::table('users')->where('username', $username)->where('password', $password)->exists()) {
-            $token = DB::table('users')->where('username', $username)->where('password', $password)->first()->api_key;
-            return redirect('/')->withCookie(Cookie::create('token', $token));
+            $user = DB::table('users')->where('username', $username)->where('password', $password)->first();
+            if ($user->user_type == 1) {
+                return redirect('/admin_users')->withCookie(Cookie::create('token', $user->api_key));
+
+            } elseif ($user->user_type == 2) {
+                if ($user->account_expire_time < today()) {
+                    return redirect()->back()->with('status', 'زمان حساب کاربری شما تمام شده است  . برای تمدید حساب کاربری خود با مدیر سیستم تماس بگیرید .');
+
+                } else {
+                    return redirect('/')->withCookie(Cookie::create('token', $user->api_key));
+                }
+            } else {
+                if ($user->account_expire_time < today()) {
+                    return redirect()->back()->with('status', 'زمان حساب کاربری شما تمام شده است  . برای تمدید حساب کاربری خود با مدیر سیستم تماس بگیرید .');
+
+                } else {
+                    return redirect('/')->withCookie(Cookie::create('token', $user->api_key));
+                }
+            }
         } else {
 //            return view('login' , [
 //                'status' => 'نام کاربری یا رمز عبور وارد شده صحیح نمی باشد !'
@@ -955,7 +993,7 @@ class PanelController extends Controller
 //            $request->session()->flash('status', 'Invalid Username or Password');
 //            return view('login');
 
-            return redirect()->back()->with('status', 'username or password is incorrect !');
+            return redirect()->back()->with('status', 'نام کاربری یا رمز عبور اشتباه است !');
 //           return back()->withInput()->withErrors(['status'=> 'نام کاربری یا رمز عبور وارد شده صحیح نمی باشد !']);
 //           return redirect()->route('login')->with('status' , 'smksnskn');
 //            return "$username username or password $password incorrect";

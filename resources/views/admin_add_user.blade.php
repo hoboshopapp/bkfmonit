@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Account</title>
+    <title>Add User</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -50,11 +50,13 @@
 <body class="animsition">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
-@include('layouts.msidebar' , ['page'=>'account'])
-    <!-- END HEADER MOBILE-->
+{{--    @include('layouts.msidebar' , ['page'=>'dashboard'])--}}
+
+
+<!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
-@include('layouts.sidebar' , ['page'=>'account'])
+@include('layouts.admin_sidebar' , ['page'=>'admin_user'])
 <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
@@ -64,9 +66,9 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">
-                        <form class="form-header d-none" action="" method="POST">
-                            <input class=" au-input au-input--xl" type="text" name="search"
-                                   placeholder="Search ..."/>
+                        <form class="form-header d-none ">
+                            <input class=" au-input au-input--xl" type="text" name="search" id="search_text"
+                                   placeholder="Search User ..."/>
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
@@ -78,25 +80,55 @@
         <!-- HEADER DESKTOP-->
 
         <!-- MAIN CONTENT-->
-        <div class="main-content ">
-            <div class="container">
-                <!--  SELECTOR DIV -->
-                <div class="au-card text-center " style="direction: rtl">
+        <div class="main-content  d-flex justify-content-center" style="direction: rtl;">
 
-                    <div class="d-flex flex-column align-items-center justify-content-center">
 
-                        <img src="images/avatar.png" style="width: 150px; border-radius: 50%" class="m-5"
-                             alt="BKFMonit"/>
+            <div class="col-lg-6">
+                <div class="card text-right">
+                    <div class="card-header">اضافه کردن کاربر</div>
+                    <div class="card-body card-block">
+                        <form action="" method="post" class="">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-user"></i>
+                                    </div>
+                                    <input type="text" id="name" name="name" placeholder="نام" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <input type="email" id="username" name="username" placeholder="نام کاربری" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-asterisk"></i>
+                                    </div>
+                                    <input type="password" id="password" name="password" placeholder="رمز عبور" class="form-control">
+                                </div>
+                            </div>
+                            <a class="text-right">اعتبار حساب تا</a>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <input type="date"  class="" id="date_picker" name="trip-start" style="color: black"></div>
+                            </div>
 
-                        <p id="user_name"></p>
-                        <p id="user_expire" class="mt-2"></p>
+                            <div class="form-actions form-group">
+                                <button type="submit" class="btn btn-success btn-sm">ثبت نام</button>
+                            </div>
+                        </form>
                     </div>
-
                 </div>
-
-
             </div>
+
         </div>
+        <!-- END MAIN CONTENT-->
+        <!-- END PAGE CONTAINER-->
     </div>
 
 </div>
@@ -120,17 +152,12 @@
 <script src="vendor/circle-progress/circle-progress.min.js"></script>
 <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-<script src="vendor/select2/select2.min.js"></script>
-
+<script src="vendor/select2/select2.min.js">
+</script>
 
 <script>
 
-    var user ={!! $user !!};
-    var user_name = document.getElementById('user_name');
-    var user_expire = document.getElementById('user_expire');
 
-    user_name.innerText  = 'نام کاربر : ' + user.name
-    user_expire.innerText  = 'تاریخ انقضا اکانت : ' + user.account_expire_time
 </script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
@@ -138,7 +165,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 <script src="js/sevenSeg.js"></script>
+<script>
 
+</script>
 
 </body>
 </html>
