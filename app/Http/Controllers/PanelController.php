@@ -6,6 +6,8 @@ use App\Models\System;
 use App\Models\SystemRecord;
 use App\Models\User;
 use Illuminate\Container\RewindableGenerator;
+use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Cookie\CookieJar;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -16,13 +18,22 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use Symfony\Component\HttpFoundation\Cookie;
-use function Sodium\add;
 
 class PanelController extends Controller
 {
     public function welcome(Request $request)
     {
         return "Welcome To BKFMonit API";
+    }
+
+    public function logout(Request $request)
+    {
+
+
+        $cookie = \cookie()->forget('token');
+
+        return redirect('/login')->withCookie($cookie);
+
     }
 
     public function dashboard(Request $request)
@@ -42,13 +53,15 @@ class PanelController extends Controller
 
         $data['user'] = $user;
 
-        $charts = $this->getChartRecords($user['selected_system']);
-        $user->selected_system['today_charts'] = $charts;
+        if (DB::table('systems')->where('user_id', $user->id)->exists()) {
 
-        foreach ($user->systems as $system) {
-            $system['last_record'] = $system->temp_records->get(rand(1, 9));
+            $charts = $this->getChartRecords($user['selected_system']);
+            $user->selected_system['today_charts'] = $charts;
+
+            foreach ($user->systems as $system) {
+                $system['last_record'] = $system->records->last();
+            }
         }
-
 
 //        return $charts;
 //        return $this->jsonResponse($data , 200);
@@ -296,6 +309,9 @@ class PanelController extends Controller
         $co2_chart = [];
         $error_chart = [];
         $today = $day->toDateString();
+        $from_hour = '00:00:00';
+        $to_hour = '23:00:00';
+//        $today = $day->toDateString();
 //        echo $today;
 //        $temp1_chart[0] = 12;
 //        dd($temp1_chart);
@@ -304,77 +320,100 @@ class PanelController extends Controller
 //            ->whereBetween('date', [$today . ' 00:00:00', $today . ' 23:59:59'])
 //            ->count();
 
-        $error_count = DB::table('systems_records')
+        $all_error = DB::table('systems_records')
             ->where('system_id', '=', $selected_system->id)
-            ->where('error', '=', 1)
-            ->whereBetween('date', [$today . ' 00:00:00', $today . ' 23:59:59'])
-            ->count('error');
+            ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+            ->get();
 
-        $ok_count = DB::table('systems_records')
-            ->where('system_id', '=', $selected_system->id)
-            ->where('error', '=', 0)
-            ->whereBetween('date', [$today . ' 00:00:00', $today . ' 23:59:59'])
-            ->count();
+        $ok_count = 0;
+        $error_count = 0;
 
-//        $error_chart[0] = $count;
+        foreach ($all_error as $error) {
+            $error->error == 0 ? $ok_count++ : $error_count++;
+        }
+
+
         $error_chart[0] = $ok_count;
         $error_chart[1] = $error_count;
 
-        for ($i = 0; $i < 24; $i++) {
-            $from_hour = '00:00:00';
-            $to_hour = '00:00:00';
 
-            if ($i <= 9) {
-                $from_hour = '0' . $i . ':00:00';
-                $to_hour = '0' . $i . ':59:59';
-            }
-            if (9 < $i) {
-                $from_hour = $i . ':00:00';
-                $to_hour = $i . ':59:59';
-            }
+        $chart_rows = DB::table('systems_records')
+            ->select('temp2', 'hum', 'co2', 'temp1', 'date')
+            ->where('system_id', '=', $selected_system->id)
+            ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+            ->get();
 
-            $chart_clocks[$i] = substr($from_hour, 0, 5);
-//            print $from_hour .'  '. $to_hour .'/      /';
-
-
-//            $temp = SystemRecord::all()->where('system_id', '=', $selected_system->id)
-//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
-//                ->take(1)
-//                ->avg('temp1');
-            $temp = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp1');
-
-            $temp1_chart[$i] = round($temp, 2);
-
-            $temp2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp2');
-
-            $temp2_chart[$i] = round($temp2, 2);
-
-            $hum = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('hum');
-
-            $hum_chart[$i] = round($hum, 2);
-
-            $co2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('co2');
-
-            $co2_chart[$i] = round($co2, 2);
+        foreach ($chart_rows as $i => $chart_row) {
+            $chart_clocks[$i] = substr($chart_row->date, 11, 19);
+            $temp1_chart[$i] = $chart_row->temp1;
+            $temp2_chart[$i] = $chart_row->temp2;
+            $hum_chart[$i] = $chart_row->hum;
+            $co2_chart[$i] = $chart_row->co2;
+        }
 
 
-//            $hum = SystemRecord::all()->where('system_id', '=', $selected_system->id)
-//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
-//                ->take(10)
-//                ->avg('hum');
+//
+//
+//
+//
+//
+//
+//            $temp1_chart[$i] = $temp;
+//        for ($i = 0; $i < 24; $i++) {
+//            $from_hour = '00:00:00';
+//            $to_hour = '00:00:00';
+//
+//            if ($i <= 9) {
+//                $from_hour = '0' . $i . ':00:00';
+//                $to_hour = '0' . $i . ':59:59';
+//            }
+//            if (9 < $i) {
+//                $from_hour = $i . ':00:00';
+//                $to_hour = $i . ':59:59';
+//            }
+//
+//            $chart_clocks[$i] = substr($from_hour, 0, 5);
+////            print $from_hour .'  '. $to_hour .'/      /';
+//
+//
+////            $temp = SystemRecord::all()->where('system_id', '=', $selected_system->id)
+////                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+////                ->take(1)
+////                ->avg('temp1');
+//            $temp = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
+//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp1');
+//
+//            $temp1_chart[$i] = $temp;
+//
+//            $temp2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
+//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp2');
+//
+//            $temp2_chart[$i] = $temp2;
+//
+//            $hum = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
+//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('hum');
+//
 //            $hum_chart[$i] = $hum;
 //
-//            $temp2 = SystemRecord::all()->where('system_id', '=', $selected_system->id)
-//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
-//                ->take(10)
-//                ->avg('temp2');
-//            $temp2_chart[$i] = $temp2;
-
-        }
+//            $co2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
+//                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('co2');
+//
+//            $co2_chart[$i] = $co2;
+//
+//
+////            $hum = SystemRecord::all()->where('system_id', '=', $selected_system->id)
+////                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+////                ->take(10)
+////                ->avg('hum');
+////            $hum_chart[$i] = $hum;
+////
+////            $temp2 = SystemRecord::all()->where('system_id', '=', $selected_system->id)
+////                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+////                ->take(10)
+////                ->avg('temp2');
+////            $temp2_chart[$i] = $temp2;
+//
+//        }
 
 
         $charts['temp1_chart'] = $temp1_chart;
@@ -386,6 +425,7 @@ class PanelController extends Controller
 //        dd($charts);
 
         return $charts;
+
     }
 
     public function getMonthChartRecords($selected_system, $day)
@@ -490,7 +530,6 @@ class PanelController extends Controller
             $from_day = $day->addDays(-7);
         } else {
             $from_day = $day->addDays(-1);
-
         }
 
 
@@ -577,58 +616,27 @@ class PanelController extends Controller
         $tables = [];
         $today = $day->toDateString();
 
-        for ($i = 0; $i < 24; $i++) {
-            $from_hour = '00:00:00';
-            $to_hour = '00:00:00';
-
-            if ($i <= 9) {
-                $from_hour = '0' . $i . ':00:00';
-                $to_hour = '0' . $i . ':59:59';
-            }
-            if (9 < $i) {
-                $from_hour = $i . ':00:00';
-                $to_hour = $i . ':59:59';
-            }
-
-            $clock = substr($from_hour, 0, 5);
+        $from_hour = '00:00:00';
+        $to_hour = '23:59:59';
 
 
-            $temp = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp1');
+        $chart_rows = DB::table('systems_records')
+            ->select('temp2', 'hum', 'co2', 'temp1', 'date' , 'error')
+            ->where('system_id', '=', $selected_system->id)
+            ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
+            ->get();
 
-
-            $temp2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('temp2');
-
-
-            $hum = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('hum');
-
-
-            $co2 = DB::table('systems_records')->where('system_id', '=', $selected_system->id)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])->avg('co2');
-
-
-            $error_count = DB::table('systems_records')
-                ->where('system_id', '=', $selected_system->id)
-                ->where('error', '=', 1)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
-                ->count('error');
-
-            $ok_count = DB::table('systems_records')
-                ->where('system_id', '=', $selected_system->id)
-                ->where('error', '=', 0)
-                ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
-                ->count();
+        foreach ($chart_rows as $i => $chart_row) {
 
             $tables[$i] = new \stdClass();
-            $tables[$i]->time = $clock;
-            $tables[$i]->temp1 = $temp;
-            $tables[$i]->temp2 = $temp2;
-            $tables[$i]->hum = $hum;
-            $tables[$i]->co2 = $co2;
-            $tables[$i]->error = $error_count;
-            $tables[$i]->ok = $ok_count;
+            $tables[$i]->time = $chart_row->date;
+            $tables[$i]->temp1 = $chart_row->temp1;
+            $tables[$i]->temp2 = $chart_row->temp2;
+            $tables[$i]->hum = $chart_row->hum;
+            $tables[$i]->co2 = $chart_row->co2;
+            $tables[$i]->error = $chart_row->error;
+            $tables[$i]->ok = $chart_row->error;
+
         }
 
 
@@ -969,21 +977,35 @@ class PanelController extends Controller
         if (DB::table('users')->where('username', $username)->where('password', $password)->exists()) {
             $user = DB::table('users')->where('username', $username)->where('password', $password)->first();
             if ($user->user_type == 1) {
-                return redirect('/admin_users')->withCookie(Cookie::create('token', $user->api_key));
+                try {
+                    $cookie = \cookie()->make('token', $user->api_key);
+                } catch (BindingResolutionException $e) {
+                }
+                return redirect('/admin_users')->withCookie($cookie);
 
             } elseif ($user->user_type == 2) {
                 if ($user->account_expire_time < today()) {
                     return redirect()->back()->with('status', 'زمان حساب کاربری شما تمام شده است  . برای تمدید حساب کاربری خود با مدیر سیستم تماس بگیرید .');
 
                 } else {
-                    return redirect('/')->withCookie(Cookie::create('token', $user->api_key));
+                    try {
+                        $cookie = \cookie()->make('token', $user->api_key);
+                    } catch (BindingResolutionException $e) {
+                    }
+
+                    return redirect('/')->withCookie($cookie);
                 }
             } else {
                 if ($user->account_expire_time < today()) {
                     return redirect()->back()->with('status', 'زمان حساب کاربری شما تمام شده است  . برای تمدید حساب کاربری خود با مدیر سیستم تماس بگیرید .');
 
                 } else {
-                    return redirect('/')->withCookie(Cookie::create('token', $user->api_key));
+                    try {
+                        $cookie = \cookie()->make('token', $user->api_key);
+                    } catch (BindingResolutionException $e) {
+                    }
+
+                    return redirect('/')->withCookie($cookie);
                 }
             }
         } else {

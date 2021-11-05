@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Add User</title>
+    <title>Edit User</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -87,7 +87,7 @@
                 <div class="card text-right">
                     <div class="card-header">اضافه کردن کاربر</div>
                     <div class="card-body card-block">
-                        <form action="/admin_api_add_user" method="post" class="">
+                        <form action="/admin_api_edit_user?user_id={{ $user->id }}" method="post" class="">
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon">
@@ -122,7 +122,7 @@
                             </div>
 
                             <div class="form-actions form-group">
-                                <button type="submit" class="btn btn-success btn-sm">ثبت نام</button>
+                                <button type="submit" class="btn btn-success btn-sm">ویرایش کاربر</button>
                             </div>
                         </form>
                     </div>
@@ -174,7 +174,16 @@
 </script>
 
 <script>
+    var user ={!! $user !!};
+    var name_input = document.getElementById('name')
+    var username_input = document.getElementById('username')
+    var password_input = document.getElementById('password')
+    var date_input = document.getElementById('date_picker')
 
+    name_input.value = user.name
+    username_input.value = user.username
+    password_input.value = user.password
+    date_input.value = user.account_expire_time.substr(0,10)
 
 </script>
 <!-- Main JS-->

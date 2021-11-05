@@ -42,6 +42,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script type="text/JavaScript" src="js/jquery.print.js"></script>
+
     <script src="js/sevenSeg.js"></script>
 
 
@@ -51,15 +53,17 @@
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
 @include('layouts.msidebar' , ['page'=>'charts'])
-    <!-- END HEADER MOBILE-->
+<!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
 @include('layouts.sidebar' , ['page'=>'charts'])
 <!-- END MENU SIDEBAR-->
 
     <!-- PAGE CONTAINER-->
-    <div class="page-container">
+    <div class="page-container" id="page_container">
         <!-- HEADER DESKTOP-->
+
+
         <header class="header-desktop">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
@@ -80,35 +84,39 @@
         <!-- MAIN CONTENT-->
         <div class="main-content ">
             <div class="container">
+
+
                 <!--  SELECTOR DIV -->
                 <div class="au-card text-center">
                     <ul class="d-flex flex-row justify-content-center nav nav-pills SS " id="systems_tab_list"
                         role="tablist">
-                                                @foreach($user->systems as $system)
-                                                    @if($system->id == $user->selected_system->id)
-                                                        <li class="nav-item">
-                                                            <a class="nav-link active" id="system{{$system->id}}button" data-toggle="pill" href="#pills-home"
-                                                               role="tab" aria-controls="pills-home"
-                                                               aria-selected="true">{{ $system->name }}</a>
-                                                        </li>
-                                                    @else
-                                                        <li class="nav-item">
-                                                            <a class="nav-link" id="system{{$system->id}}button" data-toggle="pill" href="#pills-home"
-                                                               role="tab" aria-controls="pills-home"
-                                                               aria-selected="true">{{ $system->name }}</a>
-                                                        </li>
-                                                    @endif
-                                                    <script>
-                                                        var button = document.getElementById("system{!! $system->id !!}button");
-                                                        button.addEventListener("click", function () {
-                                                            window.location.href = "/charts?system_id="  + {!! $system->id !!}
-                                                        })
-                                                        {{--document.getElementById("system{!! $system->id !!}button").addEventListener("click", function () {--}}
-                                                        {{--    console.log({!! $system->name !!})--}}
-                                                        {{--});--}}
-                                                    </script>
+                        @foreach($user->systems as $system)
+                            @if($system->id == $user->selected_system->id)
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="system{{$system->id}}button" data-toggle="pill"
+                                       href="#pills-home"
+                                       role="tab" aria-controls="pills-home"
+                                       aria-selected="true">{{ $system->name }}</a>
+                                </li>
+                            @else
+                                <li class="nav-item">
+                                    <a class="nav-link" id="system{{$system->id}}button" data-toggle="pill"
+                                       href="#pills-home"
+                                       role="tab" aria-controls="pills-home"
+                                       aria-selected="true">{{ $system->name }}</a>
+                                </li>
+                            @endif
+                            <script>
+                                var button = document.getElementById("system{!! $system->id !!}button");
+                                button.addEventListener("click", function () {
+                                    window.location.href = "/charts?system_id=" + {!! $system->id !!}
+                                })
+                                {{--document.getElementById("system{!! $system->id !!}button").addEventListener("click", function () {--}}
+                                {{--    console.log({!! $system->name !!})--}}
+                                {{--});--}}
+                            </script>
 
-                                                @endforeach
+                        @endforeach
                     </ul>
 
                     <ul class="d-flex flex-row justify-content-center nav nav-pills SS mt-3" id="pills-tab"
@@ -116,31 +124,42 @@
                         <li class="nav-item">
                             <a class="nav-link active" id="tab_last" data-toggle="pill" href="#pills-home"
                                role="tab" aria-controls="pills-home"
-                               aria-selected="true">Last Records</a>
+                               aria-selected="true">تغییرات اخیر</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tab_day" data-toggle="pill" href="#pills-profile"
                                role="tab" aria-controls="pills-profile"
-                               aria-selected="false">Day</a>
+                               aria-selected="false">روزانه</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tab_week" data-toggle="pill" href="#pills-contact"
                                role="tab" aria-controls="pills-contact"
-                               aria-selected="false">Week</a>
+                               aria-selected="false">هفتگی</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="tab_month" data-toggle="pill" href="#pills-contact"
                                role="tab" aria-controls="pills-contact"
-                               aria-selected="false">Month</a>
+                               aria-selected="false">ماهانه</a>
                         </li>
                     </ul>
 
-                    <div class="mt-4 d-flex flex-row justify-content-center">
+                    <div class="checkbox mt-3 text-right">
+                        <label for="checkbox2" class="form-check-label ">
+                            <input type="checkbox" id="date_checkbox" name="checkbox2" value="option2"
+                                   class="form-check-input"> انتخاب تاریخ
+                        </label>
+                    </div>
+
+                    <div class="mt-2 flex-row justify-content-center d-none" id="dt_fo">
+
+                        <p>از تاریخ </p>
+
+
                         <button type="button" id="date_button" class="btn btn-primary m-3">تایید</button>
 
-                        <input type="date"  class="" id="date_picker" name="trip-start" style="color: black"
+                        <input type="date" id="date_picker" name="trip-start" style="color: #0c0a0a">
 
-                            >
+
                     </div>
 
                 </div>
@@ -186,6 +205,8 @@
 
 <!-- Jquery JS-->
 <script src="vendor/jquery-3.2.1.min.js"></script>
+<script type="text/JavaScript" src="js/jquery.print.js"></script>
+
 
 <!-- Bootstrap JS-->
 <script src="vendor/bootstrap-4.1/popper.min.js"></script>
@@ -214,18 +235,28 @@
 
     var date_button = document.getElementById('date_button')
     var date = document.getElementById('date_picker')
+    var dt_fo = document.getElementById('dt_fo')
+
 
 
     chart_data = selected_system.from_date
-    date.value =chart_data
+    date.value = chart_data
 
     // console.log(chart_data)
     // console.log(date.value)
     date_button.addEventListener("click", function () {
-        window.location.href = "/charts?system_id="  + selected_system.id+"&day="+date.value
+        window.location.href = "/charts?system_id=" + selected_system.id + "&day=" + date.value
         // console.log(date.value)
     })
 
+    var date_checkbox = document.getElementById('date_checkbox');
+    date_checkbox.addEventListener('change', function () {
+        if (this.checked) {
+            dt_fo.classList.remove('d-none')
+        } else {
+            dt_fo.classList.add('d-none')
+        }
+    });
 
     var chart ={!! $user->selected_system !!};
     var last_chart = chart.last_charts;

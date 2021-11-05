@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Charts</title>
+    <title>Dashboard</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -84,7 +84,7 @@
             <div class="section__content section__content--p30 ">
                 <div class="container-fluid">
                     <p class="title-2 text-right text-dark mb-4 " id="selected_system_name"
-                       style=" font-size: 20px">{{ $user->selected_system->name }} وضعیت فعلی دستگاه</p>
+                       style=" font-size: 20px">{{ $user->selected_system!=null?$user->selected_system->name:'' }} وضعیت فعلی دستگاه</p>
 
                     <div class="au-card text-center  mb-3  " style="background-color: #000">
 
@@ -317,7 +317,7 @@
                                      style="width: 180px;"></div>
 
                                 <p class="text-light mt-2  small"
-                                   id="set_temp_1">{{ $user->selected_system->last_record->set_temp1 }} </p>
+                                   id="set_temp_1">{{ $user->selected_system!=null?$user->selected_system->last_record->set_temp1:'' }} </p>
 
                             </div>
 
@@ -327,7 +327,7 @@
                                      style="width: 180px;"></div>
 
                                 <p class="text-light mt-2  small"
-                                   id="set_temp_2">{{ $user->selected_system->last_record->set_temp2 }} </p>
+                                   id="set_temp_2">{{ $user->selected_system!=null?$user->selected_system->last_record->set_temp2:'' }} </p>
 
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
@@ -336,7 +336,7 @@
                                      style="width: 180px;"></div>
 
                                 <p class="text-light mt-2  small"
-                                   id="set_hum">{{ $user->selected_system->last_record->set_hum }} </p>
+                                   id="set_hum">{{ $user->selected_system!=null?$user->selected_system->last_record->set_hum:'' }} </p>
 
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">
@@ -485,15 +485,14 @@
 </script>
 
 <script>
-    {{--var chart_temp1_array={!! $user->selected_system->today_charts !!}--}}
     var app = @json($user->selected_system->today_charts);
+
     var temp1_values = app.temp1_chart;
     var temp2_values = app.temp2_chart;
     var clock_values = app.clock_chart;
     var hum_values = app.hum_chart;
     var co2_values = app.co2_chart;
     var error_values = app.error_chart;
-    console.log(hum_values);
     try {
 
 

@@ -67,6 +67,10 @@
                     </li>
                 @endif
 
+                    <li>
+                        <a href="/logout">
+                            <i class="fas fa-remove"></i>خروج از حساب</a>
+                    </li>
 
             </ul>
         </div>

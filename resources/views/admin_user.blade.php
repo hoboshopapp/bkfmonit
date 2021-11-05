@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>Users</title>
+    <title>User</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -62,17 +62,20 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
+        <header class="header-desktop d-none">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">
+
                         <form class="form-header ">
                             <input class=" au-input au-input--xl" type="text" name="search" id="search_text"
-                                   placeholder="Search User ..."/>
+                                   placeholder="Search User System ..."/>
                             <button class="au-btn--submit" type="submit">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
                         </form>
+
+
                     </div>
                 </div>
             </div>
@@ -97,12 +100,12 @@
                         </button>
                     </div>
                     <div class="d-flex flex-column col-lg-4 col-12 col-md-12 col-sm-12  pull-right text-right p-2">
-                        <button type="button" class="btn btn-danger">
+                        <button type="button" class="btn btn-danger" id="delete_user">
                             <i class="fa fa-remove"></i>حذف کاربر
                         </button>
                     </div>
                     <div class="d-flex flex-column col-lg-4 col-12 col-md-12 col-sm-12 pull-right text-right p-2">
-                        <button type="button" class="btn btn-dark">
+                        <button type="button" class="btn btn-dark" id="edit_user">
                             <i class="fa fa-pencil-alt"></i>ویرایش کاربر
                         </button>
                     </div>
@@ -171,6 +174,31 @@
     var username_text = document.getElementById('username')
     var expire_text = document.getElementById('expire_time')
 
+    var edit_button = document.getElementById('edit_user')
+    edit_button.addEventListener("click", function () {
+        window.location.href = "/admin_edit_user?user_id="+admin.id
+    })
+    var delete_button = document.getElementById('delete_user')
+    delete_button.addEventListener("click", function () {
+        var confirmd = confirm('آیا مطمن هستید ؟؟؟ تمام دستگاه های کاربر نیز حذف خواهد شد')
+        if (!confirmd) {
+            return
+        }
+        $.post("/admin_api_delete_user/?user_id="+admin.id,
+            function (status) {
+
+            if (status === 'success'){
+                window.location.href = "/admin_users"
+            }
+            else {
+                alert('مشکلی در حذف به وجود آمده است')
+            }
+            // console.log(status ,data);
+
+        });
+        // window.location.href = "/admin_api_delete_user?user_id="+admin.id
+    })
+
     name_text.innerText = 'نام : ' + admin.name
     username_text.innerText = 'نام کاربری : ' + admin.username
     expire_text.innerText = 'تاریخ انقضای اکانت : ' + admin.account_expire_time
@@ -205,7 +233,7 @@
             //
             //
             cell0.innerText = system.name
-            cell1.innerText = system.system_type == 1? 'setter':'hatcher'
+            cell1.innerText = system.system_type == 1 ? 'setter' : 'hatcher'
             cell2.innerText = system.serial
             // cell3.innerHTML = user.account_expire_time
             //

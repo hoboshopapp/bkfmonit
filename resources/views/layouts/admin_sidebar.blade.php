@@ -24,6 +24,12 @@
                     </li>
                 @endif
 
+
+                <li>
+                    <a href="/logout">
+                        <i class="fas fa-remove"></i>خروج از حساب</a>
+                </li>
+
 {{--                @if($page =='admin_systems')--}}
 {{--                    <li class="active has-sub">--}}
 {{--                        <a class="js-arrow" href="#">--}}

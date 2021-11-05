@@ -122,6 +122,7 @@
 <script src="vendor/chartjs/Chart.bundle.min.js"></script>
 <script src="vendor/select2/select2.min.js"></script>
 
+<script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
 
 <script>
 
@@ -130,7 +131,10 @@
     var user_expire = document.getElementById('user_expire');
 
     user_name.innerText  = 'نام کاربر : ' + user.name
-    user_expire.innerText  = 'تاریخ انقضا اکانت : ' + user.account_expire_time
+    const m = moment(user.account_expire_time.substring(0, 10), 'YYYY/MM/DD').locale('fa').format('YYYY/MM/DD'); // 1367/11/04
+
+
+    user_expire.innerText  = 'تاریخ انقضا اکانت : ' +m
 </script>
 <!-- Main JS-->
 <script src="js/main.js"></script>
