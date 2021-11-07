@@ -621,7 +621,7 @@ class PanelController extends Controller
 
 
         $chart_rows = DB::table('systems_records')
-            ->select('temp2', 'hum', 'co2', 'temp1', 'date' , 'error')
+            ->select('temp2', 'hum', 'co2', 'temp1', 'date', 'error')
             ->where('system_id', '=', $selected_system->id)
             ->whereBetween('date', [$today . ' ' . $from_hour, $today . ' ' . $to_hour])
             ->get();
@@ -992,34 +992,20 @@ class PanelController extends Controller
                         $cookie = \cookie()->make('token', $user->api_key);
                     } catch (BindingResolutionException $e) {
                     }
+                    DB::table('login_log')->insert([
+                        'user_id' => $user->id,
+                        'ip' => $request->ip(),
+                        'date' => today()
+                    ]);
 
                     return redirect('/')->withCookie($cookie);
                 }
             } else {
-                if ($user->account_expire_time < today()) {
-                    return redirect()->back()->with('status', 'زمان حساب کاربری شما تمام شده است  . برای تمدید حساب کاربری خود با مدیر سیستم تماس بگیرید .');
-
-                } else {
-                    try {
-                        $cookie = \cookie()->make('token', $user->api_key);
-                    } catch (BindingResolutionException $e) {
-                    }
-
-                    return redirect('/')->withCookie($cookie);
-                }
+                return redirect()->back()->with('status', 'کاربری با این مشخصات وجود ندارد .');
             }
         } else {
-//            return view('login' , [
-//                'status' => 'نام کاربری یا رمز عبور وارد شده صحیح نمی باشد !'
-//            ]);
-//            $request->session()->flash('status', 'Invalid Username or Password');
-//            return view('login');
 
             return redirect()->back()->with('status', 'نام کاربری یا رمز عبور اشتباه است !');
-//           return back()->withInput()->withErrors(['status'=> 'نام کاربری یا رمز عبور وارد شده صحیح نمی باشد !']);
-//           return redirect()->route('login')->with('status' , 'smksnskn');
-//            return "$username username or password $password incorrect";
-//        }
         }
     }
 

@@ -26,6 +26,8 @@ Route::get('/admin_edit_user', [AdminController::class, 'admin_edit_user'])->mid
 Route::post('/admin_api_add_user', [AdminController::class, 'admin_api_add_user'])->middleware(['admin_api_auth'])->name('admin_api_add_user');
 Route::post('/admin_api_edit_user', [AdminController::class, 'admin_api_edit_user'])->middleware(['admin_api_auth'])->name('admin_api_edit_user');
 Route::post('/admin_api_delete_user', [AdminController::class, 'admin_api_delete_user'])->middleware(['admin_api_auth'])->name('admin_api_delete_user');
+Route::get('/admin_add_system', [AdminController::class, 'admin_add_system'])->middleware(['admin_api_auth'])->name('admin_add_system');
+Route::post('/admin_api_add_system', [AdminController::class, 'admin_api_add_system'])->middleware(['admin_api_auth'])->name('admin_api_add_system');
 
 //User Routes
 Route::get('/charts', [PanelController::class, 'charts'])->middleware(['api_auth']);

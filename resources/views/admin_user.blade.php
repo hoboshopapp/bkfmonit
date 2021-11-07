@@ -95,7 +95,7 @@
 
                 <div class="row mr-5 ml-5 mt-3 mb-1" style="direction: rtl">
                     <div class="d-flex flex-column col-lg-4 col-12 col-md-12 col-sm-12  pull-right text-right p-2">
-                        <button type="button" class="btn active btn-primary">
+                        <button type="button" class="btn active btn-primary" id="add_system">
                             <i class="fa fa-plus-circle"></i> اضافه کردن دستگاه
                         </button>
                     </div>
@@ -175,6 +175,13 @@
     var expire_text = document.getElementById('expire_time')
 
     var edit_button = document.getElementById('edit_user')
+    var add_system_button = document.getElementById('add_system')
+
+    add_system_button.addEventListener("click",  function () {
+        window.location.href = "/admin_add_system?user_id="+admin.id
+    })
+
+
     edit_button.addEventListener("click", function () {
         window.location.href = "/admin_edit_user?user_id="+admin.id
     })

@@ -171,6 +171,84 @@ class AdminController extends Controller
 //        return view("admin_add_user");
     }
 
+    public function admin_api_add_system(Request $request)
+    {
+
+        $user_id = $request->input('user_id');
+        $serial = $request->input('serial');
+        $name = $request->input('name');
+        $system_type = $request->input('system_type');
+
+        $system_id = DB::table('systems')->insertGetId([
+            'name' => $name,
+            'serial' => $serial,
+            'user_id' => $user_id,
+            'system_type' => $system_type,
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+
+        DB::table('systems_records')->insert([
+            'system_type' => 1,
+            'system_id' => $system_id,
+            'system_read' => rand(0, 1),
+            'temp1' => rand(70.00, 99.99),
+            'temp2' => rand(70.00, 99.99),
+            'hum' => rand(70.00, 99.99),
+            'set_temp1' => rand(70.00, 99.99),
+            'set_temp2' => rand(70.00, 99.99),
+            'set_hum' => rand(70.00, 99.99),
+            'fan_control' => rand(0, 1),
+            's_error' => 'error',
+            'fan' => rand(70.00, 99.99),
+            'pressure' => rand(70.00, 99.99),
+            'co2' => rand(70.00, 99.99),
+
+            'egg_turn' => rand(0, 1),
+            'dumper' => rand(0, 1),
+            'high_temp' => rand(0, 1),
+            'low_temp' => rand(0, 1),
+            'high_hum' => rand(0, 1),
+            'low_hum' => rand(0, 1),
+            'door_open' => rand(0, 1),
+            'fan_failure' => rand(0, 1),
+            'dry_wick' => rand(0, 1),
+            'error_program' => rand(0, 1),
+            'heater' => rand(0, 1),
+            'spray' => rand(0, 1),
+            'damper_opening' => rand(0, 1),
+            'damper_open' => rand(0, 1),
+            'auxlary_heater' => rand(0, 1),
+            'damper_closing' => rand(0, 1),
+            'damper_closed' => rand(0, 1),
+            'egg_left' => rand(0, 1),
+            'egg_right' => rand(0, 1),
+            'turning' => rand(0, 1),
+            'egg_failure' => rand(0, 1),
+            'blower' => rand(0, 1),
+            'auxlary_damper' => rand(0, 1),
+            'error' => rand(0, 1),
+
+            'date' => today(),
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return redirect()->back()->with('status', 'success')->with('message', 'دستگاه با موفقیت اضافه شد .');
+
+
+//        return view("admin_add_user");
+    }
+
+    public function admin_add_system(Request $request)
+    {
+        $user_id = $request->input('user_id');
+
+
+        return view("admin_add_system", ['user_id' => $user_id]);
+    }
+
     public function admin_api_edit_user(Request $request)
     {
         $user_id = $request->input('user_id');
@@ -179,11 +257,11 @@ class AdminController extends Controller
         $password = $request->input('password');
         $expire_date = $request->input('date_picker');
 
-        if (DB::table('users')->where('username', $username)->where('id' , '<>' , $user_id)->exists()) {
+        if (DB::table('users')->where('username', $username)->where('id', '<>', $user_id)->exists()) {
             return redirect()->back()->with('status', 'error')->with('message', 'نام کابری قبلا استفاده شده است .');
         } else {
             $day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('date_picker'))));
-            DB::table('users')->where('id' , $user_id)->update([
+            DB::table('users')->where('id', $user_id)->update([
                 'name' => $name,
                 'username' => $username,
                 'password' => $password,
@@ -193,8 +271,7 @@ class AdminController extends Controller
 
         }
 //        return $user_id;
-            return redirect()->back()->with('status', 'success')->with('message', 'حساب کاربری با موفقیت ,ویرایش شد .');
-
+        return redirect()->back()->with('status', 'success')->with('message', 'حساب کاربری با موفقیت ,ویرایش شد .');
 
 
 //        return view("admin_add_user");
