@@ -185,6 +185,7 @@
     edit_button.addEventListener("click", function () {
         window.location.href = "/admin_edit_user?user_id="+admin.id
     })
+
     var delete_button = document.getElementById('delete_user')
     delete_button.addEventListener("click", function () {
         var confirmd = confirm('آیا مطمن هستید ؟؟؟ تمام دستگاه های کاربر نیز حذف خواهد شد')
@@ -226,7 +227,7 @@
             var new_row = table_tbody.insertRow();
             //
             new_row.addEventListener("click", function () {
-                // window.location.href = "/admin_user?user_id=" + user.id
+                window.location.href = "/admin_show_system?system_id=" + system.id
             })
             //
             var cell0 = new_row.insertCell()

@@ -493,6 +493,7 @@
     var hum_values = app.hum_chart;
     var co2_values = app.co2_chart;
     var error_values = app.error_chart;
+
     try {
 
 

@@ -50,7 +50,7 @@
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
 @include('layouts.msidebar' , ['page'=>'tables'])
-    <!-- END HEADER MOBILE-->
+<!-- END HEADER MOBILE-->
 
     <!-- MENU SIDEBAR-->
 @include('layouts.sidebar' , ['page'=>'tables'])
@@ -80,8 +80,11 @@
         <div class="main-content ">
             <div class="container">
                 <!--  SELECTOR DIV -->
+
                 <div class="au-card text-center">
-                    <ul class="d-flex flex-row justify-content-center nav nav-pills SS " id="systems_tab_list"
+                    <p>انتخاب دستگاه</p>
+
+                    <ul class="d-flex flex-row justify-content-center nav nav-pills SS mt-3" id="systems_tab_list"
                         role="tablist">
                         @foreach($user->systems as $system)
                             @if($system->id == $user->selected_system->id)
@@ -112,45 +115,60 @@
                         @endforeach
                     </ul>
 
-                    <ul class="d-flex flex-row justify-content-center nav nav-pills SS mt-3" id="pills-tab"
-                        role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link active" id="tab_last" data-toggle="pill" href="#pills-home"
-                               role="tab" aria-controls="pills-home"
-                               aria-selected="true">تغییرات اخیر</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab_day" data-toggle="pill" href="#pills-profile"
-                               role="tab" aria-controls="pills-profile"
-                               aria-selected="false">روزانه</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab_week" data-toggle="pill" href="#pills-contact"
-                               role="tab" aria-controls="pills-contact"
-                               aria-selected="false">هفتکی</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="tab_month" data-toggle="pill" href="#pills-contact"
-                               role="tab" aria-controls="pills-contact"
-                               aria-selected="false">ماهانه</a>
-                        </li>
-                    </ul>
-                    <div class="checkbox mt-3 text-right" >
-                        <label for="checkbox2" class="form-check-label ">
-                            <input type="checkbox" id="date_checkbox" name="checkbox2" value="option2" class="form-check-input"> انتخاب تاریخ
-                        </label>
+                    {{--                    <ul class="d-flex flex-row justify-content-center nav nav-pills SS mt-3" id="pills-tab"--}}
+                    {{--                        role="tablist">--}}
+                    {{--                        <li class="nav-item">--}}
+                    {{--                            <a class="nav-link active" id="tab_last" data-toggle="pill" href="#pills-home"--}}
+                    {{--                               role="tab" aria-controls="pills-home"--}}
+                    {{--                               aria-selected="true">تغییرات اخیر</a>--}}
+                    {{--                        </li>--}}
+                    {{--                        <li class="nav-item">--}}
+                    {{--                            <a class="nav-link" id="tab_day" data-toggle="pill" href="#pills-profile"--}}
+                    {{--                               role="tab" aria-controls="pills-profile"--}}
+                    {{--                               aria-selected="false">روزانه</a>--}}
+                    {{--                        </li>--}}
+                    {{--                        <li class="nav-item">--}}
+                    {{--                            <a class="nav-link" id="tab_week" data-toggle="pill" href="#pills-contact"--}}
+                    {{--                               role="tab" aria-controls="pills-contact"--}}
+                    {{--                               aria-selected="false">هفتکی</a>--}}
+                    {{--                        </li>--}}
+                    {{--                        <li class="nav-item">--}}
+                    {{--                            <a class="nav-link" id="tab_month" data-toggle="pill" href="#pills-contact"--}}
+                    {{--                               role="tab" aria-controls="pills-contact"--}}
+                    {{--                               aria-selected="false">ماهانه</a>--}}
+                    {{--                        </li>--}}
+                    {{--                    </ul>--}}
+{{--                    <div class="checkbox mt-3 text-right">--}}
+{{--                        <label for="checkbox2" class="form-check-label ">--}}
+{{--                            <input type="checkbox" id="date_checkbox" name="checkbox2" value="option2"--}}
+{{--                                   class="form-check-input"> انتخاب تاریخ--}}
+{{--                        </label>--}}
+
+{{--                    </div>--}}
+                    <div class="row d-flex flex-row mt-3 mr-5 ml-5" style="direction: rtl">
+
+                        <div class="col col-lg-6 col-sm-12">
+                            <div class="mt-2 flex-row justify-content-center" id="dt_fo">
+
+                                <p>از تاریخ </p>
+                                <input class="mt-2" type="date" id="date_picker" name="trip-start" style="">
+
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-6 col-sm-12">
+                            <div class="mt-2 flex-row justify-content-center" id="dt_fo">
+
+                                <p>تا تاریخ </p>
+                                <input class="mt-2" type="date" id="date_picker2" name="trip-start" style="">
+
+                            </div>
+                        </div>
+
                     </div>
 
-                    <div class="mt-2 flex-row justify-content-center d-none" id="dt_fo">
-
-                        <p >از تاریخ  </p>
-
-
+                    <div class="row d-flex justify-content-center">
                         <button type="button" id="date_button" class="btn btn-primary m-3">تایید</button>
-
-                        <input type="date"   id="date_picker" name="trip-start" style="color: #0c0a0a">
-
-
 
                     </div>
 
@@ -159,7 +177,7 @@
 
                 </div>
                 <!-- END SELECTOR DIV -->
-<button class="btn btn-primary m-3" id="print">Print</button>
+                {{--<button class="btn btn-primary m-3" id="print">Print</button>--}}
                 <div class="mt-4 table-responsive table-bordered table--no-card m-b-40">
                     <table class=" table table-borderless table-striped table-earning" id="systems_table"
                            style="direction: ltr">
@@ -223,14 +241,7 @@
 <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
 
 
-
 <script>
-
-
-    // $('#pdf_print').on('click',function(){
-    // })
-
-
 
     var selected_system ={!! $user->selected_system !!};
     var systems ={!! $user->systems !!};
@@ -241,82 +252,26 @@
 
     var date_button = document.getElementById('date_button')
     var date = document.getElementById('date_picker')
+    var date2 = document.getElementById('date_picker2')
 
 
     chart_data = selected_system.from_date
-    date.value =chart_data
+    chart_data2 = selected_system.to_date
+    date.value = chart_data
+    date2.value = chart_data2
 
-    // console.log(chart_data)
-    // console.log(date.value)
     date_button.addEventListener("click", function () {
-        window.location.href = "/tables?system_id="  + selected_system.id+"&day="+date.value
-        // console.log(date.value)
+        window.location.href = "/tables?system_id=" + selected_system.id + "&day=" + date.value+"&to_day="+date2.value
     })
 
-    var date_checkbox = document.getElementById('date_checkbox');
-    date_checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            dt_fo.classList.remove('d-none')
-        } else {
-            dt_fo.classList.add('d-none')
-        }
-    });
 
     var table ={!! $user->selected_system !!};
-    var last_table = table.last_table;
-    var day_table = table.today_table;
-    var week_table = table.week_table;
-    var month_table = table.month_table;
+    var last_table = table.table_values;
 
 
     update_table(last_table)
-    // set_data_to_charts(clock_values, temp1_values, temp2_values, hum_values, co2_values, error_values)
 
-    var last_record_button = document.getElementById("tab_last")
-    var day_button = document.getElementById("tab_day")
-    var week_button = document.getElementById("tab_week")
-    var month_button = document.getElementById("tab_month")
 
-    last_record_button.addEventListener("click", function () {
-        update_table(last_table)
-        // update_temp_chart(last_chart)
-        // update_hum_chart(last_chart)
-        // update_co2_chart(last_chart)
-        // update_error_chart(last_chart)
-        // console.log(last_chart)
-
-        // temp_chart.update()
-        // change_chart_type('last', chart)
-    })
-
-    day_button.addEventListener("click", function () {
-        update_table(day_table)
-        // update_temp_chart(day_chart)
-        // update_hum_chart(day_chart)
-        // update_co2_chart(day_chart)
-        // update_error_chart(day_chart)
-
-        // change_chart_type('day', chart)
-    })
-
-    week_button.addEventListener("click", function () {
-        update_table(week_table)
-        // update_temp_chart(week_chart)
-        // update_hum_chart(week_chart)
-        // update_co2_chart(week_chart)
-        // update_error_chart(week_chart)
-
-        // change_chart_type('day', chart)
-    })
-    month_button.addEventListener("click", function () {
-        update_table(month_table)
-        // update_temp_chart(month_chart)
-        // update_hum_chart(month_chart)
-        // update_co2_chart(month_chart)
-        // update_error_chart(month_chart)
-
-        // change_chart_type('day', chart)
-    })
 
     function update_table(table_values) {
         $("#systems_table tbody tr").remove()
@@ -341,12 +296,11 @@
             const m = moment(table_value.time.substring(0, 10), 'YYYY/MM/DD').locale('fa').format('YYYY/MM/DD'); // 1367/11/04
 
 
-
             cell0.innerText = m + table_value.time.substring(10, 19)
-            cell1.innerText = table_value.temp1?table_value.temp1.toFixed(2):null
-            cell2.innerText =table_value.temp2?table_value.temp2.toFixed(2):null
-            cell3.innerHTML =table_value.hum?table_value.hum.toFixed(2):null
-            cell4.innerHTML =table_value.co2?table_value.co2.toFixed(2):null
+            cell1.innerText = table_value.temp1 ? table_value.temp1.toFixed(2) : null
+            cell2.innerText = table_value.temp2 ? table_value.temp2.toFixed(2) : null
+            cell3.innerHTML = table_value.hum ? table_value.hum.toFixed(2) : null
+            cell4.innerHTML = table_value.co2 ? table_value.co2.toFixed(2) : null
             cell5.innerHTML = table_value.error
 
         }

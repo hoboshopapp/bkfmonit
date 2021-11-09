@@ -73,6 +73,36 @@ class AdminController extends Controller
         ]);
     }
 
+    public function admin_show_system(Request $request)
+    {
+//        $user = $this->getUser($request);
+        $system_id = $request->input('system_id');
+
+        $system = DB::table('systems')->where('id' , $system_id)->first();
+//
+//        if ($request->has('search')) {
+//            $user['search'] = $request->input('search');
+//            $user['systems'] = DB::table('systems')->select('id', 'system_type', 'serial', 'name', 'created_at')
+//                ->where('user_id', $user_id)->where('name', 'LIKE', '%' . $request->input('search') . '%')->get();
+//
+//        } else {
+//            $user['systems'] = DB::table('systems')->select('id', 'system_type', 'serial', 'name', 'created_at')
+//                ->where('user_id', $user_id)->get();
+//            $user['search'] = '';
+//
+//        }
+
+        $system_last_record = DB::table('systems_records')->where('system_id' , $system_id)->orderBy('id' , 'desc')->first();
+
+        $system->last_record = $system_last_record;
+
+//        $user['selected_system'] = $system;
+//        return $this->jsonResponse($system , 200);
+        return view("admin_system", [
+            'system' => $system
+        ]);
+    }
+
     public function admin_add_user(Request $request)
     {
         return view("admin_add_user");
@@ -249,6 +279,15 @@ class AdminController extends Controller
         return view("admin_add_system", ['user_id' => $user_id]);
     }
 
+    public function admin_edit_system(Request $request)
+    {
+        $system_id = $request->input('system_id');
+        $system = System::all()->find($system_id)->first();
+
+        return $this->jsonResponse($system);
+        return view("admin_edit_system", ['system' => $system]);
+    }
+
     public function admin_api_edit_user(Request $request)
     {
         $user_id = $request->input('user_id');
@@ -288,6 +327,17 @@ class AdminController extends Controller
 
 
 //        return view("admin_add_user");
+    }
+
+    public function admin_api_delete_system(Request $request)
+    {
+        $system_id = $request->input('system_id');
+
+        System::all()->find($system_id)->delete();
+
+        return $this->jsonResponse("success", 200);
+
+
     }
 
 
