@@ -44,6 +44,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="js/sevenSeg.js"></script>
 
+    <link type="text/css" rel="stylesheet" href="css/persian-datepicker.css" />
+
 </head>
 
 <body class="animsition">
@@ -115,43 +117,14 @@
                         @endforeach
                     </ul>
 
-                    {{--                    <ul class="d-flex flex-row justify-content-center nav nav-pills SS mt-3" id="pills-tab"--}}
-                    {{--                        role="tablist">--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                            <a class="nav-link active" id="tab_last" data-toggle="pill" href="#pills-home"--}}
-                    {{--                               role="tab" aria-controls="pills-home"--}}
-                    {{--                               aria-selected="true">تغییرات اخیر</a>--}}
-                    {{--                        </li>--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                            <a class="nav-link" id="tab_day" data-toggle="pill" href="#pills-profile"--}}
-                    {{--                               role="tab" aria-controls="pills-profile"--}}
-                    {{--                               aria-selected="false">روزانه</a>--}}
-                    {{--                        </li>--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                            <a class="nav-link" id="tab_week" data-toggle="pill" href="#pills-contact"--}}
-                    {{--                               role="tab" aria-controls="pills-contact"--}}
-                    {{--                               aria-selected="false">هفتکی</a>--}}
-                    {{--                        </li>--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                            <a class="nav-link" id="tab_month" data-toggle="pill" href="#pills-contact"--}}
-                    {{--                               role="tab" aria-controls="pills-contact"--}}
-                    {{--                               aria-selected="false">ماهانه</a>--}}
-                    {{--                        </li>--}}
-                    {{--                    </ul>--}}
-{{--                    <div class="checkbox mt-3 text-right">--}}
-{{--                        <label for="checkbox2" class="form-check-label ">--}}
-{{--                            <input type="checkbox" id="date_checkbox" name="checkbox2" value="option2"--}}
-{{--                                   class="form-check-input"> انتخاب تاریخ--}}
-{{--                        </label>--}}
-
-{{--                    </div>--}}
                     <div class="row d-flex flex-row mt-3 mr-5 ml-5" style="direction: rtl">
 
                         <div class="col col-lg-6 col-sm-12">
                             <div class="mt-2 flex-row justify-content-center" id="dt_fo">
 
                                 <p>از تاریخ </p>
-                                <input class="mt-2" type="date" id="date_picker" name="trip-start" style="">
+{{--                                <input class="mt-2" type="date" id="date_picker" name="trip-start" style="">--}}
+                                <input type="text"class=""  id="datepicker0"  />
 
                             </div>
                         </div>
@@ -160,7 +133,8 @@
                             <div class="mt-2 flex-row justify-content-center" id="dt_fo">
 
                                 <p>تا تاریخ </p>
-                                <input class="mt-2" type="date" id="date_picker2" name="trip-start" style="">
+{{--                                <input class="mt-2" type="date" id="date_picker2" name="trip-start" style="">--}}
+                                <input type="text"class=""  id="datepicker1" />
 
                             </div>
                         </div>
@@ -257,11 +231,24 @@
 
     chart_data = selected_system.from_date
     chart_data2 = selected_system.to_date
-    date.value = chart_data
-    date2.value = chart_data2
+
+    console.log(chart_data)
+    console.log(chart_data2)
+    chart_date_from_fa =moment(chart_data, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
+    chart_date_to_fa =moment(chart_data2, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
+
+    var datepicker = document.getElementById('datepicker0')
+    datepicker.value = chart_date_from_fa
+    var datepicker2 = document.getElementById('datepicker1')
+    datepicker2.value = chart_date_to_fa
+    // date.value = chart_data
+    // date2.value = chart_data2
 
     date_button.addEventListener("click", function () {
-        window.location.href = "/tables?system_id=" + selected_system.id + "&day=" + date.value+"&to_day="+date2.value
+        var from_date = moment.from(datepicker.value, 'fa', 'DD/MM/YYYY').format('YYYY/MM/DD'); // 1989/01/24
+        var to_date = moment.from(datepicker2.value, 'fa', 'DD/MM/YYYY').format('YYYY/MM/DD'); // 1989/01/24
+
+        window.location.href = "/tables?system_id=" + selected_system.id + "&day=" + from_date+"&to_day="+to_date
     })
 
 
@@ -277,7 +264,6 @@
         $("#systems_table tbody tr").remove()
 
         for (const table_value of table_values) {
-            console.log(table_value)
 
             var new_row = table_tbody.insertRow();
 
@@ -316,7 +302,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
 <script src="js/sevenSeg.js"></script>
 
-s
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/persian-datepicker.js"></script>
+<script type="text/javascript">
+    $(function() {
+        // حالت پیشفرض
+        $('#datepicker0').datepicker();
+        $('#datepicker1').datepicker();
+    });
+</script>
 </body>
 </html>
 

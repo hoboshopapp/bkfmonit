@@ -75,29 +75,14 @@ class AdminController extends Controller
 
     public function admin_show_system(Request $request)
     {
-//        $user = $this->getUser($request);
         $system_id = $request->input('system_id');
 
         $system = DB::table('systems')->where('id' , $system_id)->first();
-//
-//        if ($request->has('search')) {
-//            $user['search'] = $request->input('search');
-//            $user['systems'] = DB::table('systems')->select('id', 'system_type', 'serial', 'name', 'created_at')
-//                ->where('user_id', $user_id)->where('name', 'LIKE', '%' . $request->input('search') . '%')->get();
-//
-//        } else {
-//            $user['systems'] = DB::table('systems')->select('id', 'system_type', 'serial', 'name', 'created_at')
-//                ->where('user_id', $user_id)->get();
-//            $user['search'] = '';
-//
-//        }
 
         $system_last_record = DB::table('systems_records')->where('system_id' , $system_id)->orderBy('id' , 'desc')->first();
 
         $system->last_record = $system_last_record;
 
-//        $user['selected_system'] = $system;
-//        return $this->jsonResponse($system , 200);
         return view("admin_system", [
             'system' => $system
         ]);
@@ -113,6 +98,7 @@ class AdminController extends Controller
         $user_id = $request->input('user_id');
 
         $user = User::all()->where('id', $user_id)->first();
+
 
         return view("admin_edit_user", [
             'user' => $user
@@ -271,6 +257,29 @@ class AdminController extends Controller
 //        return view("admin_add_user");
     }
 
+    public function admin_api_edit_system(Request $request)
+    {
+
+        $system_id = $request->input('system_id');
+        $serial = $request->input('serial');
+        $name = $request->input('name');
+        $system_type = $request->input('system_type');
+
+          DB::table('systems')->where('id'  , $system_id)->update([
+            'name' => $name,
+            'serial' => $serial,
+            'system_type' => $system_type,
+            'updated_at' => now()
+        ]);
+
+
+
+        return redirect()->back()->with('status', 'success')->with('message', 'دستگاه با موفقیت اضافه شد .');
+
+
+//        return view("admin_add_user");
+    }
+
     public function admin_add_system(Request $request)
     {
         $user_id = $request->input('user_id');
@@ -282,9 +291,9 @@ class AdminController extends Controller
     public function admin_edit_system(Request $request)
     {
         $system_id = $request->input('system_id');
-        $system = System::all()->find($system_id)->first();
-
-        return $this->jsonResponse($system);
+//        $system = System::all()->find($system_id)->first();
+        $system = DB::table('systems')->where('id' , $system_id)->first();
+//        return $this->jsonResponse($system);
         return view("admin_edit_system", ['system' => $system]);
     }
 

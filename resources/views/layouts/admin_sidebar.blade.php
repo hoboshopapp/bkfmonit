@@ -1,6 +1,6 @@
 <aside class="menu-sidebar d-none d-lg-block">
     <div class="logo text-center d-flex flex-row align-items-center justify-content-center">
-        <a href="#">
+        <a href="/">
             <div class="row  d-flex flex-row align-items-center text-center  justify-content-center ">
                 <img src="images/icon/bkf3_icon.png" alt="BKFMonit"/>
                 <h5 class="text-dark ml-2">BKFMonit</h5>

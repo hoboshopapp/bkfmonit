@@ -31,6 +31,7 @@ Route::get('/admin_add_system', [AdminController::class, 'admin_add_system'])->m
 Route::get('/admin_edit_system', [AdminController::class, 'admin_edit_system'])->middleware(['admin_api_auth'])->name('admin_edit_system');
 Route::get('/admin_show_system', [AdminController::class, 'admin_show_system'])->middleware(['admin_api_auth'])->name('admin_show_system');
 Route::post('/admin_api_add_system', [AdminController::class, 'admin_api_add_system'])->middleware(['admin_api_auth'])->name('admin_api_add_system');
+Route::post('/admin_api_edit_system', [AdminController::class, 'admin_api_edit_system'])->middleware(['admin_api_auth'])->name('admin_api_edit_system');
 
 //User Routes
 Route::get('/charts', [PanelController::class, 'charts'])->middleware(['api_auth']);

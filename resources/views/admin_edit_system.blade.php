@@ -85,7 +85,7 @@
 
             <div class="col-lg-6">
                 <div class="card text-right">
-                    <div class="card-header">ویرایش دستگاه اضافه شده</div>
+                    <div class="card-header">ویرایش دستگاه</div>
                     <div class="card-body card-block">
                         <form action="/admin_api_edit_system" method="post" class="">
                             <input name="system_id" value="{{$system->id}}" hidden>
@@ -123,7 +123,7 @@
 
                             </select>
                             <div class="form-actions form-group mt-3">
-                                <button type="submit" class="btn btn-success btn-sm">اضافه کردن</button>
+                                <button type="submit" class="btn btn-success btn-sm">ویرایش</button>
                             </div>
                         </form>
                     </div>

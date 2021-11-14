@@ -2,7 +2,7 @@
     <div class="header-mobile__bar">
         <div class="container-fluid">
             <div class="ml-3 header-mobile-inner">
-                <a href="#">
+                <a href="/">
                     <div class=" row  d-flex flex-row align-items-center text-center  justify-content-center ">
                         <img src="images/icon/bkf3_icon.png" alt="BKFMonit"/>
                         <h5 class="text-dark ml-2">BKFMonit</h5>

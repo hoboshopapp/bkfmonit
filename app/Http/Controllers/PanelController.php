@@ -999,7 +999,7 @@ class PanelController extends Controller
         if ($request->has('day') && $request->has('to_day')) {
             try {
                 $from_day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('day'))));
-                $to_day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('day'))));
+                $to_day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('to_day'))));
                 $from_day = $from_day->toDateString();
                 $to_day = $to_day->toDateString();
             } catch (\Exception $e) {

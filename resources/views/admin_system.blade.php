@@ -108,7 +108,7 @@
                     <div class="section__content section__content--p30 ">
                         <div class="container-fluid">
                             <p class="title-2 text-right text-dark mb-4 " id="selected_system_name"
-                               style=" font-size: 20px">{{ $system!=null?$system->name:'' }} وضعیت فعلی دستگاه</p>
+                               style=" font-size: 20px">{{ $system->name}} وضعیت فعلی دستگاه</p>
 
                             <div class="au-card text-center  mb-3  " style="background-color: #000">
 
@@ -470,7 +470,7 @@
     console.log(selected_system)
 
     name_text.innerText =  'نام دستگاه : ' +selected_system.name
-    type_text.innerText =  'نوع دستگاه : ' +(selected_system.system_type = 1 ? "Setter":"Hatcher")
+    type_text.innerText =   selected_system.system_type == 1 ? "Setter":"Hatcher"
     serial_text.innerText =  'سریال دستگاه : ' +selected_system.serial
 
 {{--    var user_systems = {!! $user->systems !!};--}}
@@ -531,7 +531,7 @@
         set_temp1.innerHTML = selected_system.last_record.set_temp1;
         set_temp2.innerHTML = selected_system.last_record.set_temp2;
         set_hum.innerHTML = selected_system.last_record.set_hum;
-        selected_system_name.innerHTML = selected_system.name +' '+ (selected_system.type ==1? '(Setter)':'(Hatcher)' )+ "  وضعیت فعلی دستگاه   "
+        selected_system_name.innerHTML = selected_system.name + "  وضعیت فعلی دستگاه   "
     //     // $(function() {
         set_led(led_high_temp, selected_system.last_record.high_temp)
         set_led(led_high_hum, selected_system.last_record.high_hum)
