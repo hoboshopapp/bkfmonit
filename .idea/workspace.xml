@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,15 +23,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8bfe596-1685-40a2-9d66-cb7c791ff197" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/admin_msidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/bkfmonit.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/bkfmonit.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PanelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/ApiAuthenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/ApiAuthenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/theme.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/account.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/account.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_add_system.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_add_system.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_add_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_add_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_edit_system.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_edit_system.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_edit_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_edit_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_system.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_system.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin_users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin_users.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/charts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/charts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tables.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tables.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,9 +178,19 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/morilog/jalali" />
+      <path value="$PROJECT_DIR$/vendor/beberlei/assert" />
     </include_path>
   </component>
   <component name="ProjectId" id="1zPdse1Cq62fUDJSbfw6azYpNtN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -166,16 +198,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/layouts" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\LaravelProjects\bkfmonit\resources\views\layouts" />
+      <recent name="C:\LaravelProjects\bkfmonit\public\css" />
+      <recent name="C:\LaravelProjects\bkfmonit\public\js" />
+      <recent name="C:\LaravelProjects\bkfmonit\resources\views" />
       <recent name="C:\LaravelProjects\bkfmonit\app\Http\Controllers" />
-      <recent name="C:\LaravelProjects\bkfmonit\app\Models" />
-      <recent name="C:\LaravelProjects\bkfmonit\public\images\icon" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +251,35 @@
       <workItem from="1635006424007" duration="666000" />
       <workItem from="1635007244503" duration="9757000" />
       <workItem from="1635051501591" duration="13448000" />
-      <workItem from="1635075352618" duration="5420000" />
+      <workItem from="1635075352618" duration="6125000" />
+      <workItem from="1635097396175" duration="8719000" />
+      <workItem from="1635139678264" duration="29017000" />
+      <workItem from="1635180266567" duration="3325000" />
+      <workItem from="1635192050510" duration="1825000" />
+      <workItem from="1635194964438" duration="391000" />
+      <workItem from="1635265328993" duration="6331000" />
+      <workItem from="1635272783646" duration="5174000" />
+      <workItem from="1635349501538" duration="8605000" />
+      <workItem from="1635446376458" duration="2787000" />
+      <workItem from="1635482869876" duration="2929000" />
+      <workItem from="1635519469296" duration="4264000" />
+      <workItem from="1635613125639" duration="11557000" />
+      <workItem from="1635654887020" duration="4309000" />
+      <workItem from="1635695769669" duration="5840000" />
+      <workItem from="1635783961155" duration="8835000" />
+      <workItem from="1635957382760" duration="10261000" />
+      <workItem from="1636001625217" duration="5034000" />
+      <workItem from="1636031436337" duration="7180000" />
+      <workItem from="1636051721670" duration="27000" />
+      <workItem from="1636051768569" duration="925000" />
+      <workItem from="1636091601824" duration="10713000" />
+      <workItem from="1636304899983" duration="11196000" />
+      <workItem from="1636380681188" duration="10130000" />
+      <workItem from="1636400048862" duration="1293000" />
+      <workItem from="1636557255678" duration="8547000" />
+      <workItem from="1636577849906" duration="54000" />
+      <workItem from="1637086610090" duration="5614000" />
+      <workItem from="1637166419697" duration="5150000" />
     </task>
     <servers />
   </component>
@@ -237,10 +299,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="358" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1634876559255">
+    <state x="68" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1635657162630">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="358" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/68.0.1852.1080@68.0.1852.1080" timestamp="1634876559255" />
+    <state x="68" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/68.0.1852.1080@68.0.1852.1080" timestamp="1635657162630" />
     <state x="724" y="294" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1634921300214">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
@@ -249,25 +311,33 @@
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
     <state x="774" y="294" key="FileChooserDialogImpl/68.0.1852.1080@68.0.1852.1080" timestamp="1634899328735" />
-    <state x="798" y="246" key="NewPhpClassDialog" timestamp="1634899841507">
+    <state x="798" y="246" key="NewPhpClassDialog" timestamp="1637090636832">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="798" y="246" key="NewPhpClassDialog/68.0.1852.1080@68.0.1852.1080" timestamp="1634899841507" />
+    <state x="798" y="246" key="NewPhpClassDialog/68.0.1852.1080@68.0.1852.1080" timestamp="1637090636832" />
     <state x="828" y="459" key="NewPhpFileDialog" timestamp="1634913049636">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
     <state x="828" y="459" key="NewPhpFileDialog/68.0.1852.1080@68.0.1852.1080" timestamp="1634913049636" />
-    <state x="713" y="262" key="SettingsEditor" timestamp="1634974466509">
+    <state x="713" y="262" key="SettingsEditor" timestamp="1635194937508">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="713" y="262" key="SettingsEditor/68.0.1852.1080@68.0.1852.1080" timestamp="1634974466509" />
-    <state x="650" y="250" key="run.anything.popup" timestamp="1634978454744">
+    <state x="713" y="262" key="SettingsEditor/68.0.1852.1080@68.0.1852.1080" timestamp="1635194937508" />
+    <state x="319" y="156" width="1302" height="1068" key="dock-window-1" timestamp="1635149349884">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="650" y="250" key="run.anything.popup/68.0.1852.1080@68.0.1852.1080" timestamp="1634978454744" />
-    <state x="657" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1635078694736">
+    <state x="319" y="156" width="1302" height="1068" key="dock-window-1/68.0.1852.1080@68.0.1852.1080" timestamp="1635149349884" />
+    <state x="487" y="29" width="1302" height="1068" key="dock-window-2" timestamp="1635149349884">
       <screen x="68" y="0" width="1852" height="1080" />
     </state>
-    <state x="657" y="235" width="672" height="678" key="search.everywhere.popup/68.0.1852.1080@68.0.1852.1080" timestamp="1635078694736" />
+    <state x="487" y="29" width="1302" height="1068" key="dock-window-2/68.0.1852.1080@68.0.1852.1080" timestamp="1635149349884" />
+    <state x="650" y="250" key="run.anything.popup" timestamp="1636385193923">
+      <screen x="68" y="0" width="1852" height="1080" />
+    </state>
+    <state x="650" y="250" key="run.anything.popup/68.0.1852.1080@68.0.1852.1080" timestamp="1636385193923" />
+    <state x="657" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1637172970929">
+      <screen x="68" y="0" width="1852" height="1080" />
+    </state>
+    <state x="657" y="235" width="672" height="678" key="search.everywhere.popup/68.0.1852.1080@68.0.1852.1080" timestamp="1637172970929" />
   </component>
 </project>

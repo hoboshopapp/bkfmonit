@@ -50,7 +50,7 @@
 <body class="animsition">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
-{{--    @include('layouts.msidebar' , ['page'=>'dashboard'])--}}
+@include('layouts.admin_msidebar' , ['page'=>'dashboard'])
 
 
 <!-- END HEADER MOBILE-->

@@ -62,7 +62,7 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
+        <header class="header-desktop d-none d-lg-block">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">
@@ -316,7 +316,7 @@
                                 <div id="exampleArray" class="new-au-card au-card-seven-seg"
                                      style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small"
+                                <p class="text-light mt-2  h5"
                                    id="set_temp_1">{{ $user->selected_system!=null?$user->selected_system->last_record->set_temp1:'' }} </p>
 
                             </div>
@@ -326,7 +326,7 @@
                                 <div id="exampleArray2" class="new-au-card au-card-seven-seg"
                                      style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small"
+                                <p class="text-light mt-2  h5"
                                    id="set_temp_2">{{ $user->selected_system!=null?$user->selected_system->last_record->set_temp2:'' }} </p>
 
                             </div>
@@ -335,7 +335,7 @@
                                 <div id="exampleArray3" class="new-au-card au-card-seven-seg"
                                      style="width: 180px;"></div>
 
-                                <p class="text-light mt-2  small"
+                                <p class="text-light mt-2  h5"
                                    id="set_hum">{{ $user->selected_system!=null?$user->selected_system->last_record->set_hum:'' }} </p>
 
                             </div>
@@ -344,7 +344,7 @@
 
                                 <div id="exampleArray4" class="new-au-card au-card-seven-seg"
                                      style="width: 180px;"></div>
-                                <p class="text-light mt-2  small">_</p>
+                                <p class="text-light mt-2  h5">.</p>
 
                             </div>
                             <div class="col-lg-2 col-md-6 col-sm-12 new-parent-center d-flex flex-column mr-lg-2 ">

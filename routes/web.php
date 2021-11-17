@@ -36,6 +36,7 @@ Route::post('/admin_api_edit_system', [AdminController::class, 'admin_api_edit_s
 //User Routes
 Route::get('/charts', [PanelController::class, 'charts'])->middleware(['api_auth']);
 Route::get('/tables', [PanelController::class, 'tables'])->middleware(['api_auth']);
+Route::get('/print_tables', [PanelController::class, 'print_tables'])->middleware(['api_auth']);
 Route::get('/user_account', [PanelController::class, 'user_account'])->middleware(['api_auth']);
 Route::get('/charts_data', [PanelController::class, 'charts_data'])->middleware(['api_auth']);
 Route::get('/dashboard/{system_id?}', [PanelController::class, 'dashboard_data'])->middleware(['api_auth']);

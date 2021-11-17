@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\System;
 use App\Models\SystemRecord;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Container\RewindableGenerator;
 use Illuminate\Contracts\Container\BindingResolutionException;
 use Illuminate\Cookie\CookieJar;
@@ -15,8 +16,10 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Morilog\Jalali\CalendarUtils;
 use Symfony\Component\HttpFoundation\Cookie;
 
 class PanelController extends Controller
@@ -691,7 +694,7 @@ class PanelController extends Controller
         $chart_rows = DB::table('systems_records')
             ->select('temp2', 'hum', 'co2', 'temp1', 'date', 'error')
             ->where('system_id', '=', $selected_system->id)
-            ->whereBetween('date', [$from_day.' '.$from_hour , $to_day . ' ' . $to_hour])
+            ->whereBetween('date', [$from_day . ' ' . $from_hour, $to_day . ' ' . $to_hour])
             ->get();
 
 
@@ -798,7 +801,7 @@ class PanelController extends Controller
         $chart_rows = DB::table('systems_records')
             ->select('temp2', 'hum', 'co2', 'temp1', 'date', 'error')
             ->where('system_id', '=', $selected_system->id)
-            ->whereBetween('date', [$from_day.' '.$from_hour , $to_day . ' ' . $to_hour])
+            ->whereBetween('date', [$from_day . ' ' . $from_hour, $to_day . ' ' . $to_hour])
             ->get();
 
 
@@ -995,6 +998,90 @@ class PanelController extends Controller
         $to_hour = '23:59:59';
 
 
+        if ($request->has('day') && $request->has('to_day')) {
+            try {
+                $from_day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('day'))));
+                $to_day = new Carbon(date('Y-m-d H:i:s', strtotime(request()->input('to_day'))));
+                $from_day = $from_day->toDateString();
+                $to_day = $to_day->toDateString();
+            } catch (\Exception $e) {
+
+            }
+        }
+
+
+        $user->selected_system['from_date'] = $from_day;
+        $user->selected_system['to_date'] = $to_day;
+
+        $tables = [];
+
+        $chart_rows = DB::table('systems_records')
+            ->select('temp2', 'hum', 'co2', 'temp1', 'date', 'error')
+            ->where('system_id', '=', $user->selected_system->id)
+            ->whereBetween('date', [$from_day . ' ' . $from_hour, $to_day . ' ' . $to_hour])
+            ->get();
+
+        foreach ($chart_rows as $i => $chart_row) {
+
+            $tables[$i] = new \stdClass();
+            $tables[$i]->time = $chart_row->date;
+            $tables[$i]->temp1 = $chart_row->temp1;
+            $tables[$i]->temp2 = $chart_row->temp2;
+            $tables[$i]->hum = $chart_row->hum;
+            $tables[$i]->co2 = $chart_row->co2;
+            $tables[$i]->error = $chart_row->error;
+            $tables[$i]->ok = $chart_row->error;
+
+        }
+
+
+//        return $this->jsonResponse($today_tables ,200 );
+
+//        $last_charts = $this->getLastChartRecords($user['selected_system']);
+//        $week_charts = $this->getWeekChartRecords($user['selected_system'], today());
+//        $month_charts = $this->getMonthChartRecords($user['selected_system'], today());
+
+
+        $user->selected_system['table_values'] = $tables;
+//        $user->selected_system['today_table'] = $this->getTodayTableRecords($user['selected_system'], $day);
+//        $user->selected_system['last_table'] = $this->getLastTableRecords($user['selected_system']);
+//        $user->selected_system['week_table'] = $this->getWeekTableRecords($user['selected_system'], $day);
+//        $user->selected_system['month_table'] = $this->getMonthTableRecords($user['selected_system'], $day);
+//        $user->selected_system['week_charts'] = $week_charts;
+//        $user->selected_system['month_charts'] = $month_charts;
+
+
+        return view("tables", [
+            'user' => $user
+        ]);
+    }
+
+
+    public function print_tables(Request $request)
+    {
+
+
+        $user = $this->getUser($request);
+
+        $system_id = 0;
+
+        if ($request->has('system_id')) {
+            $system_id = \request()->input('system_id');
+        }
+
+        if ($system_id == 0) {
+            $user['selected_system'] = $user->systems->first();
+        } else {
+            $user['selected_system'] = $user->systems->find($system_id);
+        }
+
+
+        $from_day = today()->toDateString();
+        $to_day = today()->toDateString();
+
+        $from_hour = '00:00:00';
+        $to_hour = '23:59:59';
+
 
         if ($request->has('day') && $request->has('to_day')) {
             try {
@@ -1040,7 +1127,7 @@ class PanelController extends Controller
 //        $month_charts = $this->getMonthChartRecords($user['selected_system'], today());
 
 
-        $user->selected_system['table_values'] =$tables;
+        $user->selected_system['table_values'] = $tables;
 //        $user->selected_system['today_table'] = $this->getTodayTableRecords($user['selected_system'], $day);
 //        $user->selected_system['last_table'] = $this->getLastTableRecords($user['selected_system']);
 //        $user->selected_system['week_table'] = $this->getWeekTableRecords($user['selected_system'], $day);
@@ -1049,10 +1136,106 @@ class PanelController extends Controller
 //        $user->selected_system['month_charts'] = $month_charts;
 
 
-//        return $this->jsonResponse($user, 200);
-        return view("tables", [
-            'user' => $user
-        ]);
+        $posts = $user->selected_system['table_values'];
+
+        $html_body = '';
+        foreach ($posts as $post) {
+            $date = $post->time;
+            $p_date =  CalendarUtils::strftime('Y-m-d', strtotime(substr($date , 0 , 11))); // 1395-02-19
+
+            $post->time = $p_date . '  '.substr($date , 11 , 9) ;
+        }
+
+        foreach ($posts as $post) {
+            $html_body .=
+                '<tr>
+                 <td>'
+                .
+                $post->time .
+                '</td>
+                 <td>' .
+                $post->temp1 .
+                '</td>
+                 <td>'
+                . $post->temp2 .
+                '</td>
+                 <td>'
+                . $post->hum .
+                '</td>
+                 <td>'
+                . $post->co2 .
+                '</td>
+                 <td>'
+                . $post->error .
+                '</td>
+
+
+                 </tr>';
+        }
+
+
+        $html = '';
+        $html .= '
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+    text-align: center;
+
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+<div class="table-scrollable">
+                        <table  id="customers" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>T1</th>
+                                    <th>T2</th>
+                                    <th>Hum</th>
+                                    <th>Co2</th>
+                                    <th>Err</th>
+                                </tr>
+                            </thead>
+                            <tbody id="body">
+                             ' . $html_body . '
+                            </tbody>
+                </table>
+            </div>';
+
+//        return $html;
+
+//        return PDF::loadView("tables", [
+//        'user' => $user
+//    ])->setPaper('a4', 'landscape')->setWarnings(false)->save('myfile.pdf');
+
+        if ($request->input('type') == 1) {
+            $pdf = PDF::loadHTML($html);
+            return $pdf->setOptions(['dpi' => 150])->download("print.pdf");
+        } else if ($request->input('type') == 2) {
+            return print($html);
+
+        }
+
+
     }
 
 

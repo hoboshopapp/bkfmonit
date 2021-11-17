@@ -50,6 +50,7 @@
 <body class="animsition">
 <div class="page-wrapper">
     <!-- HEADER MOBILE-->
+@include('layouts.admin_msidebar' , ['page'=>'dashboard'])
 
 
     <!-- END HEADER MOBILE-->
@@ -61,7 +62,7 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
+        <header class="header-desktop d-none">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">

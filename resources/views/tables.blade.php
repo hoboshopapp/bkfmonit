@@ -44,7 +44,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
     <script src="js/sevenSeg.js"></script>
 
-    <link type="text/css" rel="stylesheet" href="css/persian-datepicker.css" />
+    <link type="text/css" rel="stylesheet" href="css/persian-datepicker.css"/>
 
 </head>
 
@@ -61,7 +61,7 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container">
         <!-- HEADER DESKTOP-->
-        <header class="header-desktop">
+        <header class="header-desktop d-none d-lg-block">
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="header-wrap ">
@@ -123,8 +123,8 @@
                             <div class="mt-2 flex-row justify-content-center" id="dt_fo">
 
                                 <p>از تاریخ </p>
-{{--                                <input class="mt-2" type="date" id="date_picker" name="trip-start" style="">--}}
-                                <input type="text"class=""  id="datepicker0"  />
+                                {{--                                <input class="mt-2" type="date" id="date_picker" name="trip-start" style="">--}}
+                                <input type="text" class="" id="datepicker0"/>
 
                             </div>
                         </div>
@@ -133,8 +133,8 @@
                             <div class="mt-2 flex-row justify-content-center" id="dt_fo">
 
                                 <p>تا تاریخ </p>
-{{--                                <input class="mt-2" type="date" id="date_picker2" name="trip-start" style="">--}}
-                                <input type="text"class=""  id="datepicker1" />
+                                {{--                                <input class="mt-2" type="date" id="date_picker2" name="trip-start" style="">--}}
+                                <input type="text" class="" id="datepicker1"/>
 
                             </div>
                         </div>
@@ -147,11 +147,15 @@
                     </div>
 
 
-
-
                 </div>
                 <!-- END SELECTOR DIV -->
                 {{--<button class="btn btn-primary m-3" id="print">Print</button>--}}
+
+                <div class="row d-flex float-right">
+                    <button type="button" id="print_button" class="btn btn-primary mt-2 mb-2 mr-2">دانلود PDF</button>
+                    <button type="button" id="export_button" class="btn btn-primary mt-2 mb-2 mr-3">چاپ </button>
+
+                </div>
                 <div class="mt-4 table-responsive table-bordered table--no-card m-b-40">
                     <table class=" table table-borderless table-striped table-earning" id="systems_table"
                            style="direction: ltr">
@@ -234,8 +238,8 @@
 
     console.log(chart_data)
     console.log(chart_data2)
-    chart_date_from_fa =moment(chart_data, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
-    chart_date_to_fa =moment(chart_data2, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
+    chart_date_from_fa = moment(chart_data, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
+    chart_date_to_fa = moment(chart_data2, 'YYYY-MM-DD').locale('fa').format('DD/MM/YYYY'); // 1367/11/04
 
     var datepicker = document.getElementById('datepicker0')
     datepicker.value = chart_date_from_fa
@@ -248,8 +252,24 @@
         var from_date = moment.from(datepicker.value, 'fa', 'DD/MM/YYYY').format('YYYY/MM/DD'); // 1989/01/24
         var to_date = moment.from(datepicker2.value, 'fa', 'DD/MM/YYYY').format('YYYY/MM/DD'); // 1989/01/24
 
-        window.location.href = "/tables?system_id=" + selected_system.id + "&day=" + from_date+"&to_day="+to_date
+        window.location.href = "/tables?system_id=" + selected_system.id + "&day=" + from_date + "&to_day=" + to_date
     })
+
+
+    var print_button = document.getElementById('print_button')
+    print_button.addEventListener("click", function () {
+        from_date = selected_system.from_date
+        to_date = selected_system.to_date
+            window.location.href = "/print_tables?system_id=" + selected_system.id + "&day=" + from_date + "&to_day=" + to_date+"&type="+1
+        }
+    )
+    var export_button = document.getElementById('export_button')
+    export_button.addEventListener("click", function () {
+            from_date = selected_system.from_date
+            to_date = selected_system.to_date
+            window.location.href = "/print_tables?system_id=" + selected_system.id + "&day=" + from_date + "&to_day=" + to_date+"&type="+2
+        }
+    )
 
 
     var table ={!! $user->selected_system !!};
@@ -257,7 +277,6 @@
 
 
     update_table(last_table)
-
 
 
     function update_table(table_values) {
@@ -295,6 +314,7 @@
 
     //
 </script>
+
 <!-- Main JS-->
 <script src="js/main.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
@@ -305,7 +325,7 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/persian-datepicker.js"></script>
 <script type="text/javascript">
-    $(function() {
+    $(function () {
         // حالت پیشفرض
         $('#datepicker0').datepicker();
         $('#datepicker1').datepicker();
